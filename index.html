@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
         * {
             margin: 0;
@@ -119,57 +119,54 @@
             margin-bottom: 20px;
             font-size: 18px;
         }
-        .service-grid {
+        .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 30px;
-            margin-top: 40px;
+            margin-top: 30px;
         }
         .service-card {
             background: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
+            padding: 40px 25px;
+            border-radius: 12px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.08);
             text-align: center;
-            border-top: 4px solid #F28C38;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
         .service-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 12px rgba(242, 140, 56, 0.2);
+            transform: translateY(-8px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.12);
         }
         .service-card i {
-            font-size: 3rem;
             color: #F28C38;
             margin-bottom: 20px;
-            display: block;
         }
-        .service-card h3 {
-            text-align: center;
+        .service-card h4 {
+            color: #1A1A1A;
             margin-bottom: 15px;
+            font-size: 22px;
         }
         .service-card p {
             text-align: left;
             margin-bottom: 15px;
         }
         .service-card ul {
-            list-style: none;
-            padding: 0;
             text-align: left;
+            padding-left: 25px;
+            list-style: none;
         }
         .service-card ul li {
             padding: 8px 0;
             font-size: 16px;
             color: #555;
             position: relative;
-            padding-left: 25px;
         }
         .service-card ul li:before {
             content: "✓";
             color: #F28C38;
             font-weight: bold;
             position: absolute;
-            left: 0;
+            left: -20px;
         }
         .contact-info {
             background: white;
@@ -260,7 +257,7 @@
             section {
                 padding: 40px 20px;
             }
-            .service-grid {
+            .services-grid {
                 grid-template-columns: 1fr;
             }
         }
@@ -303,10 +300,10 @@
     <section id="services">
         <div class="container">
             <h2>Our Services</h2>
-            <div class="service-grid">
+            <div class="services-grid">
                 <div class="service-card">
-                    <i class="fas fa-users"></i>
-                    <h3>Human Resources Provision</h3>
+                    <i class="fas fa-3x fa-users"></i>
+                    <h4>Human Resources Provision</h4>
                     <p>Strategic HR solutions including recruitment, staffing, workforce management, and comprehensive business consultancy services tailored to your organization's needs.</p>
                     <ul>
                         <li>Talent Acquisition</li>
@@ -315,8 +312,8 @@
                     </ul>
                 </div>
                 <div class="service-card">
-                    <i class="fas fa-shopping-cart"></i>
-                    <h3>E-Commerce & General Trading</h3>
+                    <i class="fas fa-3x fa-shopping-cart"></i>
+                    <h4>E-Commerce & General Trading</h4>
                     <p>Full-spectrum trading and e-commerce solutions, from digital marketplace setup to international trade facilitation and supply chain management.</p>
                     <ul>
                         <li>E-Commerce Solutions</li>
@@ -325,8 +322,8 @@
                     </ul>
                 </div>
                 <div class="service-card">
-                    <i class="fas fa-project-diagram"></i>
-                    <h3>Management & Project Services</h3>
+                    <i class="fas fa-3x fa-project-diagram"></i>
+                    <h4>Management & Project Services</h4>
                     <p>Expert project management and comprehensive business management services to ensure your operations run smoothly and efficiently from start to finish.</p>
                     <ul>
                         <li>Project Management</li>
