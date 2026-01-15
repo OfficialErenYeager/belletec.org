@@ -7,6 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <style>
         * {
             margin: 0;
@@ -130,10 +131,45 @@
             border-radius: 10px;
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
             transition: transform 0.3s ease;
+            text-align: center;
+            border-top: 4px solid #F28C38;
         }
         .service-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 8px 12px rgba(242, 140, 56, 0.2);
+        }
+        .service-card i {
+            font-size: 3rem;
+            color: #F28C38;
+            margin-bottom: 20px;
+            display: block;
+        }
+        .service-card h3 {
+            text-align: center;
+            margin-bottom: 15px;
+        }
+        .service-card p {
+            text-align: left;
+            margin-bottom: 15px;
+        }
+        .service-card ul {
+            list-style: none;
+            padding: 0;
+            text-align: left;
+        }
+        .service-card ul li {
+            padding: 8px 0;
+            font-size: 16px;
+            color: #555;
+            position: relative;
+            padding-left: 25px;
+        }
+        .service-card ul li:before {
+            content: "✓";
+            color: #F28C38;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
         }
         .contact-info {
             background: white;
@@ -269,28 +305,34 @@
             <h2>Our Services</h2>
             <div class="service-grid">
                 <div class="service-card">
+                    <i class="fas fa-users"></i>
                     <h3>Human Resources Provision</h3>
                     <p>Strategic HR solutions including recruitment, staffing, workforce management, and comprehensive business consultancy services tailored to your organization's needs.</p>
+                    <ul>
+                        <li>Talent Acquisition</li>
+                        <li>HR Management</li>
+                        <li>Business Consulting</li>
+                    </ul>
                 </div>
                 <div class="service-card">
-                    <h3>Business Consultancy</h3>
-                    <p>Expert guidance and strategic planning to help your business navigate challenges and seize opportunities in today's dynamic market environment.</p>
+                    <i class="fas fa-shopping-cart"></i>
+                    <h3>E-Commerce & General Trading</h3>
+                    <p>Full-spectrum trading and e-commerce solutions, from digital marketplace setup to international trade facilitation and supply chain management.</p>
+                    <ul>
+                        <li>E-Commerce Solutions</li>
+                        <li>Import/Export Services</li>
+                        <li>Supply Chain Management</li>
+                    </ul>
                 </div>
                 <div class="service-card">
-                    <h3>E-Commerce</h3>
-                    <p>Full-spectrum e-commerce solutions, from digital marketplace setup to online business strategy and digital transformation services.</p>
-                </div>
-                <div class="service-card">
-                    <h3>General Trading</h3>
-                    <p>International trade facilitation, import/export services, and supply chain management to connect your business with global markets.</p>
-                </div>
-                <div class="service-card">
-                    <h3>Management Services</h3>
-                    <p>Comprehensive business management services to ensure your operations run smoothly and efficiently from start to finish.</p>
-                </div>
-                <div class="service-card">
-                    <h3>Project Management Services</h3>
-                    <p>Expert project management to deliver your initiatives on time, within budget, and to the highest quality standards.</p>
+                    <i class="fas fa-project-diagram"></i>
+                    <h3>Management & Project Services</h3>
+                    <p>Expert project management and comprehensive business management services to ensure your operations run smoothly and efficiently from start to finish.</p>
+                    <ul>
+                        <li>Project Management</li>
+                        <li>Operations Management</li>
+                        <li>Strategic Planning</li>
+                    </ul>
                 </div>
             </div>
         </div>
