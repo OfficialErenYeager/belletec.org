@@ -3,554 +3,218 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Belle Trading & E-Commerce F.Z.E. - Business Excellence in Ajman</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Belle Trading & E-Commerce F.Z.E.</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         * {
-            scroll-behavior: smooth;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
         body {
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: #333;
         }
         .logo-font {
             font-family: 'Great Vibes', cursive;
+            color: #F28C38;
         }
-        .hero-gradient {
-            background: linear-gradient(135deg, #F28C38 0%, #E07A28 25%, #C86A20 50%, #8B4513 75%, #1A1A1A 100%);
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
         }
-        .card-hover {
-            transition: all 0.3s ease;
+        header {
+            background: #1A1A1A;
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
-        .card-hover:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 40px rgba(242, 140, 56, 0.15);
+        header h1 {
+            font-size: 120px;
+            margin-bottom: 20px;
         }
-        .btn-primary {
+        header p {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: #e0e0e0;
+        }
+        section {
+            padding: 80px 20px;
+            background: white;
+        }
+        section:nth-child(even) {
+            background: #f9f9f9;
+        }
+        h2 {
+            color: #F28C38;
+            font-size: 36px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        h3 {
+            color: #1A1A1A;
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+        p {
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        .service-card {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 12px rgba(242, 140, 56, 0.2);
+        }
+        .contact-info {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            margin-top: 40px;
+        }
+        .contact-info p {
+            margin-bottom: 10px;
+        }
+        .btn {
+            display: inline-block;
             background: #F28C38;
+            color: white;
+            padding: 15px 40px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 18px;
+            border: none;
+            cursor: pointer;
             transition: all 0.3s ease;
+            margin-top: 20px;
         }
-        .btn-primary:hover {
+        .btn:hover {
             background: #E07A28;
             transform: scale(1.05);
         }
-        .btn-secondary {
-            border: 2px solid #F28C38;
-            color: #F28C38;
-            transition: all 0.3s ease;
-        }
-        .btn-secondary:hover {
-            background: #F28C38;
-            color: white;
-        }
-        .mobile-menu {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease;
-        }
-        .mobile-menu.active {
-            max-height: 500px;
-        }
-        .hamburger span {
-            display: block;
-            width: 25px;
-            height: 3px;
+        footer {
             background: #1A1A1A;
-            margin: 5px 0;
-            transition: all 0.3s ease;
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
         }
-        .hamburger.active span:nth-child(1) {
-            transform: rotate(45deg) translate(8px, 8px);
-        }
-        .hamburger.active span:nth-child(2) {
-            opacity: 0;
-        }
-        .hamburger.active span:nth-child(3) {
-            transform: rotate(-45deg) translate(7px, -7px);
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 60px;
+            }
+            header p {
+                font-size: 18px;
+            }
+            h2 {
+                font-size: 28px;
+            }
+            h3 {
+                font-size: 20px;
+            }
+            p {
+                font-size: 16px;
+            }
+            section {
+                padding: 40px 20px;
+            }
+            .service-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
-<body class="bg-white">
-    <!-- Navigation -->
-    <nav class="fixed w-full bg-white/95 backdrop-blur-sm shadow-sm z-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-20">
-                <div class="flex items-center">
-                    <span class="logo-font text-4xl text-orange-500">Béllè</span>
-                </div>
-                <div class="hidden md:flex space-x-8">
-                    <a href="#home" class="text-gray-700 hover:text-orange-500 transition">Home</a>
-                    <a href="#about" class="text-gray-700 hover:text-orange-500 transition">About</a>
-                    <a href="#services" class="text-gray-700 hover:text-orange-500 transition">Services</a>
-                    <a href="#contact" class="text-gray-700 hover:text-orange-500 transition">Contact</a>
-                </div>
-                <a href="tel:+971554383573" class="hidden md:block btn-primary text-white px-6 py-2 rounded-full font-medium">
-                    Call Now
-                </a>
-                <!-- Hamburger Menu -->
-                <button class="md:hidden hamburger" id="hamburger">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-            </div>
-            <!-- Mobile Menu -->
-            <div class="mobile-menu md:hidden" id="mobileMenu">
-                <div class="py-4 space-y-4">
-                    <a href="#home" class="block text-gray-700 hover:text-orange-500 transition py-2">Home</a>
-                    <a href="#about" class="block text-gray-700 hover:text-orange-500 transition py-2">About</a>
-                    <a href="#services" class="block text-gray-700 hover:text-orange-500 transition py-2">Services</a>
-                    <a href="#contact" class="block text-gray-700 hover:text-orange-500 transition py-2">Contact</a>
-                    <a href="tel:+971554383573" class="block btn-primary text-white px-6 py-2 rounded-full font-medium text-center">
-                        Call Now
-                    </a>
-                </div>
-            </div>
+<body>
+    <header>
+        <div class="container">
+            <h1 class="logo-font">Béllè</h1>
+            <p style="font-size: 20px; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 30px;">Trading & E-Commerce F.Z.E.</p>
+            <p style="font-size: 32px; font-weight: 700; max-width: 900px; margin: 0 auto;">Empowering Business Through HR, Trading, E-Commerce & Management Excellence</p>
         </div>
-    </nav>
+    </header>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero-gradient min-h-screen flex items-center pt-20">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center">
-            <div class="mb-8" data-aos="fade-down">
-                <h1 class="logo-font text-7xl md:text-9xl text-white mb-4">Béllè</h1>
-                <p class="text-white/90 text-xl md:text-2xl uppercase tracking-wider">Trading & E-Commerce F.Z.E.</p>
-            </div>
-            <h2 class="text-white text-3xl md:text-5xl font-bold mb-6 leading-tight max-w-4xl mx-auto" data-aos="fade-up" data-aos-delay="100">
-                Empowering Business Through HR, Trading, E-Commerce & Management Excellence
-            </h2>
-            <p class="text-white/90 text-lg md:text-xl mb-12 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="200">
-                Your trusted partner for comprehensive business solutions in Ajman Freezone
-            </p>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center" data-aos="fade-up" data-aos-delay="300">
-                <a href="#contact" class="btn-primary text-white px-8 py-4 rounded-full font-semibold text-lg">
-                    Contact Us
-                </a>
-                <a href="#services" class="btn-secondary bg-transparent px-8 py-4 rounded-full font-semibold text-lg text-white border-white hover:bg-white hover:text-orange-500">
-                    Learn More
-                </a>
-            </div>
+    <section id="about">
+        <div class="container">
+            <h2>About Belle Trading & E-Commerce F.Z.E.</h2>
+            <p>Belle Trading & E-Commerce F.Z.E. is a dynamic business solutions provider headquartered in Ajman Freezone. As a registered Free Zone Entity, we deliver comprehensive services spanning human resources, business consultancy, e-commerce, general trading, and project management.</p>
+            <p>Under the leadership of our CEO, <strong>Malik Mansoor Awan</strong>, we've built a reputation for excellence, reliability, and innovative business solutions that help companies thrive in today's competitive marketplace.</p>
         </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about" class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid md:grid-cols-2 gap-12 items-center">
-                <div data-aos="fade-right">
-                    <h3 class="text-orange-500 font-semibold text-lg mb-2">About Us</h3>
-                    <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-                        Building Success in the Heart of Ajman
-                    </h2>
-                    <p class="text-gray-600 text-lg mb-6 leading-relaxed">
-                        Belle Trading & E-Commerce F.Z.E. is a dynamic business solutions provider headquartered in Ajman Freezone. As a registered Free Zone Entity, we deliver comprehensive services spanning human resources, business consultancy, e-commerce, general trading, and project management.
-                    </p>
-                    <p class="text-gray-600 text-lg mb-6 leading-relaxed">
-                        Under the leadership of our CEO, <span class="font-semibold text-gray-900">Malik Mansoor Awan</span>, we've built a reputation for excellence, reliability, and innovative business solutions that help companies thrive in today's competitive marketplace.
-                    </p>
-                    <div class="flex items-center gap-4">
-                        <div class="w-16 h-1 bg-orange-500"></div>
-                        <p class="text-gray-500 italic">Registered in Ajman Freezone, UAE</p>
-                    </div>
+    <section id="services">
+        <div class="container">
+            <h2>Our Services</h2>
+            <div class="service-grid">
+                <div class="service-card">
+                    <h3>Human Resources Provision</h3>
+                    <p>Strategic HR solutions including recruitment, staffing, workforce management, and comprehensive business consultancy services tailored to your organization's needs.</p>
                 </div>
-                <div class="bg-gray-100 rounded-2xl p-8 shadow-xl" data-aos="fade-left">
-                    <div class="space-y-6">
-                        <div class="flex items-start gap-4">
-                            <div class="bg-orange-500 text-white p-3 rounded-lg">
-                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                                </svg>
-                            </div>
-                            <div>
-                                <h4 class="font-semibold text-gray-900 text-lg">Licensed F.Z.E.</h4>
-                                <p class="text-gray-600">Fully registered Ajman Freezone Entity</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start gap-4">
-                            <div class="bg-orange-500 text-white p-3 rounded-lg">
-                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
-                                </svg>
-                            </div>
-                            <div>
-                                <h4 class="font-semibold text-gray-900 text-lg">Expert Leadership</h4>
-                                <p class="text-gray-600">Led by experienced CEO Malik Mansoor Awan</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start gap-4">
-                            <div class="bg-orange-500 text-white p-3 rounded-lg">
-                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
-                                </svg>
-                            </div>
-                            <div>
-                                <h4 class="font-semibold text-gray-900 text-lg">Full-Service Solutions</h4>
-                                <p class="text-gray-600">Comprehensive business support services</p>
-                            </div>
-                        </div>
-                    </div>
+                <div class="service-card">
+                    <h3>Business Consultancy</h3>
+                    <p>Expert guidance and strategic planning to help your business navigate challenges and seize opportunities in today's dynamic market environment.</p>
+                </div>
+                <div class="service-card">
+                    <h3>E-Commerce</h3>
+                    <p>Full-spectrum e-commerce solutions, from digital marketplace setup to online business strategy and digital transformation services.</p>
+                </div>
+                <div class="service-card">
+                    <h3>General Trading</h3>
+                    <p>International trade facilitation, import/export services, and supply chain management to connect your business with global markets.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Management Services</h3>
+                    <p>Comprehensive business management services to ensure your operations run smoothly and efficiently from start to finish.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Project Management Services</h3>
+                    <p>Expert project management to deliver your initiatives on time, within budget, and to the highest quality standards.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Services Section -->
-    <section id="services" class="py-20 bg-gray-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16" data-aos="fade-up">
-                <h3 class="text-orange-500 font-semibold text-lg mb-2">Our Services</h3>
-                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-                    Comprehensive Business Solutions
-                </h2>
-                <p class="text-gray-600 text-lg max-w-3xl mx-auto">
-                    From human resources to e-commerce, we provide end-to-end services to power your business growth
-                </p>
-            </div>
-
-            <div class="grid md:grid-cols-3 gap-8">
-                <!-- Service Card 1 -->
-                <div class="bg-white rounded-2xl p-8 shadow-lg card-hover" data-aos="fade-up" data-aos-delay="100">
-                    <div class="bg-orange-100 w-16 h-16 rounded-xl flex items-center justify-center mb-6">
-                        <svg class="w-8 h-8 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path>
-                        </svg>
-                    </div>
-                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Human Resources & Consultancy</h3>
-                    <p class="text-gray-600 mb-6 leading-relaxed">
-                        Strategic HR solutions including recruitment, staffing, workforce management, and comprehensive business consultancy services tailored to your organization's needs.
-                    </p>
-                    <ul class="space-y-2 text-gray-600">
-                        <li class="flex items-center gap-2">
-                            <span class="text-orange-500">✓</span> Talent Acquisition
-                        </li>
-                        <li class="flex items-center gap-2">
-                            <span class="text-orange-500">✓</span> HR Management
-                        </li>
-                        <li class="flex items-center gap-2">
-                            <span class="text-orange-500">✓</span> Business Consulting
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- Service Card 2 -->
-                <div class="bg-white rounded-2xl p-8 shadow-lg card-hover" data-aos="fade-up" data-aos-delay="200">
-                    <div class="bg-orange-100 w-16 h-16 rounded-xl flex items-center justify-center mb-6">
-                        <svg class="w-8 h-8 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path>
-                        </svg>
-                    </div>
-                    <h3 class="text-2xl font-bold text-gray-900 mb-4">E-Commerce & General Trading</h3>
-                    <p class="text-gray-600 mb-6 leading-relaxed">
-                        Full-spectrum trading and e-commerce solutions, from digital marketplace setup to international trade facilitation and supply chain management.
-                    </p>
-                    <ul class="space-y-2 text-gray-600">
-                        <li class="flex items-center gap-2">
-                            <span class="text-orange-500">✓</span> E-Commerce Solutions
-                        </li>
-                        <li class="flex items-center gap-2">
-                            <span class="text-orange-500">✓</span> Import/Export Services
-                        </li>
-                        <li class="flex items-center gap-2">
-                            <span class="text-orange-500">✓</span> Supply Chain Management
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- Service Card 3 -->
-                <div class="bg-white rounded-2xl p-8 shadow-lg card-hover" data-aos="fade-up" data-aos-delay="300">
-                    <div class="bg-orange-100 w-16 h-16 rounded-xl flex items-center justify-center mb-6">
-                        <svg class="w-8 h-8 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path>
-                        </svg>
-                    </div>
-                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Management & Project Services</h3>
-                    <p class="text-gray-600 mb-6 leading-relaxed">
-                        Expert project management and comprehensive business management services to ensure your operations run smoothly and efficiently from start to finish.
-                    </p>
-                    <ul class="space-y-2 text-gray-600">
-                        <li class="flex items-center gap-2">
-                            <span class="text-orange-500">✓</span> Project Management
-                        </li>
-                        <li class="flex items-center gap-2">
-                            <span class="text-orange-500">✓</span> Operations Management
-                        </li>
-                        <li class="flex items-center gap-2">
-                            <span class="text-orange-500">✓</span> Strategic Planning
-                        </li>
-                    </ul>
-                </div>
+    <section id="contact">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <div class="contact-info">
+                <h3>Get In Touch</h3>
+                <p><strong>CEO:</strong> Malik Mansoor Awan</p>
+                <p><strong>Company:</strong> Belle Trading & E-Commerce F.Z.E.</p>
+                <p><strong>Address:</strong> C1-1F-SF13288-AJMAN FREEZONE, C1 BUILDING - AJMAN</p>
+                <p><strong>Email:</strong> info@belletec.org | belleajman@gmail.com</p>
+                <p><strong>Phone:</strong> +971 55 438 3573 | +971 438 3573</p>
+                <p><strong>Website:</strong> www.belletec.org</p>
+                <button class="btn">Send Message</button>
             </div>
         </div>
     </section>
 
-    <!-- Why Choose Us Section -->
-    <section class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16" data-aos="fade-up">
-                <h3 class="text-orange-500 font-semibold text-lg mb-2">Why Choose Us</h3>
-                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-                    Your Success Is Our Priority
-                </h2>
-            </div>
-
-            <div class="grid md:grid-cols-4 gap-8">
-                <div class="text-center" data-aos="fade-up" data-aos-delay="100">
-                    <div class="bg-orange-500 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
-                        <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
-                        </svg>
-                    </div>
-                    <h4 class="text-xl font-bold text-gray-900 mb-3">Reliable & Trusted</h4>
-                    <p class="text-gray-600">
-                        Licensed F.Z.E. with proven track record in business solutions
-                    </p>
-                </div>
-
-                <div class="text-center" data-aos="fade-up" data-aos-delay="200">
-                    <div class="bg-orange-500 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
-                        <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                        </svg>
-                    </div>
-                    <h4 class="text-xl font-bold text-gray-900 mb-3">Global Reach</h4>
-                    <p class="text-gray-600">
-                        Strategic Ajman location with international business connections
-                    </p>
-                </div>
-
-                <div class="text-center" data-aos="fade-up" data-aos-delay="300">
-                    <div class="bg-orange-500 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
-                        <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
-                        </svg>
-                    </div>
-                    <h4 class="text-xl font-bold text-gray-900 mb-3">Expert Team</h4>
-                    <p class="text-gray-600">
-                        Experienced professionals dedicated to your business success
-                    </p>
-                </div>
-
-                <div class="text-center" data-aos="fade-up" data-aos-delay="400">
-                    <div class="bg-orange-500 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
-                        <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                        </svg>
-                    </div>
-                    <h4 class="text-xl font-bold text-gray-900 mb-3">Cost-Effective</h4>
-                    <p class="text-gray-600">
-                        Competitive pricing with exceptional value and ROI
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="py-20 bg-gray-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16" data-aos="fade-up">
-                <h3 class="text-orange-500 font-semibold text-lg mb-2">Get In Touch</h3>
-                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-                    Let's Start Your Success Story
-                </h2>
-                <p class="text-gray-600 text-lg">
-                    Contact us today to discuss how we can help your business thrive
-                </p>
-            </div>
-
-            <div class="grid md:grid-cols-2 gap-12">
-                <!-- Contact Form -->
-                <div class="bg-white rounded-2xl p-8 shadow-xl" data-aos="fade-right">
-                    <form action="https://formspree.io/f/xgveqlzv" method="POST" id="contactForm" class="space-y-6">
-                        <div>
-                            <label class="block text-gray-700 font-medium mb-2">Full Name</label>
-                            <input type="text" name="name" required class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-orange-500 focus:ring-2 focus:ring-orange-200 outline-none transition">
-                        </div>
-                        <div>
-                            <label class="block text-gray-700 font-medium mb-2">Email Address</label>
-                            <input type="email" name="email" required class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-orange-500 focus:ring-2 focus:ring-orange-200 outline-none transition">
-                        </div>
-                        <div>
-                            <label class="block text-gray-700 font-medium mb-2">Phone Number</label>
-                            <input type="tel" name="phone" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-orange-500 focus:ring-2 focus:ring-orange-200 outline-none transition">
-                        </div>
-                        <div>
-                            <label class="block text-gray-700 font-medium mb-2">Service Interest</label>
-                            <select name="service" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-orange-500 focus:ring-2 focus:ring-orange-200 outline-none transition">
-                                <option>HR & Consultancy</option>
-                                <option>E-Commerce & Trading</option>
-                                <option>Management Services</option>
-                                <option>Project Management</option>
-                                <option>General Inquiry</option>
-                            </select>
-                        </div>
-                        <div>
-                            <label class="block text-gray-700 font-medium mb-2">Message</label>
-                            <textarea name="message" rows="4" required class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-orange-500 focus:ring-2 focus:ring-orange-200 outline-none transition"></textarea>
-                        </div>
-                        <button type="submit" class="w-full btn-primary text-white py-4 rounded-lg font-semibold text-lg">
-                            Send Message
-                        </button>
-                        <p id="formStatus" class="text-center text-sm"></p>
-                    </form>
-                </div>
-
-                <!-- Contact Info -->
-                <div class="space-y-8" data-aos="fade-left">
-                    <div class="bg-white rounded-2xl p-8 shadow-xl">
-                        <h3 class="text-2xl font-bold text-gray-900 mb-6">Contact Information</h3>
-                        <div class="space-y-4">
-                            <div class="flex items-start gap-4">
-                                <div class="bg-orange-100 p-3 rounded-lg">
-                                    <svg class="w-6 h-6 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
-                                    </svg>
-                                </div>
-                                <div>
-                                    <h4 class="font-semibold text-gray-900">Phone</h4>
-                                    <p class="text-gray-600">+971 55 438 3573</p>
-                                    <p class="text-gray-500 text-sm">+971 438 3573</p>
-                                </div>
-                            </div>
-                            <div class="flex items-start gap-4">
-                                <div class="bg-orange-100 p-3 rounded-lg">
-                                    <svg class="w-6 h-6 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
-                                    </svg>
-                                </div>
-                                <div>
-                                    <h4 class="font-semibold text-gray-900">Email</h4>
-                                    <p class="text-gray-600">info@belletec.org</p>
-                                    <p class="text-gray-500 text-sm">belleajman@gmail.com</p>
-                                </div>
-                            </div>
-                            <div class="flex items-start gap-4">
-                                <div class="bg-orange-100 p-3 rounded-lg">
-                                    <svg class="w-6 h-6 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
-                                    </svg>
-                                </div>
-                                <div>
-                                    <h4 class="font-semibold text-gray-900">Address</h4>
-                                    <p class="text-gray-600">C1-1F-SF13288-AJMAN FREEZONE</p>
-                                    <p class="text-gray-500 text-sm">C1 Building - Ajman, UAE</p>
-                                </div>
-                            </div>
-                            <div class="flex items-start gap-4">
-                                <div class="bg-orange-100 p-3 rounded-lg">
-                                    <svg class="w-6 h-6 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path>
-                                    </svg>
-                                </div>
-                                <div>
-                                    <h4 class="font-semibold text-gray-900">Website</h4>
-                                    <p class="text-gray-600">www.belletec.org</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Map Embed Placeholder -->
-                    <div class="bg-white rounded-2xl p-8 shadow-xl">
-                        <h3 class="text-2xl font-bold text-gray-900 mb-4">Find Us</h3>
-                        <div class="bg-gray-200 rounded-lg h-64 flex items-center justify-center">
-                            <p class="text-gray-500">Ajman Freezone, C1 Building</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-12">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid md:grid-cols-4 gap-8 mb-8">
-                <div>
-                    <h3 class="logo-font text-4xl text-orange-500 mb-4">Béllè</h3>
-                    <p class="text-gray-400">Empowering businesses through comprehensive solutions in Ajman Freezone.</p>
-                </div>
-                <div>
-                    <h4 class="font-semibold text-lg mb-4">Quick Links</h4>
-                    <ul class="space-y-2">
-                        <li><a href="#home" class="text-gray-400 hover:text-orange-500 transition">Home</a></li>
-                        <li><a href="#about" class="text-gray-400 hover:text-orange-500 transition">About</a></li>
-                        <li><a href="#services" class="text-gray-400 hover:text-orange-500 transition">Services</a></li>
-                        <li><a href="#contact" class="text-gray-400 hover:text-orange-500 transition">Contact</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="font-semibold text-lg mb-4">Services</h4>
-                    <ul class="space-y-2 text-gray-400">
-                        <li>Human Resources</li>
-                        <li>Business Consultancy</li>
-                        <li>E-Commerce Solutions</li>
-                        <li>General Trading</li>
-                        <li>Project Management</li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="font-semibold text-lg mb-4">Contact</h4>
-                    <ul class="space-y-2 text-gray-400">
-                        <li>+971 55 438 3573</li>
-                        <li>info@belletec.org</li>
-                        <li>Ajman Freezone, UAE</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="border-t border-gray-800 pt-8 text-center">
-                <p class="text-gray-400">&copy; 2026 Belle Trading & E-Commerce F.Z.E. All rights reserved.</p>
-                <p class="text-gray-500 text-sm mt-2">CEO: Malik Mansoor Awan</p>
-            </div>
+    <footer>
+        <div class="container">
+            <p class="logo-font" style="font-size: 48px; margin-bottom: 20px;">Béllè</p>
+            <p>&copy; 2026 Belle Trading & E-Commerce F.Z.E. All rights reserved.</p>
+            <p>Registered in Ajman Freezone, UAE</p>
         </div>
     </footer>
-
-    <!-- Scripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-    <script>
-        // Initialize AOS
-        AOS.init({
-            duration: 800,
-            once: true,
-            offset: 100
-        });
-
-        // Mobile Menu Toggle
-        const hamburger = document.getElementById('hamburger');
-        const mobileMenu = document.getElementById('mobileMenu');
-
-        hamburger.addEventListener('click', () => {
-            hamburger.classList.toggle('active');
-            mobileMenu.classList.toggle('active');
-        });
-
-        // Close mobile menu when clicking on a link
-        const mobileLinks = mobileMenu.querySelectorAll('a');
-        mobileLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                hamburger.classList.remove('active');
-                mobileMenu.classList.remove('active');
-            });
-        });
-
-        // Form Submission Handler
-        const form = document.getElementById('contactForm');
-        const formStatus = document.getElementById('formStatus');
-
-        form.addEventListener('submit', async (e) => {
-            formStatus.textContent = 'Sending...';
-            formStatus.className = 'text-center text-sm text-orange-500';
-        });
-
-        // Handle form response from Formspree
-        if (window.location.search.includes('success')) {
-            formStatus.textContent = 'Thank you! Your message has been sent successfully.';
-            formStatus.className = 'text-center text-sm text-green-600';
-        }
-    </script>
 </body>
 </html>
