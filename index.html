@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -59,6 +60,7 @@
             font-weight: 600;
             color: var(--white);
             letter-spacing: 0.5px;
+            text-decoration: none;
         }
 
         .logo-accent {
@@ -543,9 +545,9 @@
 <body>
     <nav>
         <div class="nav-container">
-            <div class="logo">
+            <a href="#home" class="logo">
                 <span class="logo-accent">B</span>éllè
-            </div>
+            </a>
             <button class="mobile-toggle" id="mobileToggle">
                 <i class="fas fa-bars"></i>
             </button>
@@ -561,16 +563,16 @@
 
     <section class="hero" id="home">
         <div class="container">
-            <div class="hero-content">
+            <div class="hero-content" data-aos="fade-up">
                 <h1>Empowering Global Business Excellence</h1>
-                <p class="hero-subtitle">HR | Trading | E-Commerce | Management Solutions – Ajman Freezone</p>
+                <p class="hero-subtitle">HR | Trading | E-Commerce | Management Solutions – Ajman Freezone, UAE</p>
                 <a href="#contact" class="cta-button">Get in Touch</a>
             </div>
         </div>
     </section>
 
     <section class="about-section" id="about">
-        <div class="container">
+        <div class="container" data-aos="fade-up" data-aos-delay="100">
             <h2 class="section-title">About Us</h2>
             <div class="about-content">
                 <p>Belle Trading & E-Commerce F.Z.E. is a dynamic business solutions provider established in the UAE's Ajman Freezone. Under the leadership of our founder <span class="founder-name">Malik M A Awan</span>, we deliver comprehensive services designed to drive growth and operational excellence for businesses across the globe.</p>
@@ -580,10 +582,10 @@
     </section>
 
     <section class="services-section" id="services">
-        <div class="container">
+        <div class="container" data-aos="fade-up" data-aos-delay="200">
             <h2 class="section-title">Our Services</h2>
             <div class="services-grid">
-                <div class="service-card">
+                <div class="service-card" data-aos="fade-up" data-aos-delay="300">
                     <div class="service-icon">
                         <i class="fas fa-users"></i>
                     </div>
@@ -591,13 +593,13 @@
                     <p>Strategic human capital management to build high-performing teams and streamline workforce operations.</p>
                     <ul>
                         <li>HR Provision & Talent Acquisition</li>
-                        <li>Workforce Planning & Development</li>
-                        <li>Business Consultancy & Strategy</li>
+                        <li>Recruitment & Workforce Planning</li>
+                        <li>Business Consultancy & Compliance</li>
                         <li>Organizational Development</li>
                     </ul>
                 </div>
 
-                <div class="service-card">
+                <div class="service-card" data-aos="fade-up" data-aos-delay="400">
                     <div class="service-icon">
                         <i class="fas fa-shopping-cart"></i>
                     </div>
@@ -611,17 +613,17 @@
                     </ul>
                 </div>
 
-                <div class="service-card">
+                <div class="service-card" data-aos="fade-up" data-aos-delay="500">
                     <div class="service-icon">
                         <i class="fas fa-briefcase"></i>
                     </div>
                     <h3>Management & Projects</h3>
                     <p>Comprehensive management services delivering efficiency, innovation, and sustainable business growth.</p>
                     <ul>
-                        <li>Management Services & Oversight</li>
                         <li>Project Management & Execution</li>
                         <li>Operations & Process Improvement</li>
                         <li>Strategic Planning & Advisory</li>
+                        <li>Business Process Management</li>
                     </ul>
                 </div>
             </div>
@@ -629,26 +631,26 @@
     </section>
 
     <section class="why-us-section" id="why-us">
-        <div class="container">
+        <div class="container" data-aos="fade-up" data-aos-delay="300">
             <h2 class="section-title">Why Choose Us</h2>
             <div class="features-grid">
-                <div class="feature-item">
+                <div class="feature-item" data-aos="fade-up" data-aos-delay="350">
                     <div class="feature-icon">
                         <i class="fas fa-certificate"></i>
                     </div>
-                    <h4>Reliable F.Z.E. Status</h4>
+                    <h4>Reliable & Trusted Licensed F.Z.E.</h4>
                     <p>Registered Ajman Freezone entity ensuring regulatory compliance and business credibility</p>
                 </div>
 
-                <div class="feature-item">
+                <div class="feature-item" data-aos="fade-up" data-aos-delay="400">
                     <div class="feature-icon">
                         <i class="fas fa-globe"></i>
                     </div>
-                    <h4>Global Reach</h4>
+                    <h4>Global Reach Ajman Freezone</h4>
                     <p>International expertise with local market knowledge for seamless cross-border operations</p>
                 </div>
 
-                <div class="feature-item">
+                <div class="feature-item" data-aos="fade-up" data-aos-delay="450">
                     <div class="feature-icon">
                         <i class="fas fa-user-tie"></i>
                     </div>
@@ -656,7 +658,7 @@
                     <p>Seasoned professionals dedicated to delivering tailored solutions that drive results</p>
                 </div>
 
-                <div class="feature-item">
+                <div class="feature-item" data-aos="fade-up" data-aos-delay="500">
                     <div class="feature-icon">
                         <i class="fas fa-chart-line"></i>
                     </div>
@@ -668,7 +670,7 @@
     </section>
 
     <section class="contact-section" id="contact">
-        <div class="container">
+        <div class="container" data-aos="fade-up" data-aos-delay="400">
             <h2 class="section-title">Contact Us</h2>
             <div class="contact-wrapper">
                 <div class="contact-info">
@@ -716,7 +718,10 @@
                 </div>
 
                 <div class="contact-form">
-                    <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                    <form action="https://formspree.io/f/xwvvvlql" method="POST">
+                        <input type="text" name="_gotcha" style="display:none">
+                        <input type="hidden" name="_subject" value="New Inquiry from Belle Website">
+                        
                         <div class="form-group">
                             <label for="name">Full Name</label>
                             <input type="text" id="name" name="name" required>
@@ -732,7 +737,7 @@
                             <textarea id="message" name="message" required></textarea>
                         </div>
 
-                        <button type="submit" class="cta-button">Send Message</button>
+                        <button type="submit" class="cta-button">Submit Inquiry</button>
                     </form>
                 </div>
             </div>
@@ -768,6 +773,7 @@
         </div>
     </footer>
 
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         const mobileToggle = document.getElementById('mobileToggle');
         const navLinks = document.getElementById('navLinks');
@@ -797,6 +803,12 @@
                     });
                 }
             });
+        });
+
+        AOS.init({
+            duration: 800,
+            once: true,
+            easing: 'ease-in-out'
         });
     </script>
 </body>
