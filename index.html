@@ -1,0 +1,840 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Basic SEO -->
+    <meta name="description" content="Belle Trading & E-Commerce F.Z.E. – Expert business solutions from Ajman Freezone, UAE. HR provision, business consultancy, e-commerce & general trading, management and project services.">
+    <meta name="keywords" content="Ajman Freezone, UAE business services, HR consultancy, e-commerce solutions, general trading, project management, business consulting, UAE free zone company">
+    <meta name="author" content="Belle Trading & E-Commerce F.Z.E.">
+    <meta name="robots" content="index, follow">
+
+<!-- Open Graph / Social Sharing (Whatsapp, Linkedin, Facebook, etc.) -->
+    <meta property="og:title" content="Belle Trading & E-Commerce F.Z.E. | Business Excellence in Ajman Freezone">
+    <meta property="og:description" content="Leading provider of HR, consultancy, e-commerce, general trading, and management & project services from Ajman Freezone, UAE. Contact us for tailored business solutions.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://belletec-org.vercel.app/">
+    <meta property="og:site_name" content="Belle Trading & E-Commerce F.Z.E.">
+    <meta property="og:image" content="https://placehold.co">
+
+<!-- Twitter/X Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Belle Trading & E-Commerce F.Z.E. | UAE Business Solutions">
+    <meta name="twitter:description" content="HR | Trading | E-Commerce | Management Excellence – Ajman Freezone">
+    <meta name="twitter:image" content="https://placehold.co">
+    
+    <title>Belle Trading & E-Commerce F.Z.E. | UAE Business Solutions</title>
+
+<!-- Favicon (simple text-based placeholder for now – blue background, white B) -->
+    <link rel="icon" href="https://placehold.co" type="image/png">
+    <link rel="apple-touch-icon" href="https://placehold.co">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-blue: #003366;
+            --accent-gold: #D4AF37;
+            --bg-cream: #FDFDFD;
+            --light-cream: #FAF9F6;
+            --text-charcoal: #2C3E50;
+            --white: #ffffff;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-charcoal);
+            background-color: var(--bg-cream);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: linear-gradient(135deg, var(--primary-blue) 0%, #004080 100%);
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0, 51, 102, 0.15);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1.2rem 2.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.75rem;
+            font-weight: 600;
+            color: var(--white);
+            letter-spacing: 0.5px;
+            text-decoration: none;
+        }
+
+        .logo-accent {
+            color: var(--accent-gold);
+            font-weight: 700;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            position: relative;
+            padding-bottom: 4px;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent-gold);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-gold);
+        }
+
+        .mobile-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--white);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        section {
+            padding: 5rem 2.5rem;
+        }
+
+        .container {
+            max-width: 1300px;
+            margin: 0 auto;
+        }
+
+        .hero {
+            background: linear-gradient(160deg, var(--light-cream) 0%, #f5f3ee 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            margin-top: 70px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(212, 175, 55, 0.08) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: var(--primary-blue);
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .hero-subtitle {
+            font-size: 1.35rem;
+            color: var(--text-charcoal);
+            margin-bottom: 2.5rem;
+            font-weight: 400;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--accent-gold) 0%, #c9a332 100%);
+            color: var(--white);
+            padding: 1rem 3rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.4s ease;
+            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.3);
+            border: none;
+            cursor: pointer;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(212, 175, 55, 0.4);
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-blue);
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--accent-gold);
+            border-radius: 2px;
+        }
+
+        .about-section {
+            background: var(--white);
+        }
+
+        .about-content {
+            max-width: 950px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .about-content p {
+            font-size: 1.15rem;
+            line-height: 1.9;
+            margin-bottom: 1.5rem;
+            color: var(--text-charcoal);
+        }
+
+        .founder-name {
+            color: var(--primary-blue);
+            font-weight: 600;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        .service-card {
+            background: var(--light-cream);
+            padding: 2.5rem 2rem;
+            border-radius: 16px;
+            box-shadow: 0 6px 30px rgba(0, 51, 102, 0.08);
+            transition: all 0.4s ease;
+            border: 1px solid rgba(212, 175, 55, 0.1);
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 40px rgba(0, 51, 102, 0.15);
+            border-color: var(--accent-gold);
+        }
+
+        .service-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--primary-blue) 0%, #004080 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            color: var(--accent-gold);
+            font-size: 2rem;
+            border: 3px solid var(--accent-gold);
+            transition: all 0.4s ease;
+        }
+
+        .service-card:hover .service-icon {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .service-card h3 {
+            color: var(--primary-blue);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .service-card p {
+            color: var(--text-charcoal);
+            margin-bottom: 1.25rem;
+            font-size: 1rem;
+        }
+
+        .service-card ul {
+            list-style: none;
+            text-align: left;
+        }
+
+        .service-card li {
+            padding: 0.5rem 0;
+            color: var(--text-charcoal);
+            font-size: 0.95rem;
+            position: relative;
+            padding-left: 1.75rem;
+        }
+
+        .service-card li::before {
+            content: '\f00c';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            color: var(--accent-gold);
+        }
+
+        .why-us-section {
+            background: var(--white);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        .feature-item {
+            text-align: center;
+            padding: 2rem 1.5rem;
+            background: var(--light-cream);
+            border-radius: 12px;
+            transition: all 0.3s ease;
+        }
+
+        .feature-item:hover {
+            background: var(--white);
+            box-shadow: 0 8px 25px rgba(0, 51, 102, 0.1);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            color: var(--accent-gold);
+            margin-bottom: 1.25rem;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+
+        .feature-item:hover .feature-icon {
+            transform: scale(1.15);
+            color: var(--primary-blue);
+        }
+
+        .feature-item h4 {
+            color: var(--primary-blue);
+            font-size: 1.3rem;
+            margin-bottom: 0.75rem;
+            font-weight: 600;
+        }
+
+        .feature-item p {
+            color: var(--text-charcoal);
+            font-size: 0.95rem;
+        }
+
+        .contact-section {
+            background: linear-gradient(135deg, var(--light-cream) 0%, #f5f3ee 100%);
+        }
+
+        .contact-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .contact-info h3 {
+            color: var(--primary-blue);
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+            font-weight: 600;
+        }
+
+        .info-item {
+            margin-bottom: 1.75rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+
+        .info-icon {
+            color: var(--accent-gold);
+            font-size: 1.4rem;
+            margin-top: 0.25rem;
+        }
+
+        .info-item h4 {
+            color: var(--primary-blue);
+            font-size: 1rem;
+            margin-bottom: 0.4rem;
+            font-weight: 600;
+        }
+
+        .info-item p {
+            color: var(--text-charcoal);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .contact-form {
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: 16px;
+            box-shadow: 0 8px 30px rgba(0, 51, 102, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 1.75rem;
+        }
+
+        .form-group label {
+            display: block;
+            color: var(--primary-blue);
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.9rem 1.2rem;
+            border: 2px solid rgba(0, 51, 102, 0.1);
+            border-radius: 8px;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            background: var(--light-cream);
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--accent-gold);
+            background: var(--white);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 140px;
+        }
+
+        footer {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, #002244 100%);
+            color: var(--white);
+            padding: 3rem 2.5rem 2rem;
+        }
+
+        .footer-content {
+            max-width: 1300px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h4 {
+            color: var(--accent-gold);
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .footer-section p,
+        .footer-section a {
+            color: rgba(255, 255, 255, 0.85);
+            text-decoration: none;
+            font-size: 0.9rem;
+            line-height: 1.8;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section a:hover {
+            color: var(--accent-gold);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 968px) {
+            .nav-links {
+                position: fixed;
+                top: 70px;
+                left: -100%;
+                background: var(--primary-blue);
+                width: 100%;
+                flex-direction: column;
+                padding: 2rem;
+                gap: 1.5rem;
+                transition: left 0.4s ease;
+            }
+
+            .nav-links.active {
+                left: 0;
+            }
+
+            .mobile-toggle {
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.1rem;
+            }
+
+            .contact-wrapper {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+            }
+
+            section {
+                padding: 3.5rem 1.5rem;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .services-grid,
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="#home" class="logo">
+                <span class="logo-accent">B</span>éllè
+            </a>
+            <button class="mobile-toggle" id="mobileToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#why-us">Why Us</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content" data-aos="fade-up">
+                <h1>Empowering Global Business Excellence</h1>
+                <p class="hero-subtitle">HR | Trading | E-Commerce | Management Solutions – Ajman Freezone, UAE</p>
+                <a href="#contact" class="cta-button">Get in Touch</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="about-section" id="about">
+        <div class="container" data-aos="fade-up" data-aos-delay="100">
+            <h2 class="section-title">About Us</h2>
+            <div class="about-content">
+                <p>Belle Trading & E-Commerce F.Z.E. is a dynamic business solutions provider established in the UAE's Ajman Freezone. Under the leadership of our founder <span class="founder-name">Malik M A Awan</span>, we deliver comprehensive services designed to drive growth and operational excellence for businesses across the globe.</p>
+                <p>As a registered Free Zone Entity, we combine local expertise with international standards to offer integrated HR provision, strategic business consultancy, cutting-edge e-commerce solutions, and robust management services. Our commitment is to empower organizations with the tools, talent, and strategies they need to thrive in today's competitive marketplace.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="services-section" id="services">
+        <div class="container" data-aos="fade-up" data-aos-delay="200">
+            <h2 class="section-title">Our Services</h2>
+            <div class="services-grid">
+                <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="service-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>HR & Talent Solutions</h3>
+                    <p>Strategic human capital management to build high-performing teams and streamline workforce operations.</p>
+                    <ul>
+                        <li>HR Provision & Talent Acquisition</li>
+                        <li>Recruitment & Workforce Planning</li>
+                        <li>Business Consultancy & Compliance</li>
+                        <li>Organizational Development</li>
+                    </ul>
+                </div>
+
+                <div class="service-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="service-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                    <h3>E-Commerce & Trading</h3>
+                    <p>End-to-end solutions for digital commerce and international trade operations across diverse markets.</p>
+                    <ul>
+                        <li>E-Commerce Platform Management</li>
+                        <li>Import & Export Services</li>
+                        <li>General Trading Operations</li>
+                        <li>Supply Chain Optimization</li>
+                    </ul>
+                </div>
+
+                <div class="service-card" data-aos="fade-up" data-aos-delay="500">
+                    <div class="service-icon">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <h3>Management & Projects</h3>
+                    <p>Comprehensive management services delivering efficiency, innovation, and sustainable business growth.</p>
+                    <ul>
+                        <li>Project Management & Execution</li>
+                        <li>Operations & Process Improvement</li>
+                        <li>Strategic Planning & Advisory</li>
+                        <li>Business Process Management</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="why-us-section" id="why-us">
+        <div class="container" data-aos="fade-up" data-aos-delay="300">
+            <h2 class="section-title">Why Choose Us</h2>
+            <div class="features-grid">
+                <div class="feature-item" data-aos="fade-up" data-aos-delay="350">
+                    <div class="feature-icon">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <h4>Reliable & Trusted Licensed F.Z.E.</h4>
+                    <p>Registered Ajman Freezone entity ensuring regulatory compliance and business credibility</p>
+                </div>
+
+                <div class="feature-item" data-aos="fade-up" data-aos-delay="400">
+                    <div class="feature-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h4>Global Reach Ajman Freezone</h4>
+                    <p>International expertise with local market knowledge for seamless cross-border operations</p>
+                </div>
+
+                <div class="feature-item" data-aos="fade-up" data-aos-delay="450">
+                    <div class="feature-icon">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <h4>Expert Team</h4>
+                    <p>Seasoned professionals dedicated to delivering tailored solutions that drive results</p>
+                </div>
+
+                <div class="feature-item" data-aos="fade-up" data-aos-delay="500">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h4>Cost-Effective Solutions</h4>
+                    <p>Optimized services delivering maximum value without compromising on quality</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact-section" id="contact">
+        <div class="container" data-aos="fade-up" data-aos-delay="400">
+            <h2 class="section-title">Contact Us</h2>
+            <div class="contact-wrapper">
+                <div class="contact-info">
+                    <h3>Get In Touch</h3>
+                    
+                    <div class="info-item">
+                        <i class="fas fa-building info-icon"></i>
+                        <div>
+                            <h4>Company</h4>
+                            <p>Belle Trading & E-Commerce fze.</p>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt info-icon"></i>
+                        <div>
+                            <h4>Address</h4>
+                            <p>C1-1F-SF13288-AJMAN FREEZONE<br>C1 BUILDING - AJMAN</p>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <i class="fas fa-envelope info-icon"></i>
+                        <div>
+                            <h4>Email</h4>
+                            <p>info@belletec.org<br>belleajman@gmail.com</p>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <i class="fas fa-phone info-icon"></i>
+                        <div>
+                            <h4>Phone</h4>
+                            <p>+971 55 438 3573</p>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <i class="fab fa-whatsapp info-icon"></i>
+                        <div>
+                            <h4>WhatsApp</h4>
+                            <p>+971 55 438 3573</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form">
+                    <form action="https://formspree.io/f/xwvvvlql" method="POST">
+                        <input type="text" name="_gotcha" style="display:none">
+                        <input type="hidden" name="_subject" value="New Inquiry from Belle Website">
+                        
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" required></textarea>
+                        </div>
+
+                        <button type="submit" class="cta-button">Submit Inquiry</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Belle Trading & E-Commerce</h4>
+                <p>Empowering businesses with innovative HR, trading, e-commerce, and management solutions from the heart of Ajman Freezone.</p>
+            </div>
+
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <a href="#home">Home</a>
+                <a href="#about">About Us</a>
+                <a href="#services">Services</a>
+                <a href="#why-us">Why Choose Us</a>
+                <a href="#contact">Contact</a>
+            </div>
+
+            <div class="footer-section">
+                <h4>Contact Summary</h4>
+                <p>C1 Building, Ajman Freezone</p>
+                <p>info@belletec.org</p>
+                <p>+971 55 438 3573</p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 Belle Trading & E-Commerce F.Z.E. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        const mobileToggle = document.getElementById('mobileToggle');
+        const navLinks = document.getElementById('navLinks');
+
+        mobileToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            const icon = mobileToggle.querySelector('i');
+            icon.classList.toggle('fa-bars');
+            icon.classList.toggle('fa-times');
+        });
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                navLinks.classList.remove('active');
+                const icon = mobileToggle.querySelector('i');
+                icon.classList.add('fa-bars');
+                icon.classList.remove('fa-times');
+                
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const offset = 70;
+                    const targetPosition = target.offsetTop - offset;
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        AOS.init({
+            duration: 800,
+            once: true,
+            easing: 'ease-in-out'
+        });
+    </script>
+</body>
+</html>
