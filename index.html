@@ -45,12 +45,15 @@
             --primary-blue: #003366;
             --accent-gold: #D4AF37;
             
-            /* MODIFIED BODY COLOR: Soft, cool grey-blue. 
-               Easy on the eyes, modern, and not dull. */
-            --bg-cream: #F2F5F9; 
+            /* MODIFIED BODY COLOR: Deep Navy Blue */
+            --bg-cream: #001F3F;
             
-            --light-cream: #FAF9F6; 
-            --text-charcoal: #2C3E50;
+            /* MODIFIED CARD/SECTION COLOR: Slightly lighter Navy for depth */
+            --light-cream: #0A2A45; 
+            
+            /* MODIFIED TEXT COLOR: Light Grey/White for Dark Mode */
+            --text-charcoal: #ECF0F1;
+            
             --white: #ffffff;
         }
 
@@ -151,13 +154,15 @@
         }
 
         .hero {
-            background: linear-gradient(160deg, var(--light-cream) 0%, #f5f3ee 100%);
+            /* MODIFIED: Subtle gradient to Deep Navy */
+            background: radial-gradient(circle at center, #0d3861 0%, var(--bg-cream) 70%);
             min-height: 100vh;
             display: flex;
             align-items: center;
             margin-top: 70px;
             position: relative;
             overflow: hidden;
+            color: var(--white);
         }
 
         .hero::before {
@@ -167,7 +172,8 @@
             right: -20%;
             width: 600px;
             height: 600px;
-            background: radial-gradient(circle, rgba(212, 175, 55, 0.08) 0%, transparent 70%);
+            /* Gold glow adjusted for dark mode */
+            background: radial-gradient(circle, rgba(212, 175, 55, 0.1) 0%, transparent 70%);
             border-radius: 50%;
         }
 
@@ -180,14 +186,15 @@
         .hero h1 {
             font-size: 3.5rem;
             font-weight: 700;
-            color: var(--primary-blue);
+            color: var(--white);
             margin-bottom: 1.5rem;
             line-height: 1.2;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
         }
 
         .hero-subtitle {
             font-size: 1.35rem;
-            color: var(--text-charcoal);
+            color: rgba(255, 255, 255, 0.9);
             margin-bottom: 2.5rem;
             font-weight: 400;
             max-width: 900px;
@@ -198,27 +205,29 @@
         .cta-button {
             display: inline-block;
             background: linear-gradient(135deg, var(--accent-gold) 0%, #c9a332 100%);
-            color: var(--white);
+            color: var(--bg-cream); /* Dark text on Gold button */
             padding: 1rem 3rem;
             border-radius: 50px;
             text-decoration: none;
-            font-weight: 600;
+            font-weight: 700; /* Bolder text for contrast */
             font-size: 1.1rem;
             transition: all 0.4s ease;
-            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.3);
+            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.4);
             border: none;
             cursor: pointer;
         }
 
         .cta-button:hover {
             transform: translateY(-3px);
-            box-shadow: 0 12px 35px rgba(212, 175, 55, 0.4);
+            box-shadow: 0 12px 35px rgba(212, 175, 55, 0.6);
+            background: linear-gradient(135deg, #e6c55c 0%, #D4AF37 100%); /* Lighter Gold on hover */
+            color: var(--bg-cream);
         }
 
         .section-title {
             font-size: 2.5rem;
             font-weight: 700;
-            color: var(--primary-blue);
+            color: var(--white);
             text-align: center;
             margin-bottom: 3rem;
             position: relative;
@@ -238,7 +247,6 @@
         }
 
         .about-section {
-            /* MODIFIED: Now uses the soft body color */
             background: var(--bg-cream);
         }
 
@@ -252,11 +260,11 @@
             font-size: 1.15rem;
             line-height: 1.9;
             margin-bottom: 1.5rem;
-            color: var(--text-charcoal);
+            color: rgba(255, 255, 255, 0.85);
         }
 
         .founder-name {
-            color: var(--primary-blue);
+            color: var(--accent-gold);
             font-weight: 600;
         }
 
@@ -268,24 +276,27 @@
         }
 
         .service-card {
-            background: var(--white); /* Cards pop against new bg */
+            /* MODIFIED: Card background for dark mode */
+            background: #0B2D4D; 
             padding: 2.5rem 2rem;
             border-radius: 16px;
-            box-shadow: 0 6px 30px rgba(0, 51, 102, 0.08);
+            box-shadow: 0 6px 30px rgba(0, 0, 0, 0.4);
             transition: all 0.4s ease;
-            border: 1px solid rgba(212, 175, 55, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.05);
         }
 
         .service-card:hover {
             transform: translateY(-8px);
-            box-shadow: 0 12px 40px rgba(0, 51, 102, 0.15);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.6);
             border-color: var(--accent-gold);
+            background: #0f355c;
         }
 
         .service-icon {
             width: 70px;
             height: 70px;
-            background: linear-gradient(135deg, var(--primary-blue) 0%, #004080 100%);
+            /* Darker background for icon to make Gold pop */
+            background: #001F3F;
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -299,17 +310,18 @@
 
         .service-card:hover .service-icon {
             transform: scale(1.1) rotate(5deg);
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
         }
 
         .service-card h3 {
-            color: var(--primary-blue);
+            color: var(--white);
             font-size: 1.5rem;
             margin-bottom: 1rem;
             font-weight: 600;
         }
 
         .service-card p {
-            color: var(--text-charcoal);
+            color: rgba(255, 255, 255, 0.7);
             margin-bottom: 1.25rem;
             font-size: 1rem;
         }
@@ -321,7 +333,7 @@
 
         .service-card li {
             padding: 0.5rem 0;
-            color: var(--text-charcoal);
+            color: rgba(255, 255, 255, 0.85);
             font-size: 0.95rem;
             position: relative;
             padding-left: 1.75rem;
@@ -337,7 +349,6 @@
         }
 
         .why-us-section {
-            /* MODIFIED: Now uses the soft body color */
             background: var(--bg-cream);
         }
 
@@ -351,14 +362,16 @@
         .feature-item {
             text-align: center;
             padding: 2rem 1.5rem;
-            background: var(--white); /* Items pop against new bg */
+            background: #0B2D4D;
             border-radius: 12px;
             transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.05);
         }
 
         .feature-item:hover {
-            background: var(--white);
-            box-shadow: 0 8px 25px rgba(0, 51, 102, 0.1);
+            background: #0f355c;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+            transform: translateY(-5px);
         }
 
         .feature-icon {
@@ -371,23 +384,23 @@
 
         .feature-item:hover .feature-icon {
             transform: scale(1.15);
-            color: var(--primary-blue);
+            color: #f1c40f; /* Brighter gold on hover */
         }
 
         .feature-item h4 {
-            color: var(--primary-blue);
+            color: var(--white);
             font-size: 1.3rem;
             margin-bottom: 0.75rem;
             font-weight: 600;
         }
 
         .feature-item p {
-            color: var(--text-charcoal);
+            color: rgba(255, 255, 255, 0.7);
             font-size: 0.95rem;
         }
 
         .contact-section {
-            background: linear-gradient(135deg, var(--light-cream) 0%, #f5f3ee 100%);
+            background: radial-gradient(circle at center, #0d3861 0%, var(--bg-cream) 70%);
         }
 
         .contact-wrapper {
@@ -399,7 +412,7 @@
         }
 
         .contact-info h3 {
-            color: var(--primary-blue);
+            color: var(--white);
             font-size: 1.8rem;
             margin-bottom: 2rem;
             font-weight: 600;
@@ -419,23 +432,25 @@
         }
 
         .info-item h4 {
-            color: var(--primary-blue);
+            color: var(--white);
             font-size: 1rem;
             margin-bottom: 0.4rem;
             font-weight: 600;
         }
 
         .info-item p {
-            color: var(--text-charcoal);
+            color: rgba(255, 255, 255, 0.8);
             font-size: 0.95rem;
             line-height: 1.6;
         }
 
         .contact-form {
-            background: var(--white);
+            /* MODIFIED: Card background for dark mode */
+            background: #0B2D4D; 
             padding: 2.5rem;
             border-radius: 16px;
-            box-shadow: 0 8px 30px rgba(0, 51, 102, 0.1);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.05);
         }
 
         .form-group {
@@ -444,7 +459,7 @@
 
         .form-group label {
             display: block;
-            color: var(--primary-blue);
+            color: var(--white);
             font-weight: 500;
             margin-bottom: 0.5rem;
             font-size: 0.95rem;
@@ -454,19 +469,20 @@
         .form-group textarea {
             width: 100%;
             padding: 0.9rem 1.2rem;
-            border: 2px solid rgba(0, 51, 102, 0.1);
+            border: 2px solid rgba(255, 255, 255, 0.1);
             border-radius: 8px;
             font-family: 'Inter', sans-serif;
             font-size: 0.95rem;
             transition: all 0.3s ease;
-            background: var(--bg-cream); /* Use the new bg color for input fields */
+            background: #0A2A45; /* Slightly lighter than card */
+            color: var(--white);
         }
 
         .form-group input:focus,
         .form-group textarea:focus {
             outline: none;
             border-color: var(--accent-gold);
-            background: var(--white);
+            background: #0d355b;
         }
 
         .form-group textarea {
@@ -478,7 +494,8 @@
            MODIFIED FOOTER STYLES
            ----------------------------------------------------------- */
         footer {
-            background: linear-gradient(135deg, var(--primary-blue) 0%, #002244 100%);
+            /* MODIFIED: Darker Navy */
+            background: #001429;
             color: var(--white);
             padding: 4.5rem 2.5rem 2rem;
             text-align: center;
@@ -537,11 +554,9 @@
             display: inline-block;
             cursor: default;
             
-            /* Apply blinking container animation */
             animation: containerBlink 12.5s infinite linear;
         }
 
-        /* Disable hover effects */
         .footer-logo:hover {
             transform: none;
             color: var(--white);
@@ -551,63 +566,39 @@
             color: var(--accent-gold);
         }
         
-        /* Letter Wrapper */
         .logo-letter {
             display: inline-block;
             opacity: 0; 
-            /* Apply letter entry/exit animation */
             animation: letterCycle 12.5s infinite linear;
         }
 
-        /* Staggered Delays for Entry */
         .logo-letter:nth-child(1) { animation-delay: 0s; }
         .logo-letter:nth-child(2) { animation-delay: 0.5s; }
         .logo-letter:nth-child(3) { animation-delay: 1.0s; }
         .logo-letter:nth-child(4) { animation-delay: 1.5s; }
         .logo-letter:nth-child(5) { animation-delay: 2.0s; }
 
-        /* 
-           ANIMATION KEYFRAMES
-           Total Cycle: 12.5 seconds
-           
-           Phase 1 (0s - 2.5s): Letters appear (Slide Up).
-           Phase 2 (2.5s - 4.0s): Logo blinks 3 times.
-           Phase 3 (4.0s - 9.0s): Logo stays static (5 seconds).
-           Phase 4 (9.0s - 11.75s): Letters fade out & slide down (staggered).
-        */
-
         /* Container Animation */
         @keyframes containerBlink {
             0% { opacity: 1; }
-            20% { opacity: 1; } /* 2.5s (Phase 1 Ends) */
-            
-            /* Phase 2: Blinking (2.5s to 4.0s) */
-            22% { opacity: 0; } /* Blink 1 Out */
-            24% { opacity: 1; } /* Blink 1 In */
-            26% { opacity: 0; } /* Blink 2 Out */
-            28% { opacity: 1; } /* Blink 2 In */
-            30% { opacity: 0; } /* Blink 3 Out */
-            32% { opacity: 1; } /* Blink 3 In */
-            
-            94% { opacity: 1; } /* 11.75s (Phase 4 Ends) - Stay visible for full staggered exit */
-            
-            95% { opacity: 0; } /* Hide to reset */
+            20% { opacity: 1; } 
+            22% { opacity: 0; } 
+            24% { opacity: 1; } 
+            26% { opacity: 0; } 
+            28% { opacity: 1; } 
+            30% { opacity: 0; } 
+            32% { opacity: 1; } 
+            94% { opacity: 1; } 
+            95% { opacity: 0; } 
             100% { opacity: 0; }
         }
 
         /* Individual Letter Animation */
         @keyframes letterCycle {
-            /* Phase 1: Entry */
             0% { opacity: 0; transform: translateY(30px); }
-            4% { opacity: 1; transform: translateY(0); } /* Slide up & appear (0.5s duration) */
-            
-            /* Phase 2 & 3: Hold (Visible during blink & static period) */
-            72% { opacity: 1; transform: translateY(0); } /* Hold until 9.0s */
-            
-            /* Phase 4: Exit (Fade Out & Slide Down) */
-            82% { opacity: 0; transform: translateY(30px); } /* Slide down & vanish (1.25s duration) */
-            
-            /* Gap before loop restarts */
+            4% { opacity: 1; transform: translateY(0); } 
+            72% { opacity: 1; transform: translateY(0); } 
+            82% { opacity: 0; transform: translateY(30px); } 
             100% { opacity: 0; transform: translateY(30px); }
         }
         /* --------------------------- */
@@ -635,7 +626,7 @@
         }
 
         .footer-contact-summary p:hover {
-            color: var(--white);
+            color: var(--accent-gold);
         }
 
         .footer-contact-summary i {
@@ -707,7 +698,7 @@
         .footer-socials a:hover {
             transform: scale(1.15);
             background: var(--accent-gold);
-            color: var(--primary-blue);
+            color: #001429; /* Navy text on Gold bg */
             border-color: var(--accent-gold);
             box-shadow: 0 0 15px rgba(212, 175, 55, 0.5);
         }
@@ -759,9 +750,8 @@
                 padding: 3.5rem 1.5rem;
             }
 
-            /* Footer Mobile Adjustments */
             .footer-top-grid {
-                grid-template-columns: 1fr; /* Stack columns */
+                grid-template-columns: 1fr;
                 gap: 2rem;
                 text-align: center;
             }
@@ -841,8 +831,8 @@
         <div class="container" data-aos="fade-up" data-aos-delay="100">
             <h2 class="section-title">About Us</h2>
             <div class="about-content">
-                <p>Belle Trading & E-Commerce F.Z.E. is a dynamic business solutions provider established in UAE's Ajman Freezone. Under the leadership of our founder <span class="founder-name">Malik M A Awan</span>, we deliver comprehensive services designed to drive growth and operational excellence for businesses across globe.</p>
-                <p>As a registered Free Zone Entity, we combine local expertise with international standards to offer integrated HR provision, strategic business consultancy, cutting-edge e-commerce solutions, and robust management services. Our commitment is to empower organizations with tools, talent, and strategies they need to thrive in today's competitive marketplace.</p>
+                <p>Belle Trading & E-Commerce F.Z.E. is a dynamic business solutions provider established in UAE's Ajman Freezone. Under the leadership of our founder <span class="founder-name">Malik M A Awan</span>, we deliver comprehensive services designed to drive growth and operational excellence for businesses across the globe.</p>
+                <p>As a registered Free Zone Entity, we combine local expertise with international standards to offer integrated HR provision, strategic business consultancy, cutting-edge e-commerce solutions, and robust management services. Our commitment is to empower organizations with the tools, talent, and strategies they need to thrive in today's competitive marketplace.</p>
             </div>
         </div>
     </section>
