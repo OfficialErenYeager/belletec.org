@@ -44,8 +44,12 @@
         :root {
             --primary-blue: #003366;
             --accent-gold: #D4AF37;
-            --bg-cream: #FDFDFD;
-            --light-cream: #FAF9F6;
+            
+            /* MODIFIED BODY COLOR: Soft, cool grey-blue. 
+               Easy on the eyes, modern, and not dull. */
+            --bg-cream: #F2F5F9; 
+            
+            --light-cream: #FAF9F6; 
             --text-charcoal: #2C3E50;
             --white: #ffffff;
         }
@@ -234,7 +238,8 @@
         }
 
         .about-section {
-            background: var(--white);
+            /* MODIFIED: Now uses the soft body color */
+            background: var(--bg-cream);
         }
 
         .about-content {
@@ -263,7 +268,7 @@
         }
 
         .service-card {
-            background: var(--light-cream);
+            background: var(--white); /* Cards pop against new bg */
             padding: 2.5rem 2rem;
             border-radius: 16px;
             box-shadow: 0 6px 30px rgba(0, 51, 102, 0.08);
@@ -332,7 +337,8 @@
         }
 
         .why-us-section {
-            background: var(--white);
+            /* MODIFIED: Now uses the soft body color */
+            background: var(--bg-cream);
         }
 
         .features-grid {
@@ -345,7 +351,7 @@
         .feature-item {
             text-align: center;
             padding: 2rem 1.5rem;
-            background: var(--light-cream);
+            background: var(--white); /* Items pop against new bg */
             border-radius: 12px;
             transition: all 0.3s ease;
         }
@@ -453,7 +459,7 @@
             font-family: 'Inter', sans-serif;
             font-size: 0.95rem;
             transition: all 0.3s ease;
-            background: var(--light-cream);
+            background: var(--bg-cream); /* Use the new bg color for input fields */
         }
 
         .form-group input:focus,
@@ -835,8 +841,8 @@
         <div class="container" data-aos="fade-up" data-aos-delay="100">
             <h2 class="section-title">About Us</h2>
             <div class="about-content">
-                <p>Belle Trading & E-Commerce F.Z.E. is a dynamic business solutions provider established in the UAE's Ajman Freezone. Under the leadership of our founder <span class="founder-name">Malik M A Awan</span>, we deliver comprehensive services designed to drive growth and operational excellence for businesses across the globe.</p>
-                <p>As a registered Free Zone Entity, we combine local expertise with international standards to offer integrated HR provision, strategic business consultancy, cutting-edge e-commerce solutions, and robust management services. Our commitment is to empower organizations with the tools, talent, and strategies they need to thrive in today's competitive marketplace.</p>
+                <p>Belle Trading & E-Commerce F.Z.E. is a dynamic business solutions provider established in UAE's Ajman Freezone. Under the leadership of our founder <span class="founder-name">Malik M A Awan</span>, we deliver comprehensive services designed to drive growth and operational excellence for businesses across globe.</p>
+                <p>As a registered Free Zone Entity, we combine local expertise with international standards to offer integrated HR provision, strategic business consultancy, cutting-edge e-commerce solutions, and robust management services. Our commitment is to empower organizations with tools, talent, and strategies they need to thrive in today's competitive marketplace.</p>
             </div>
         </div>
     </section>
