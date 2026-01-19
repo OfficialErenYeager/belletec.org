@@ -10,23 +10,16 @@
     <meta name="author" content="Belle Trading & E-Commerce F.Z.E.">
     <meta name="robots" content="index, follow">
 
-<!-- Open Graph / Social Sharing (Whatsapp, Linkedin, Facebook, etc.) -->
+<!-- Open Graph / Social Sharing -->
     <meta property="og:title" content="Belle Trading & E-Commerce F.Z.E. | Business Excellence in Ajman Freezone">
-    <meta property="og:description" content="Leading provider of HR, consultancy, e-commerce, general trading, and management & project services from Ajman Freezone, UAE. Contact us for tailored business solutions.">
+    <meta property="og:description" content="Leading provider of HR, consultancy, e-commerce, general trading, and management & project services from Ajman Freezone, UAE.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://belle-org.netlify.app/">
     <meta property="og:site_name" content="Belle Trading & E-Commerce F.Z.E.">
     <meta property="og:image" content="https://placehold.co">
 
-<!-- Twitter/X Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Belle Trading & E-Commerce F.Z.E. | UAE Business Solutions">
-    <meta name="twitter:description" content="HR | Trading | E-Commerce | Management Excellence – Ajman Freezone">
-    <meta name="twitter:image" content="https://placehold.co">
-    
     <title>Belle Trading & E-Commerce F.Z.E. | UAE Business Solutions</title>
 
-<!-- Favicon (simple text-based placeholder for now – blue background, white B) -->
     <link rel="icon" href="https://placehold.co" type="image/png">
     <link rel="apple-touch-icon" href="https://placehold.co">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -41,13 +34,47 @@
             box-sizing: border-box;
         }
 
+        /* --- CSS VARIABLES & THEME CONFIGURATION --- */
         :root {
+            /* Light Mode Default */
             --primary-blue: #003366;
+            --primary-blue-light: #004080;
             --accent-gold: #D4AF37;
-            --bg-cream: #FDFDFD;
-            --light-cream: #FAF9F6;
-            --text-charcoal: #2C3E50;
-            --white: #ffffff;
+            --accent-gold-hover: #F4CF57;
+            
+            --bg-body: #FDFDFD;
+            --bg-surface: #FFFFFF;
+            --bg-alt: #FAF9F6; /* Light Cream */
+            
+            --text-main: #2C3E50;
+            --text-muted: #5c6b7f;
+            --text-on-dark: #ffffff;
+            
+            --border-color: rgba(0, 51, 102, 0.1);
+            --shadow-color: rgba(0, 51, 102, 0.08);
+            
+            --hero-gradient-start: #FAF9F6;
+            --hero-gradient-end: #f5f3ee;
+        }
+
+        /* Dark Mode Override */
+        body.dark-mode {
+            --primary-blue: #4da6ff; /* Lighter blue for accents in dark mode */
+            --primary-blue-light: #003366; /* Darker for hover states */
+            
+            --bg-body: #0f172a; /* Deep Slate (Eye friendly) */
+            --bg-surface: #1e293b; /* Lighter Slate for cards */
+            --bg-alt: #0f172a;
+            
+            --text-main: #f1f5f9; /* Off-white */
+            --text-muted: #94a3b8; /* Muted gray */
+            --text-on-dark: #ffffff;
+            
+            --border-color: rgba(255, 255, 255, 0.1);
+            --shadow-color: rgba(0, 0, 0, 0.4);
+            
+            --hero-gradient-start: #0b1120; /* Very Dark Blue */
+            --hero-gradient-end: #0f172a;
         }
 
         html {
@@ -56,19 +83,22 @@
 
         body {
             font-family: 'Inter', sans-serif;
-            color: var(--text-charcoal);
-            background-color: var(--bg-cream);
+            color: var(--text-main);
+            background-color: var(--bg-body);
             line-height: 1.7;
             overflow-x: hidden;
+            transition: background-color 0.3s ease, color 0.3s ease;
         }
 
+        /* --- NAVIGATION --- */
         nav {
             position: fixed;
             top: 0;
             width: 100%;
-            background: linear-gradient(135deg, var(--primary-blue) 0%, #004080 100%);
+            background: linear-gradient(135deg, var(--primary-blue-light) 0%, #002244 100%);
             z-index: 1000;
-            box-shadow: 0 4px 20px rgba(0, 51, 102, 0.15);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            transition: background 0.3s ease;
         }
 
         .nav-container {
@@ -83,9 +113,10 @@
         .logo {
             font-size: 1.75rem;
             font-weight: 600;
-            color: var(--white);
+            color: var(--text-on-dark);
             letter-spacing: 0.5px;
             text-decoration: none;
+            transition: color 0.3s;
         }
 
         .logo-accent {
@@ -100,7 +131,7 @@
         }
 
         .nav-links a {
-            color: var(--white);
+            color: var(--text-on-dark);
             text-decoration: none;
             font-weight: 500;
             font-size: 0.95rem;
@@ -128,32 +159,46 @@
             color: var(--accent-gold);
         }
 
+        .theme-toggle-btn {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: var(--text-on-dark);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 1.1rem;
+        }
+
+        .theme-toggle-btn:hover {
+            background: var(--accent-gold);
+            color: var(--primary-blue-light);
+            border-color: var(--accent-gold);
+        }
+
         .mobile-toggle {
             display: none;
             background: none;
             border: none;
-            color: var(--white);
+            color: var(--text-on-dark);
             font-size: 1.5rem;
             cursor: pointer;
         }
 
-        section {
-            padding: 5rem 2.5rem;
-        }
-
-        .container {
-            max-width: 1300px;
-            margin: 0 auto;
-        }
-
+        /* --- HERO SECTION --- */
         .hero {
-            background: linear-gradient(160deg, var(--light-cream) 0%, #f5f3ee 100%);
+            background: linear-gradient(160deg, var(--hero-gradient-start) 0%, var(--hero-gradient-end) 100%);
             min-height: 100vh;
             display: flex;
             align-items: center;
             margin-top: 70px;
             position: relative;
             overflow: hidden;
+            transition: background 0.5s ease;
         }
 
         .hero::before {
@@ -176,25 +221,35 @@
         .hero h1 {
             font-size: 3.5rem;
             font-weight: 700;
-            color: var(--primary-blue);
+            color: var(--primary-blue-light);
             margin-bottom: 1.5rem;
             line-height: 1.2;
+            transition: color 0.3s;
+        }
+        
+        /* In Dark mode, make hero heading white/gold mix */
+        body.dark-mode .hero h1 {
+            color: var(--text-main);
+            /* Add a subtle text shadow for readability if background is complex */
+            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
         }
 
         .hero-subtitle {
             font-size: 1.35rem;
-            color: var(--text-charcoal);
+            color: var(--text-muted);
             margin-bottom: 2.5rem;
             font-weight: 400;
             max-width: 900px;
             margin-left: auto;
             margin-right: auto;
+            transition: color 0.3s;
         }
 
+        /* --- BUTTONS --- */
         .cta-button {
             display: inline-block;
             background: linear-gradient(135deg, var(--accent-gold) 0%, #c9a332 100%);
-            color: var(--white);
+            color: #ffffff; /* Always white text on gold */
             padding: 1rem 3rem;
             border-radius: 50px;
             text-decoration: none;
@@ -209,16 +264,34 @@
         .cta-button:hover {
             transform: translateY(-3px);
             box-shadow: 0 12px 35px rgba(212, 175, 55, 0.4);
+            background: linear-gradient(135deg, var(--accent-gold-hover) 0%, #d4af37 100%);
+        }
+
+        section {
+            padding: 5rem 2.5rem;
+            background-color: var(--bg-surface);
+            transition: background-color 0.3s ease;
+        }
+
+        .container {
+            max-width: 1300px;
+            margin: 0 auto;
         }
 
         .section-title {
             font-size: 2.5rem;
             font-weight: 700;
-            color: var(--primary-blue);
+            color: var(--primary-blue-light);
             text-align: center;
             margin-bottom: 3rem;
             position: relative;
             padding-bottom: 1rem;
+            transition: color 0.3s;
+        }
+        
+        /* Dark Mode Section Title */
+        body.dark-mode .section-title {
+            color: var(--accent-gold);
         }
 
         .section-title::after {
@@ -233,10 +306,7 @@
             border-radius: 2px;
         }
 
-        .about-section {
-            background: var(--white);
-        }
-
+        /* --- ABOUT --- */
         .about-content {
             max-width: 950px;
             margin: 0 auto;
@@ -247,14 +317,20 @@
             font-size: 1.15rem;
             line-height: 1.9;
             margin-bottom: 1.5rem;
-            color: var(--text-charcoal);
+            color: var(--text-muted);
+            transition: color 0.3s;
         }
 
         .founder-name {
-            color: var(--primary-blue);
+            color: var(--primary-blue-light);
             font-weight: 600;
+            transition: color 0.3s;
+        }
+        body.dark-mode .founder-name {
+            color: var(--text-main);
         }
 
+        /* --- SERVICES --- */
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -263,24 +339,24 @@
         }
 
         .service-card {
-            background: var(--light-cream);
+            background: var(--bg-alt);
             padding: 2.5rem 2rem;
             border-radius: 16px;
-            box-shadow: 0 6px 30px rgba(0, 51, 102, 0.08);
-            transition: all 0.4s ease;
-            border: 1px solid rgba(212, 175, 55, 0.1);
+            box-shadow: 0 6px 30px var(--shadow-color);
+            transition: all 0.4s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid var(--border-color);
         }
 
         .service-card:hover {
             transform: translateY(-8px);
-            box-shadow: 0 12px 40px rgba(0, 51, 102, 0.15);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
             border-color: var(--accent-gold);
         }
 
         .service-icon {
             width: 70px;
             height: 70px;
-            background: linear-gradient(135deg, var(--primary-blue) 0%, #004080 100%);
+            background: linear-gradient(135deg, var(--primary-blue-light) 0%, #002244 100%);
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -291,22 +367,31 @@
             border: 3px solid var(--accent-gold);
             transition: all 0.4s ease;
         }
+        
+        body.dark-mode .service-icon {
+             background: linear-gradient(135deg, #0B1120 0%, #1e293b 100%);
+        }
 
         .service-card:hover .service-icon {
             transform: scale(1.1) rotate(5deg);
         }
 
         .service-card h3 {
-            color: var(--primary-blue);
+            color: var(--primary-blue-light);
             font-size: 1.5rem;
             margin-bottom: 1rem;
             font-weight: 600;
+            transition: color 0.3s;
+        }
+        body.dark-mode .service-card h3 {
+            color: var(--text-main);
         }
 
         .service-card p {
-            color: var(--text-charcoal);
+            color: var(--text-muted);
             margin-bottom: 1.25rem;
             font-size: 1rem;
+            transition: color 0.3s;
         }
 
         .service-card ul {
@@ -316,10 +401,11 @@
 
         .service-card li {
             padding: 0.5rem 0;
-            color: var(--text-charcoal);
+            color: var(--text-muted);
             font-size: 0.95rem;
             position: relative;
             padding-left: 1.75rem;
+            transition: color 0.3s;
         }
 
         .service-card li::before {
@@ -331,10 +417,7 @@
             color: var(--accent-gold);
         }
 
-        .why-us-section {
-            background: var(--white);
-        }
-
+        /* --- WHY US --- */
         .features-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -345,14 +428,16 @@
         .feature-item {
             text-align: center;
             padding: 2rem 1.5rem;
-            background: var(--light-cream);
+            background: var(--bg-alt);
             border-radius: 12px;
-            transition: all 0.3s ease;
+            transition: all 0.3s ease, background-color 0.3s ease;
+            border: 1px solid transparent;
         }
 
         .feature-item:hover {
-            background: var(--white);
-            box-shadow: 0 8px 25px rgba(0, 51, 102, 0.1);
+            background: var(--bg-surface);
+            box-shadow: 0 8px 25px var(--shadow-color);
+            border-color: var(--accent-gold);
         }
 
         .feature-icon {
@@ -367,21 +452,31 @@
             transform: scale(1.15);
             color: var(--primary-blue);
         }
+        body.dark-mode .feature-item:hover .feature-icon {
+            color: var(--text-main); /* In dark mode, white is better highlight */
+        }
 
         .feature-item h4 {
-            color: var(--primary-blue);
+            color: var(--primary-blue-light);
             font-size: 1.3rem;
             margin-bottom: 0.75rem;
             font-weight: 600;
+            transition: color 0.3s;
+        }
+        body.dark-mode .feature-item h4 {
+            color: var(--text-main);
         }
 
         .feature-item p {
-            color: var(--text-charcoal);
+            color: var(--text-muted);
             font-size: 0.95rem;
+            transition: color 0.3s;
         }
 
+        /* --- CONTACT --- */
         .contact-section {
-            background: linear-gradient(135deg, var(--light-cream) 0%, #f5f3ee 100%);
+            background: linear-gradient(135deg, var(--hero-gradient-start) 0%, var(--hero-gradient-end) 100%);
+            transition: background 0.5s ease;
         }
 
         .contact-wrapper {
@@ -393,10 +488,14 @@
         }
 
         .contact-info h3 {
-            color: var(--primary-blue);
+            color: var(--primary-blue-light);
             font-size: 1.8rem;
             margin-bottom: 2rem;
             font-weight: 600;
+            transition: color 0.3s;
+        }
+        body.dark-mode .contact-info h3 {
+            color: var(--accent-gold);
         }
 
         .info-item {
@@ -413,23 +512,29 @@
         }
 
         .info-item h4 {
-            color: var(--primary-blue);
+            color: var(--primary-blue-light);
             font-size: 1rem;
             margin-bottom: 0.4rem;
             font-weight: 600;
+            transition: color 0.3s;
+        }
+        body.dark-mode .info-item h4 {
+            color: var(--text-main);
         }
 
         .info-item p {
-            color: var(--text-charcoal);
+            color: var(--text-muted);
             font-size: 0.95rem;
             line-height: 1.6;
+            transition: color 0.3s;
         }
 
         .contact-form {
-            background: var(--white);
+            background: var(--bg-surface);
             padding: 2.5rem;
             border-radius: 16px;
-            box-shadow: 0 8px 30px rgba(0, 51, 102, 0.1);
+            box-shadow: 0 8px 30px var(--shadow-color);
+            transition: background 0.3s ease, box-shadow 0.3s ease;
         }
 
         .form-group {
@@ -438,29 +543,34 @@
 
         .form-group label {
             display: block;
-            color: var(--primary-blue);
+            color: var(--primary-blue-light);
             font-weight: 500;
             margin-bottom: 0.5rem;
             font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+        body.dark-mode .form-group label {
+            color: var(--text-main);
         }
 
         .form-group input,
         .form-group textarea {
             width: 100%;
             padding: 0.9rem 1.2rem;
-            border: 2px solid rgba(0, 51, 102, 0.1);
+            border: 2px solid var(--border-color);
             border-radius: 8px;
             font-family: 'Inter', sans-serif;
             font-size: 0.95rem;
             transition: all 0.3s ease;
-            background: var(--light-cream);
+            background: var(--bg-alt);
+            color: var(--text-main);
         }
 
         .form-group input:focus,
         .form-group textarea:focus {
             outline: none;
             border-color: var(--accent-gold);
-            background: var(--white);
+            background: var(--bg-surface);
         }
 
         .form-group textarea {
@@ -468,14 +578,13 @@
             min-height: 140px;
         }
 
-        /* -----------------------------------------------------------
-           MODIFIED FOOTER STYLES
-           ----------------------------------------------------------- */
+        /* --- FOOTER --- */
         footer {
-            background: linear-gradient(135deg, var(--primary-blue) 0%, #002244 100%);
-            color: var(--white);
+            background: linear-gradient(135deg, #001220 0%, #000000 100%);
+            color: var(--text-main);
             padding: 4.5rem 2.5rem 2rem;
             text-align: center;
+            border-top: 1px solid rgba(255,255,255,0.1);
         }
 
         .footer-wrapper {
@@ -509,7 +618,7 @@
         }
 
         .footer-left p {
-            color: rgba(255, 255, 255, 0.85);
+            color: rgba(255, 255, 255, 0.7);
             font-size: 0.9rem;
             line-height: 1.6;
             margin: 0;
@@ -521,90 +630,60 @@
             text-align: center;
         }
 
-        /* --- ANIMATED LOGO STYLES --- */
+        /* Animated Logo Styles */
         .footer-logo {
             font-size: 3.5rem;
             font-weight: 700;
-            color: var(--white);
+            color: var(--text-main);
             text-decoration: none;
             letter-spacing: 0.5px;
             display: inline-block;
             cursor: default;
-            
-            /* Apply blinking container animation */
             animation: containerBlink 12.5s infinite linear;
         }
 
-        /* Disable hover effects */
         .footer-logo:hover {
             transform: none;
-            color: var(--white);
+            color: var(--text-main);
         }
 
         .footer-logo .logo-accent {
             color: var(--accent-gold);
         }
         
-        /* Letter Wrapper */
         .logo-letter {
             display: inline-block;
             opacity: 0; 
-            /* Apply letter entry/exit animation */
             animation: letterCycle 12.5s infinite linear;
         }
 
-        /* Staggered Delays for Entry */
         .logo-letter:nth-child(1) { animation-delay: 0s; }
         .logo-letter:nth-child(2) { animation-delay: 0.5s; }
         .logo-letter:nth-child(3) { animation-delay: 1.0s; }
         .logo-letter:nth-child(4) { animation-delay: 1.5s; }
         .logo-letter:nth-child(5) { animation-delay: 2.0s; }
 
-        /* 
-           ANIMATION KEYFRAMES
-           Total Cycle: 12.5 seconds
-           
-           Phase 1 (0s - 2.5s): Letters appear (Slide Up).
-           Phase 2 (2.5s - 4.0s): Logo blinks 3 times.
-           Phase 3 (4.0s - 9.0s): Logo stays static (5 seconds).
-           Phase 4 (9.0s - 11.75s): Letters fade out & slide down (staggered).
-        */
-
-        /* Container Animation */
         @keyframes containerBlink {
             0% { opacity: 1; }
             20% { opacity: 1; } /* 2.5s (Phase 1 Ends) */
-            
-            /* Phase 2: Blinking (2.5s to 4.0s) */
             22% { opacity: 0; } /* Blink 1 Out */
             24% { opacity: 1; } /* Blink 1 In */
             26% { opacity: 0; } /* Blink 2 Out */
             28% { opacity: 1; } /* Blink 2 In */
             30% { opacity: 0; } /* Blink 3 Out */
             32% { opacity: 1; } /* Blink 3 In */
-            
-            94% { opacity: 1; } /* 11.75s (Phase 4 Ends) - Stay visible for full staggered exit */
-            
+            94% { opacity: 1; } /* 11.75s (Phase 4 Ends) */
             95% { opacity: 0; } /* Hide to reset */
             100% { opacity: 0; }
         }
 
-        /* Individual Letter Animation */
         @keyframes letterCycle {
-            /* Phase 1: Entry */
             0% { opacity: 0; transform: translateY(30px); }
-            4% { opacity: 1; transform: translateY(0); } /* Slide up & appear (0.5s duration) */
-            
-            /* Phase 2 & 3: Hold (Visible during blink & static period) */
+            4% { opacity: 1; transform: translateY(0); } /* Slide up & appear */
             72% { opacity: 1; transform: translateY(0); } /* Hold until 9.0s */
-            
-            /* Phase 4: Exit (Fade Out & Slide Down) */
-            82% { opacity: 0; transform: translateY(30px); } /* Slide down & vanish (1.25s duration) */
-            
-            /* Gap before loop restarts */
-            100% { opacity: 0; transform: translateY(30px); }
+            82% { opacity: 0; transform: translateY(30px); } /* Slide down & vanish */
+            100% { opacity: 0; transform: translateY(30px); } /* Stay hidden */
         }
-        /* --------------------------- */
 
         /* Right Column: Contact Summary */
         .footer-right {
@@ -619,7 +698,7 @@
         }
 
         .footer-contact-summary p {
-            color: rgba(255, 255, 255, 0.85);
+            color: rgba(255, 255, 255, 0.7);
             font-size: 0.9rem;
             margin: 0;
             display: flex;
@@ -629,7 +708,7 @@
         }
 
         .footer-contact-summary p:hover {
-            color: var(--white);
+            color: var(--text-main);
         }
 
         .footer-contact-summary i {
@@ -659,7 +738,7 @@
         }
 
         .footer-nav-links a {
-            color: rgba(255, 255, 255, 0.9);
+            color: rgba(255, 255, 255, 0.8);
             text-decoration: none;
             font-weight: 500;
             font-size: 0.95rem;
@@ -701,31 +780,34 @@
         .footer-socials a:hover {
             transform: scale(1.15);
             background: var(--accent-gold);
-            color: var(--primary-blue);
+            color: #000000; /* Black text on gold hover */
             border-color: var(--accent-gold);
             box-shadow: 0 0 15px rgba(212, 175, 55, 0.5);
         }
 
         .footer-bottom {
-            color: rgba(255, 255, 255, 0.6);
+            color: rgba(255, 255, 255, 0.4);
             font-size: 0.8rem;
         }
 
-        /* -----------------------------------------------------------
-           END MODIFIED FOOTER STYLES
-           ----------------------------------------------------------- */
-
+        /* --- MEDIA QUERIES --- */
         @media (max-width: 968px) {
             .nav-links {
                 position: fixed;
                 top: 70px;
                 left: -100%;
-                background: var(--primary-blue);
+                background: #0f172a; /* Dark menu background by default for readability */
                 width: 100%;
                 flex-direction: column;
                 padding: 2rem;
                 gap: 1.5rem;
                 transition: left 0.4s ease;
+                border-bottom: 1px solid var(--accent-gold);
+            }
+            
+            /* Light mode menu override */
+            body:not(.dark-mode) .nav-links {
+                background: var(--primary-blue-light);
             }
 
             .nav-links.active {
@@ -753,9 +835,8 @@
                 padding: 3.5rem 1.5rem;
             }
 
-            /* Footer Mobile Adjustments */
             .footer-top-grid {
-                grid-template-columns: 1fr; /* Stack columns */
+                grid-template-columns: 1fr; 
                 gap: 2rem;
                 text-align: center;
             }
@@ -802,15 +883,22 @@
         }
     </style>
 </head>
-<body>
+<body class="dark-mode"> <!-- Default to Dark Mode as requested -->
     <nav>
         <div class="nav-container">
             <a href="#home" class="logo">
                 <span class="logo-accent">B</span>éllè
             </a>
-            <button class="mobile-toggle" id="mobileToggle">
-                <i class="fas fa-bars"></i>
-            </button>
+            
+            <div style="display: flex; align-items: center; gap: 1rem;">
+                <button class="theme-toggle-btn" id="themeToggle" aria-label="Toggle Dark Mode">
+                    <i class="fas fa-sun"></i>
+                </button>
+                <button class="mobile-toggle" id="mobileToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+            
             <ul class="nav-links" id="navLinks">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
@@ -1004,22 +1092,17 @@
         </div>
     </section>
 
-    <!-- MODIFIED FOOTER SECTION -->
     <footer>
         <div class="footer-wrapper">
             
-            <!-- Top Grid: Left (Details) | Center (Logo) | Right (Address) -->
             <div class="footer-top-grid">
-                <!-- Left: Company Details -->
                 <div class="footer-left">
                     <h4>Belle Trading & E-Commerce</h4>
-                    <p>Empowering businesses with innovative HR, trading, e-commerce, and management solutions from the heart of Ajman Freezone.</p>
+                    <p>Empowering businesses with innovative HR, trading, e-commerce, and management solutions from heart of Ajman Freezone.</p>
                 </div>
 
-                <!-- Center: Animated Belle Logo -->
                 <div class="footer-center">
                     <a href="#home" class="footer-logo">
-                        <!-- Wrapped letters for individual animation -->
                         <span class="logo-letter logo-accent">B</span>
                         <span class="logo-letter">é</span>
                         <span class="logo-letter">l</span>
@@ -1028,7 +1111,6 @@
                     </a>
                 </div>
 
-                <!-- Right: Address Details -->
                 <div class="footer-right">
                     <div class="footer-contact-summary">
                         <p><i class="fas fa-map-marker-alt"></i> C1 Building, Ajman Freezone</p>
@@ -1038,7 +1120,6 @@
                 </div>
             </div>
 
-            <!-- Bottom Wrapper: Links, Socials, Copyright -->
             <div class="footer-bottom-wrapper">
                 <ul class="footer-nav-links">
                     <li><a href="#home">Home</a></li>
@@ -1064,13 +1145,50 @@
                     <p>&copy; 2026 Belle Trading & E-Commerce F.Z.E. All rights reserved.</p>
                 </div>
             </div>
-
         </div>
     </footer>
-    <!-- END MODIFIED FOOTER SECTION -->
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
+        // --- Theme Toggle Logic ---
+        const themeToggleBtn = document.getElementById('themeToggle');
+        const themeIcon = themeToggleBtn.querySelector('i');
+        const body = document.body;
+
+        // Function to update icon
+        function updateIcon(isDark) {
+            if (isDark) {
+                themeIcon.classList.remove('fa-sun');
+                themeIcon.classList.add('fa-moon');
+            } else {
+                themeIcon.classList.remove('fa-moon');
+                themeIcon.classList.add('fa-sun');
+            }
+        }
+
+        // Check Local Storage or System Preference
+        const savedTheme = localStorage.getItem('theme');
+        const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+        // Initialize: Default to Dark if no saved preference (as per user request "white mode not suitable")
+        if (savedTheme === 'light') {
+            body.classList.remove('dark-mode');
+            updateIcon(false);
+        } else {
+            // If saved is dark OR not saved (default to dark)
+            body.classList.add('dark-mode');
+            updateIcon(true);
+        }
+
+        // Toggle Event
+        themeToggleBtn.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+            const isDark = body.classList.contains('dark-mode');
+            localStorage.setItem('theme', isDark ? 'dark' : 'light');
+            updateIcon(isDark);
+        });
+
+        // --- Mobile Menu Logic ---
         const mobileToggle = document.getElementById('mobileToggle');
         const navLinks = document.getElementById('navLinks');
 
