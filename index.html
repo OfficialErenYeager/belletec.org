@@ -469,25 +469,40 @@
         }
 
         footer {
-            background: linear-gradient(135deg, var(--primary-blue) 0%, #002244 100%);
-            color: var(--white);
-            padding: 3rem 2.5rem 2rem;
+              background: #003d82; /* darker blue variant for contrast */
+              color: white;
+              padding: 60px 20px 20px;
+              margin-top: 40px;
         }
 
         .footer-content {
-            max-width: 1300px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 3rem;
-            margin-bottom: 2rem;
+              max-width: 1200px;
+              margin: 0 auto;
+              display: flex;
+              flex-wrap: wrap;
+              gap: 40px;
+              justify-content: space-between;
+        }
+
+        .footer-section {
+            flex: 1;
+            min-width: 220px;
         }
 
         .footer-section h4 {
             color: var(--accent-gold);
-            font-size: 1.2rem;
-            margin-bottom: 1rem;
+            font-size: 1.3rem;
+            margin-bottom: 20px;
             font-weight: 600;
+        }
+
+        .footer-section u1 {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-section u1 li {
+            margin-bottom: 12px;
         }
 
         .footer-section p,
@@ -501,15 +516,28 @@
         }
 
         .footer-section a:hover {
-            color: var(--accent-gold);
+            color: white;
+            text-decoration: underline;
+        }
+
+        .social-links li a span {
+            display: inline-block;
         }
 
         .footer-bottom {
             text-align: center;
-            padding-top: 2rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
             color: rgba(255, 255, 255, 0.7);
             font-size: 0.9rem;
+        }
+
+        @media (max-width: 968px) {
+            .footer-section {
+                flex-direction: column;
+                text-align: center;
+            }
         }
 
         @media (max-width: 968px) {
@@ -784,6 +812,28 @@
                 <a href="#why-us">Why Choose Us</a>
                 <a href="#contact">Contact</a>
             </div>
+
+            <div class="footer-column">
+      <h4>Contact & Follow</h4>
+      <ul class="social-links">
+        <li>
+          <a href="https://wa.me/971554383573" target="_blank" rel="noopener">
+            <span>WhatsApp: +971 55 438 3573</span>
+          </a>
+        </li>
+        <li>
+          <a href="mailto:info@belletec.org">
+            <span>Email: info@belletec.org</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://www.linkedin.com/company/belle-trading-e-commerce-fze" target="_blank" rel="noopener">
+            <span>LinkedIn (coming soon)</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
 
             <div class="footer-section">
                 <h4>Contact Summary</h4>
