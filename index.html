@@ -96,12 +96,13 @@
             align-items: center;
         }
 
-        /* NEW CSS FOR LOGO IMAGE */
+        /* CSS FOR LOGO IMAGE */
         .nav-logo {
-            max-height: 120px; /* Adjusted to 120px (slightly smaller than 150px) */
+            max-height: 150px; /* User set size */
             width: auto;
             display: block;
-            /* Centered via flex on parent */
+            /* MODIFIED: Move logo down to align with nav menu */
+            transform: translateY(20px); 
         }
 
         .logo-accent {
@@ -792,6 +793,7 @@
         @media (max-width: 768px) {
             .nav-logo {
                 max-height: 50px; /* Adjusted for mobile */
+                transform: translateY(0); /* Reset shift for mobile */
             }
         }
 
