@@ -81,15 +81,16 @@
         .nav-container {
             max-width: 1400px;
             margin: 0 auto;
-            padding: 1.2rem 2.5rem;
+            /* MODIFIED: Removed vertical padding, set fixed height to prevent expansion */
+            padding: 0 2.5rem;
+            height: 80px; 
             display: flex;
             justify-content: space-between;
             align-items: center;
+            overflow: visible; /* Allows logo to spill out if needed */
         }
 
         .logo {
-            /* Removed text specific styles as it now contains an image, 
-               but kept structural styles */
             text-decoration: none;
             display: flex;
             align-items: center;
@@ -97,9 +98,10 @@
 
         /* NEW CSS FOR LOGO IMAGE */
         .nav-logo {
-            max-height: 60px; /* Desktop size */
+            max-height: 100px; /* Enlarged logo - will overflow the 80px container */
             width: auto;
             display: block;
+            /* Centered via flex on parent */
         }
 
         .logo-accent {
@@ -166,7 +168,8 @@
             min-height: 100vh;
             display: flex;
             align-items: center;
-            margin-top: 70px;
+            /* Adjusted margin-top to match the new fixed nav height (80px) */
+            margin-top: 80px;
             position: relative;
             overflow: hidden;
             color: var(--white);
@@ -722,7 +725,7 @@
         @media (max-width: 968px) {
             .nav-links {
                 position: fixed;
-                top: 70px;
+                top: 80px; /* Adjusted to match new fixed height */
                 left: -100%;
                 background: var(--primary-blue);
                 width: 100%;
@@ -1105,7 +1108,7 @@
                 
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
-                    const offset = 70;
+                    const offset = 80; // Updated offset to match new nav height
                     const targetPosition = target.offsetTop - offset;
                     window.scrollTo({
                         top: targetPosition,
