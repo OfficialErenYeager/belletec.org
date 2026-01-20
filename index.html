@@ -26,7 +26,7 @@
     
     <title>Belle Trading & E-Commerce F.Z.E. | UAE Business Solutions</title>
 
-<!-- Favicon (simple text-based placeholder for now – blue background, white B) -->
+<!-- Favicon -->
     <link rel="icon" href="https://placehold.co" type="image/png">
     <link rel="apple-touch-icon" href="https://placehold.co">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -45,13 +45,13 @@
             --primary-blue: #003366;
             --accent-gold: #D4AF37;
             
-            /* MODIFIED BODY COLOR: Deep Navy Blue */
+            /* Deep Navy Blue */
             --bg-cream: #001F3F;
             
-            /* MODIFIED CARD/SECTION COLOR: Slightly lighter Navy for depth */
+            /* Slightly lighter Navy for depth */
             --light-cream: #0A2A45; 
             
-            /* MODIFIED TEXT COLOR: Light Grey/White for Dark Mode */
+            /* Light Grey/White for Dark Mode */
             --text-charcoal: #ECF0F1;
             
             --white: #ffffff;
@@ -88,18 +88,25 @@
         }
 
         .logo {
-            /* Removed text specific styles as it now contains an image, 
-               but kept structural styles */
             text-decoration: none;
             display: flex;
             align-items: center;
+            transition: all 0.3s ease;
         }
 
-        /* NEW CSS FOR LOGO IMAGE */
+        /* UPDATED NAV LOGO STYLES */
         .nav-logo {
-            max-height: 60px; /* Desktop size */
+            /* INCREASED BASE SIZE (from 60px to 85px) */
+            max-height: 85px; 
             width: auto;
             display: block;
+            transition: all 0.3s ease;
+        }
+
+        /* HOVER HIGHLIGHT & SCALE EFFECT */
+        .logo:hover .nav-logo {
+            transform: scale(1.1); /* Zooms in by 10% */
+            filter: drop-shadow(0 0 12px var(--accent-gold)); /* Adds a gold glow */
         }
 
         .logo-accent {
@@ -161,7 +168,7 @@
         }
 
         .hero {
-            /* MODIFIED: Subtle gradient to Deep Navy */
+            /* Subtle gradient to Deep Navy */
             background: radial-gradient(circle at center, #0d3861 0%, var(--bg-cream) 70%);
             min-height: 100vh;
             display: flex;
@@ -283,7 +290,7 @@
         }
 
         .service-card {
-            /* MODIFIED: Card background for dark mode */
+            /* Card background for dark mode */
             background: #0B2D4D; 
             padding: 2.5rem 2rem;
             border-radius: 16px;
@@ -452,7 +459,7 @@
         }
 
         .contact-form {
-            /* MODIFIED: Card background for dark mode */
+            /* Card background for dark mode */
             background: #0B2D4D; 
             padding: 2.5rem;
             border-radius: 16px;
@@ -498,10 +505,10 @@
         }
 
         /* -----------------------------------------------------------
-           MODIFIED FOOTER STYLES
+           FOOTER STYLES
            ----------------------------------------------------------- */
         footer {
-            /* MODIFIED: Darker Navy */
+            /* Darker Navy */
             background: #001429;
             color: var(--white);
             padding: 4.5rem 2.5rem 2rem;
@@ -716,7 +723,7 @@
         }
 
         /* -----------------------------------------------------------
-           END MODIFIED FOOTER STYLES
+           RESPONSIVE STYLES
            ----------------------------------------------------------- */
 
         @media (max-width: 968px) {
@@ -785,10 +792,17 @@
             }
         }
 
-        /* NEW MEDIA QUERY FOR MOBILE LOGO */
+        /* MOBILE LOGO ADJUSTMENTS */
         @media (max-width: 768px) {
             .nav-logo {
-                max-height: 50px; /* Adjusted for mobile */
+                /* Increased Mobile Size */
+                max-height: 60px; 
+            }
+            
+            /* Mobile Hover Effect */
+            .logo:hover .nav-logo {
+                transform: scale(1.1); /* Maintain scale effect */
+                filter: drop-shadow(0 0 8px var(--accent-gold)); /* Slightly smaller glow for mobile */
             }
         }
 
@@ -1015,7 +1029,7 @@
         </div>
     </section>
 
-    <!-- MODIFIED FOOTER SECTION -->
+    <!-- FOOTER SECTION -->
     <footer>
         <div class="footer-wrapper">
             
@@ -1078,7 +1092,7 @@
 
         </div>
     </footer>
-    <!-- END MODIFIED FOOTER SECTION -->
+    <!-- END FOOTER SECTION -->
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
