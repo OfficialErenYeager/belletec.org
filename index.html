@@ -96,13 +96,13 @@
             align-items: center;
         }
 
-        /* CSS FOR LOGO IMAGE */
+        /* CSS FOR NAV LOGO IMAGE */
         .nav-logo {
             max-height: 150px; /* User set size */
             width: auto;
             display: block;
             /* MODIFIED: Move logo down to align with nav menu */
-            transform: translateY(10px); 
+            transform: translateY(20px); 
         }
 
         .logo-accent {
@@ -555,62 +555,43 @@
             text-align: center;
         }
 
-        /* --- ANIMATED LOGO STYLES --- */
+        /* --- NEW ANIMATED LOGO STYLES (IMAGE) --- */
         .footer-logo {
-            font-size: 3.5rem;
-            font-weight: 700;
-            color: var(--white);
+            display: inline-block;
             text-decoration: none;
-            letter-spacing: 0.5px;
-            display: inline-block;
-            cursor: default;
-            
-            animation: containerBlink 12.5s infinite linear;
+            /* New Animation applied here */
+            animation: footerLogoBlink 4.5s infinite;
         }
 
-        .footer-logo:hover {
-            transform: none;
-            color: var(--white);
+        .footer-logo-img {
+            max-height: 50px; /* Appropriate size for footer */
+            width: auto;
+            display: block;
+            margin: 0 auto;
         }
 
-        .footer-logo .logo-accent {
-            color: var(--accent-gold);
-        }
-        
-        .logo-letter {
-            display: inline-block;
-            opacity: 0; 
-            animation: letterCycle 12.5s infinite linear;
-        }
-
-        .logo-letter:nth-child(1) { animation-delay: 0s; }
-        .logo-letter:nth-child(2) { animation-delay: 0.5s; }
-        .logo-letter:nth-child(3) { animation-delay: 1.0s; }
-        .logo-letter:nth-child(4) { animation-delay: 1.5s; }
-        .logo-letter:nth-child(5) { animation-delay: 2.0s; }
-
-        /* Container Animation */
-        @keyframes containerBlink {
+        /* 
+           Animation Logic: 
+           Total Duration: 4.5s
+           Blink 3 times (1.5s) -> Pause (3s) -> Loop
+           
+           0% -> 5.5% (0.25s): Off (Blink 1)
+           5.5% -> 11% (0.5s): On
+           11% -> 16.6% (0.75s): Off (Blink 2)
+           16.6% -> 22% (1.0s): On
+           22% -> 27.7% (1.25s): Off (Blink 3)
+           27.7% -> 33.3% (1.5s): On (End of blinking)
+           33.3% -> 100%: Pause (3 seconds)
+        */
+        @keyframes footerLogoBlink {
             0% { opacity: 1; }
-            20% { opacity: 1; } 
-            22% { opacity: 0; } 
-            24% { opacity: 1; } 
-            26% { opacity: 0; } 
-            28% { opacity: 1; } 
-            30% { opacity: 0; } 
-            32% { opacity: 1; } 
-            94% { opacity: 1; } 
-            95% { opacity: 0; } 
-            100% { opacity: 0; }
-        }
-
-        /* Individual Letter Animation */
-        @keyframes letterCycle {
-            0% { opacity: 0; transform: translateY(30px); }
-            4% { opacity: 1; transform: translateY(0); } 
-            72% { opacity: 1; transform: translateY(0); } 
-            82% { opacity: 0; transform: translateY(30px); } 
-            100% { opacity: 0; transform: translateY(30px); }
+            5.55% { opacity: 0; }
+            11.11% { opacity: 1; }
+            16.66% { opacity: 0; }
+            22.22% { opacity: 1; }
+            27.77% { opacity: 0; }
+            33.33% { opacity: 1; }
+            100% { opacity: 1; }
         }
         /* --------------------------- */
 
@@ -811,8 +792,8 @@
                 grid-template-columns: 1fr;
             }
             
-            .footer-logo {
-                font-size: 2.5rem;
+            .footer-logo-img {
+                max-height: 40px; /* Smaller footer logo on small screens */
             }
         }
     </style>
@@ -1032,15 +1013,10 @@
                     <p>Empowering businesses with innovative HR, trading, e-commerce, and management solutions from the heart of Ajman Freezone.</p>
                 </div>
 
-                <!-- Center: Animated Belle Logo -->
+                <!-- Center: Image Logo with New Animation -->
                 <div class="footer-center">
                     <a href="#home" class="footer-logo">
-                        <!-- Wrapped letters for individual animation -->
-                        <span class="logo-letter logo-accent">B</span>
-                        <span class="logo-letter">é</span>
-                        <span class="logo-letter">l</span>
-                        <span class="logo-letter">l</span>
-                        <span class="logo-letter">è</span>
+                        <img src="/belle-logo.png" alt="Bélle Trading & E-Commerce F.Z.E." class="footer-logo-img">
                     </a>
                 </div>
 
