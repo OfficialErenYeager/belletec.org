@@ -99,28 +99,35 @@
             height: 48px;
             width: auto;
             display: block;
-            /* ADDING ATTENTION ANIMATION HERE */
-            animation: navPulse 3.5s infinite ease-in-out;
+            /* UPDATED SMOOTH ANIMATION */
+            animation: smoothNavPulse 4s infinite ease-in-out;
         }
 
         /* -----------------------------------------------------------
-           ANIMATION KEYFRAMES FOR NAV LOGO (Attention Grabber)
+           UPDATED ANIMATION KEYFRAMES FOR NAV LOGO
+           Smooth 3-Blink + Pop + Hold
            ----------------------------------------------------------- */
-        @keyframes navPulse {
-            0% { opacity: 1; transform: scale(1); } /* Normal */
-            10% { opacity: 1; transform: scale(1); } /* Wait */
+        @keyframes smoothNavPulse {
+            0% { opacity: 1; transform: scale(1); } /* Idle Start */
+            5% { opacity: 1; transform: scale(1); } /* Short Wait */
             
-            /* Dip slightly */
-            15% { opacity: 0.3; transform: scale(0.95); } 
+            /* --- BLINK 1 --- */
+            8% { opacity: 0.6; transform: scale(0.96); } /* Dim Smoothly */
+            11% { opacity: 1; transform: scale(1.08); } /* Pop Smoothly */
+            14% { opacity: 1; transform: scale(1); } /* Settle */
             
-            /* Flash Bright & Bounce (The "Attention" moment) */
-            18% { opacity: 1; transform: scale(1.1); } 
+            /* --- BLINK 2 --- */
+            20% { opacity: 0.6; transform: scale(0.96); }
+            23% { opacity: 1; transform: scale(1.08); }
+            26% { opacity: 1; transform: scale(1); }
             
-            /* Return to normal */
-            22% { opacity: 1; transform: scale(1); } 
+            /* --- BLINK 3 --- */
+            32% { opacity: 0.6; transform: scale(0.96); }
+            35% { opacity: 1; transform: scale(1.08); }
+            38% { opacity: 1; transform: scale(1); }
             
-            /* Hold for the rest of the cycle */
-            100% { opacity: 1; transform: scale(1); }
+            /* --- LONG HOLD --- */
+            50%, 100% { opacity: 1; transform: scale(1); } /* Hold for remainder of cycle */
         }
         /* ----------------------------------------------------------- */
 
@@ -249,7 +256,7 @@
             text-align: center;
             margin-bottom: 3rem;
             position: relative;
-            padding-bottom: 1rem;
+            padding-bottom:1rem;
         }
 
         .section-title::after {
@@ -837,7 +844,7 @@
 <body>
     <nav>
         <div class="nav-container">
-            <!-- Updated Nav Logo with Attention Animation -->
+            <!-- Updated Nav Logo with Smooth Attention Animation -->
             <a href="#home" class="logo">
                 <svg class="nav-logo-svg" width="200" height="60" viewBox="0 0 200 60" xmlns="http://www.w3.org/2000/svg">
                     <defs>
