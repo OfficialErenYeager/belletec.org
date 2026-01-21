@@ -175,16 +175,19 @@
         }
 
         /* -----------------------------------------------------------
-           HERO SLIDER STYLES (FIXED)
+           HERO SLIDER STYLES (FIXED & FULL SCREEN)
            ----------------------------------------------------------- */
         .hero {
+            /* Full screen, absolutely no edges */
             margin-top: 0;
             padding: 0;
             position: relative;
-            height: 100vh;
-            width: 100%;
+            height: 100vh; /* Forces Full Viewport Height */
+            width: 100vw;  /* Forces Full Viewport Width */
             overflow: hidden;
             background: #000;
+            left: 0;
+            top: 0;
         }
 
         .swiper {
@@ -198,19 +201,9 @@
             justify-content: center;
             position: relative;
             overflow: hidden;
+            /* Ensure image covers everything to prevent blackness */
             background-size: cover;
             background-position: center;
-        }
-
-        .slide-bg {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-size: cover;
-            background-position: center;
-            z-index: 1;
         }
 
         .overlay {
@@ -225,13 +218,16 @@
 
         .hero-content {
             position: relative;
-            z-index: 10;
+            z-index: 10; /* Above overlay */
             text-align: center;
             max-width: 1000px;
-            padding: 110px 20px 20px 20px;
+            /* Padding top to clear navbar visually */
+            padding-top: 120px; 
+            padding-bottom: 20px;
+            padding-left: 20px;
+            padding-right: 20px;
             color: var(--white);
             width: 100%;
-            transition: opacity 0.3s ease, visibility 0.3s ease;
         }
 
         .hero h1 {
@@ -293,7 +289,7 @@
             height: 50px;
             border-radius: 50%;
             transition: all 0.3s ease;
-            z-index: 100; /* Ensure arrows are on top */
+            z-index: 20; /* Ensure clickable above everything */
         }
         
         .swiper-button-next:hover, .swiper-button-prev:hover {
@@ -304,13 +300,6 @@
         .swiper-button-next:after, .swiper-button-prev:after {
             font-size: 20px;
             font-weight: bold;
-        }
-
-        /* --- FIX FOR DUPLICATE TEXT --- */
-        .swiper-slide:not(.swiper-slide-active) .hero-content {
-            opacity: 0;
-            visibility: hidden;
-            pointer-events: none;
         }
 
         /* -----------------------------------------------------------
@@ -1120,15 +1109,14 @@
         </div>
     </nav>
 
-    <!-- HERO SLIDER SECTION (Fixed Stuck & Autoplay) -->
+    <!-- FIXED HERO SLIDER SECTION -->
     <section class="hero" id="home">
         <!-- Swiper -->
         <div class="swiper mySwiper">
             <div class="swiper-wrapper">
                 
                 <!-- Slide 1 -->
-                <div class="swiper-slide">
-                    <div class="slide-bg" style="background-image: url('/images/slider_1.jpg');"></div>
+                <div class="swiper-slide" style="background-image: url('/images/slider_1.jpg');">
                     <div class="overlay"></div>
                     <div class="hero-content">
                         <h1>Empowering Global Business Excellence</h1>
@@ -1138,8 +1126,7 @@
                 </div>
 
                 <!-- Slide 2 -->
-                <div class="swiper-slide">
-                    <div class="slide-bg" style="background-image: url('/images/slider_2.jpg');"></div>
+                <div class="swiper-slide" style="background-image: url('/images/slider_2.jpg');">
                     <div class="overlay"></div>
                     <div class="hero-content">
                         <h1>Building Strong Partnerships & Teams</h1>
@@ -1149,8 +1136,7 @@
                 </div>
 
                 <!-- Slide 3 -->
-                <div class="swiper-slide">
-                    <div class="slide-bg" style="background-image: url('/images/slider_3.jpg');"></div>
+                <div class="swiper-slide" style="background-image: url('/images/slider_3.jpg');">
                     <div class="overlay"></div>
                     <div class="hero-content">
                         <h1>Seamless Trading & E-Commerce Solutions</h1>
@@ -1160,8 +1146,7 @@
                 </div>
 
                 <!-- Slide 4 -->
-                <div class="swiper-slide">
-                    <div class="slide-bg" style="background-image: url('/images/slider_4.jpg');"></div>
+                <div class="swiper-slide" style="background-image: url('/images/slider_4.jpg');">
                     <div class="overlay"></div>
                     <div class="hero-content">
                         <h1>Tailored HR & Business Support</h1>
@@ -1185,7 +1170,7 @@
             <h2 class="section-title">About Us</h2>
             <div class="about-content">
                 <p>We are a premier business solutions provider strategically positioned in heart of UAE's Ajman Freezone. Under visionary leadership of our founder, <span class="founder-name">Malik M A Awan</span>, we have dedicated ourselves to fostering operational excellence and driving substantial growth for our global partners.</p>
-                <p>Leveraging unique advantages of a Free Zone establishment, we bridge gap between local market intelligence and international standards. Our integrated approach encompasses comprehensive human resource solutions, strategic e-commerce frameworks, general trading expertise, and robust project management. We are committed to empowering organizations with precise tools, talent, and strategies required to navigate complexities of today's competitive marketplace.</p>
+                <p>Leveraging unique advantages of a Free Zone establishment, we bridge gap between local market intelligence and international standards. Our integrated approach encompasses comprehensive human resource solutions, strategic e-commerce frameworks, general trading expertise, and robust project management. We are committed to empowering organizations with precise tools, talent, and strategies required to navigate the complexities of today's competitive marketplace.</p>
             </div>
         </div>
     </section>
@@ -1243,7 +1228,7 @@
         <div class="container" data-aos="fade-up" data-aos-delay="200">
             <h2 class="section-title">Customer Support Outsourcing</h2>
             <h3 class="section-slogan">Scale Your Support Without Overhead</h3>
-            <p class="support-intro">Focus on building your product while we handle the connections. Our flexible, scalable outsourcing model allows modern brands to provide premium support without fixed costs of an in-house team.</p>
+            <p class="support-intro">Focus on building your product while we handle the connections. Our flexible, scalable outsourcing model allows modern brands to provide premium support without the fixed costs of an in-house team.</p>
             
             <div class="features-grid">
                 <div class="feature-item" data-aos="zoom-in" data-aos-delay="300">
@@ -1434,7 +1419,7 @@
             <div class="footer-top-grid">
                 <div class="footer-left">
                     <h4>Belle Trading & E-Commerce</h4>
-                    <p>Empowering businesses with innovative HR, trading, e-commerce, and management solutions from heart of Ajman Freezone.</p>
+                    <p>Empowering businesses with innovative HR, trading, e-commerce, and management solutions from the heart of Ajman Freezone.</p>
                 </div>
 
                 <div class="footer-center">
@@ -1482,6 +1467,7 @@
                     <p>&copy; 2026 Belle Trading & E-Commerce F.Z.E. All rights reserved.</p>
                 </div>
             </div>
+
         </div>
     </footer>
 
@@ -1532,32 +1518,42 @@
             easing: 'ease-out-cubic'
         });
 
-        // Swiper Init - FIXES FOR STUCK & AUTOPLAY
-        const swiper = new Swiper(".mySwiper", {
-            effect: "cards",
-            grabCursor: true,
-            centeredSlides: true, // <--- Fix for stuck navigation
-            slidesPerView: 'auto', // <--- Fix for stuck navigation
-            cardsEffect: {
-                perSlideOffset: 8,
-                rotate: true,
-                slideShadows: true,
-                perSlideRotate: 2,
-            },
-            loop: true,
-            autoplay: {
-                delay: 5000,
-                disableOnInteraction: false, // <--- Don't stop on click
-                pauseOnMouseEnter: false, // <--- Don't stop on hover
-            },
-            pagination: {
-                el: ".swiper-pagination",
-                clickable: true,
-            },
-            navigation: {
-                nextEl: ".swiper-button-next",
-                prevEl: ".swiper-button-prev",
-            },
+        // ROBUST SWIPER INIT (With Error Proofing)
+        document.addEventListener("DOMContentLoaded", function() {
+            if (typeof Swiper !== 'undefined') {
+                const swiper = new Swiper(".mySwiper", {
+                    effect: "fade", // Using fade to fix duplicate text/blackness glitches
+                    fadeEffect: {
+                        crossFade: true // Ensures smooth overlay, removing black flashes
+                    },
+                    loop: true,
+                    loopAdditionalSlides: 3, // Reliable infinite loop
+                    loopedSlides: 4,        // Match slide count
+                    speed: 1000,             // Smooth transition speed
+                    slidesPerView: 1,
+                    spaceBetween: 0,
+                    centeredSlides: false,
+                    preloadImages: true,      // Fix black screen issues
+                    updateOnWindowResize: true, // Responsive fix
+                    observer: true,          // Dynamic content update
+                    grabCursor: true,
+                    autoplay: {
+                        delay: 5000,
+                        disableOnInteraction: false, // Force autoplay continue
+                        pauseOnMouseEnter: true
+                    },
+                    pagination: {
+                        el: ".swiper-pagination",
+                        clickable: true
+                    },
+                    navigation: {
+                        nextEl: ".swiper-button-next",
+                        prevEl: ".swiper-button-prev",
+                    }
+                });
+            } else {
+                console.error("Swiper.js failed to load.");
+            }
         });
     </script>
 </body>
