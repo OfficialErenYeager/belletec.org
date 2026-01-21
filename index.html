@@ -175,12 +175,13 @@
         }
 
         /* -----------------------------------------------------------
-           HERO SLIDER STYLES
+           HERO SLIDER STYLES (FIXED DUPLICATE TEXT)
            ----------------------------------------------------------- */
         .hero {
-            margin-top: 85px; /* Matches nav height */
+            margin-top: 0;
+            padding: 0;
             position: relative;
-            height: 100vh; /* Full viewport height */
+            height: 100vh;
             width: 100%;
             overflow: hidden;
             background: #000;
@@ -197,6 +198,8 @@
             justify-content: center;
             position: relative;
             overflow: hidden;
+            background-size: cover;
+            background-position: center;
         }
 
         .slide-bg {
@@ -208,11 +211,6 @@
             background-size: cover;
             background-position: center;
             z-index: 1;
-        }
-
-        /* Fallback color if images fail to load */
-        .slide-bg {
-            background-color: #1e293b;
         }
 
         .overlay {
@@ -227,15 +225,17 @@
 
         .hero-content {
             position: relative;
-            z-index: 10; /* Above overlay */
+            z-index: 10;
             text-align: center;
             max-width: 1000px;
-            padding: 0 20px;
+            padding: 110px 20px 20px 20px;
             color: var(--white);
+            width: 100%;
+            transition: opacity 0.3s ease, visibility 0.3s ease; /* Added transition for smoother effect */
         }
 
         .hero h1 {
-            font-size: clamp(2rem, 5vw, 3.5rem); /* Responsive font size */
+            font-size: clamp(2rem, 5vw, 3.5rem);
             font-weight: 700;
             margin-bottom: 1.5rem;
             line-height: 1.2;
@@ -304,6 +304,15 @@
             font-size: 20px;
             font-weight: bold;
         }
+
+        /* --- FIX FOR DUPLICATE TEXT ON CARDS EFFECT --- */
+        /* This hides text on slides that are NOT active, but keeps the background image visible */
+        .swiper-slide:not(.swiper-slide-active) .hero-content {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+        }
+        /* ----------------------------------------------- */
 
         /* -----------------------------------------------------------
            SECTIONS STYLES
@@ -1112,7 +1121,7 @@
         </div>
     </nav>
 
-    <!-- NEW HERO SLIDER SECTION -->
+    <!-- HERO SLIDER SECTION (Fixed Text Duplication) -->
     <section class="hero" id="home">
         <!-- Swiper -->
         <div class="swiper mySwiper">
@@ -1527,6 +1536,13 @@
         // Swiper Init
         const swiper = new Swiper(".mySwiper", {
             effect: "cards",
+            grabCursor: true,
+            cardsEffect: {
+                perSlideOffset: 8,
+                rotate: true,
+                slideShadows: true,
+                perSlideRotate: 2,
+            },
             loop: true,
             autoplay: {
                 delay: 5000,
