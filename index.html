@@ -26,9 +26,9 @@
     
     <title>Belle Trading & E-Commerce F.Z.E. | UAE Business Solutions</title>
 
-<!-- Favicon (simple text-based placeholder for now – blue background, white B) -->
-    <link rel="icon" href="https://placehold.co" type="image/png">
-    <link rel="apple-touch-icon" href="https://placehold.co">
+<!-- UPDATED FAVICON: SVG Data URI matching the new Logo Style -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2220%22 fill=%22%230f172a%22/><text x=%2250%22 y=%2268%22 font-family=%22Arial, sans-serif%22 font-weight=%22bold%22 font-size=%2270%22 fill=%22%23F28C38%22 text-anchor=%22middle%22> B </text></svg>" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2220%22 fill=%22%230f172a%22/><text x=%2250%22 y=%2268%22 font-family=%22Arial, sans-serif%22 font-weight=%22bold%22 font-size=%2270%22 fill=%22%23F28C38%22 text-anchor=%22middle%22> B </text></svg>">
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -602,6 +602,123 @@
         }
 
         /* -----------------------------------------------------------
+           NEW CAREERS SECTION STYLES
+           ----------------------------------------------------------- */
+        .careers-section {
+            background: transparent;
+            padding-bottom: 5rem;
+        }
+
+        .careers-intro {
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto 3rem auto;
+            color: var(--text-sub);
+            font-size: 1.15rem;
+            line-height: 1.7;
+        }
+
+        .careers-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .careers-card {
+            background: var(--card-bg);
+            padding: 2.5rem;
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            height: 100%;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+        }
+
+        .careers-card h3 {
+            color: var(--logo-orange);
+            font-size: 1.4rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding-bottom: 0.8rem;
+        }
+
+        /* List styling for Why Join Us */
+        .careers-card ul {
+            list-style: none;
+        }
+
+        .careers-card li {
+            margin-bottom: 0.8rem;
+            color: var(--text-sub);
+            font-size: 1rem;
+            position: relative;
+            padding-left: 2rem;
+            line-height: 1.5;
+        }
+
+        .careers-card li::before {
+            content: '\f00c';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            color: var(--logo-orange);
+            position: absolute;
+            left: 0;
+            top: 2px;
+        }
+
+        /* Job Listings Styling */
+        .job-listing-container {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .job-item {
+            background: rgba(255, 255, 255, 0.03);
+            padding: 1rem 1.2rem;
+            border-radius: 8px;
+            border-left: 3px solid var(--logo-orange);
+        }
+
+        .job-title {
+            color: var(--text-main);
+            font-weight: 600;
+            font-size: 1.05rem;
+            display: block;
+            margin-bottom: 0.3rem;
+        }
+
+        .job-details {
+            color: var(--text-sub);
+            font-size: 0.9rem;
+        }
+
+        .no-jobs {
+            color: var(--text-sub);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            background: rgba(255,255,255,0.02);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: 1px dashed rgba(255,255,255,0.1);
+        }
+
+        .careers-cta {
+            text-align: center;
+            margin-top: 1rem;
+        }
+
+        .diversity-note {
+            color: var(--text-sub);
+            margin-bottom: 1.5rem;
+            font-size: 0.9rem;
+            font-style: italic;
+        }
+        /* -----------------------------------------------------------
+           END NEW CAREERS SECTION STYLES
+           ----------------------------------------------------------- */
+
+        /* -----------------------------------------------------------
            MODIFIED FOOTER STYLES
            ----------------------------------------------------------- */
         footer {
@@ -882,6 +999,10 @@
                 gap: 2.5rem;
             }
 
+            .careers-grid {
+                grid-template-columns: 1fr; /* Stack careers on tablet/mobile */
+            }
+
             section {
                 padding: 3.5rem 1.5rem;
             }
@@ -1004,6 +1125,7 @@
                 <li><a href="#support">Outsourcing</a></li> <!-- Updated Nav Text -->
                 <li><a href="#why-us">Why Us</a></li>
                 <li><a href="#contact">Contact</a></li>
+                <li><a href="#careers">Careers</a></li>
             </ul>
         </div>
     </nav>
@@ -1237,6 +1359,63 @@
         </div>
     </section>
 
+    <!-- NEW CAREERS SECTION -->
+    <section class="careers-section" id="careers">
+        <div class="container" data-aos="fade-up" data-aos-delay="200">
+            <h2 class="section-title">Careers</h2>
+            
+            <p class="careers-intro">
+                Join our growing team at Belle Trading & E-Commerce F.Z.E. in Ajman Freezone, UAE. We're seeking passionate professionals in HR, business consultancy, e-commerce, trading, management, and support roles.
+            </p>
+
+            <div class="careers-grid">
+                <!-- Left Column: Why Join Us -->
+                <div class="careers-card" data-aos="fade-right" data-aos-delay="300">
+                    <h3>Why Join Us?</h3>
+                    <ul>
+                        <li>Opportunity to work in a dynamic UAE freezone environment</li>
+                        <li>Supportive team and professional growth</li>
+                        <li>Competitive packages and benefits</li>
+                        <li>Exposure to international business operations</li>
+                    </ul>
+                </div>
+
+                <!-- Right Column: Current Openings -->
+                <div class="careers-card" data-aos="fade-left" data-aos-delay="300">
+                    <h3>Current Openings</h3>
+                    
+                    <div class="job-listing-container">
+                        <!-- 
+                           NOTE: To add jobs later, simply remove the "no-jobs" paragraph 
+                           and uncomment/add <div class="job-item"> blocks below.
+                        -->
+                        
+                        <!-- <div class="job-item">
+                            <span class="job-title">Senior HR Consultant</span>
+                            <span class="job-details">Full-time • Ajman Freezone</span>
+                        </div>
+                        
+                        <div class="job-item">
+                            <span class="job-title">E-Commerce Manager</span>
+                            <span class="job-details">Full-time • Hybrid</span>
+                        </div> -->
+
+                        <!-- Current Status: No Open Positions -->
+                        <p class="no-jobs">
+                            We currently have no open positions listed. However, we're always open to talented individuals! Please send your CV/resume to <a href="mailto:info@belletec.org" style="color:var(--logo-orange);">info@belletec.org</a> with subject 'Career Application - [Your Name]'.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="careers-cta" data-aos="fade-up" data-aos-delay="500">
+                <p class="diversity-note">We encourage applications from diverse backgrounds.</p>
+                <a href="mailto:info@belletec.org?subject=Career%20Application" class="cta-button">Send Your Resume</a>
+            </div>
+        </div>
+    </section>
+    <!-- END CAREERS SECTION -->
+
     <!-- MODIFIED FOOTER SECTION -->
     <footer>
         <div class="footer-wrapper">
@@ -1279,6 +1458,7 @@
                     <li><a href="#support">Outsourcing</a></li>
                     <li><a href="#why-us">Why Choose Us</a></li>
                     <li><a href="#contact">Contact</a></li>
+                    <li><a href="#careers">Careers</a></li>
                 </ul>
 
                 <div class="footer-socials">
