@@ -77,7 +77,7 @@
             background: linear-gradient(135deg, var(--primary-blue) 0%, #004080 100%);
             z-index: 1000;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-            height: 70px;
+            height: 85px; /* Increased height to accommodate 2-line logo */
         }
 
         .nav-container {
@@ -99,7 +99,7 @@
 
         /* Styling for NEW Nav Logo */
         .nav-logo-svg {
-            height: 48px;
+            height: 70px; /* Slightly smaller than nav height to fit nicely */
             width: auto;
             display: block;
             animation: smoothNavPulse 4s infinite ease-in-out;
@@ -193,7 +193,7 @@
             min-height: 100vh;
             display: flex;
             align-items: center;
-            margin-top: 70px;
+            margin-top: 85px; /* Updated to match new nav height */
             position: relative;
             overflow: hidden;
         }
@@ -968,7 +968,7 @@
         @media (max-width: 968px) {
             .nav-links {
                 position: fixed;
-                top: 70px;
+                top: 85px; /* Updated mobile menu top position */
                 left: -100%;
                 background: var(--primary-blue);
                 width: 100%;
@@ -1070,7 +1070,7 @@
             }
             
             .nav-logo-svg {
-                height: 40px;
+                height: 50px; /* Scaled down for very small screens */
             }
 
             /* Full width buttons on mobile for easier tapping */
@@ -1096,12 +1096,12 @@
 <body>
     <nav>
         <div class="nav-container">
-            <!-- Nav Logo with Attention Animation -->
+            <!-- Nav Logo with Attention Animation & New Subtitle -->
             <a href="#home" class="logo">
-                <svg class="nav-logo-svg" width="200" height="60" viewBox="0 0 200 60" xmlns="http://www.w3.org/2000/svg">
+                <svg class="nav-logo-svg" width="200" height="80" viewBox="0 0 200 80" xmlns="http://www.w3.org/2000/svg">
                     <defs>
                         <style>
-                            @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+                            @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Poppins:wght@600&display=swap');
                             .nav-brand {
                                 font-family: 'Poppins', sans-serif;
                                 font-weight: 600;
@@ -1110,9 +1110,21 @@
                                 text-anchor: middle;
                                 letter-spacing: 0.05em;
                             }
+                            .nav-subtitle {
+                                font-family: 'Inter', sans-serif;
+                                font-weight: 500;
+                                font-size: 12px;
+                                fill: #ffffff;
+                                text-anchor: middle;
+                                text-transform: uppercase;
+                                letter-spacing: 0.1em;
+                            }
                         </style>
                     </defs>
-                    <text x="100" y="42" class="nav-brand">B&#201;LL&#200;</text>
+                    <!-- Main Logo Text -->
+                    <text x="100" y="35" class="nav-brand">B&#201;LL&#200;</text>
+                    <!-- New Subtitle Text -->
+                    <text x="100" y="62" class="nav-subtitle">TRADING &amp; E-COMMERCE</text>
                 </svg>
             </a>
             <button class="mobile-toggle" id="mobileToggle">
@@ -1507,7 +1519,7 @@
                 
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
-                    const offset = 70;
+                    const offset = 85; // Updated offset to match new nav height
                     const targetPosition = target.offsetTop - offset;
                     window.scrollTo({
                         top: targetPosition,
