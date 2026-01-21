@@ -46,13 +46,16 @@
         }
 
         :root {
+            /* NEW: Dark Professional Theme */
+            --bg-soft: #0f172a;       /* Deep Dark Blue-Grey (Body) */
+            --card-bg: #1e293b;        /* Lighter Navy (Cards) */
+            --text-main: #f8fafc;       /* White/Off-White */
+            --text-sub: #94a3b8;       /* Light Gray */
+            
             --primary-blue: #003366;
             --accent-gold: #D4AF37;
-            --bg-cream: #FDFDFD;
-            --light-cream: #FAF9F6;
-            --text-charcoal: #2C3E50;
+            --logo-orange: #F28C38;     /* Logo Color */
             --white: #ffffff;
-            --logo-orange: #F28C38; /* Added for easy reference */
         }
 
         html {
@@ -61,8 +64,8 @@
 
         body {
             font-family: 'Inter', sans-serif;
-            color: var(--text-charcoal);
-            background-color: var(--bg-cream);
+            color: var(--text-main);
+            background-color: var(--bg-soft); /* Applied Dark Background */
             line-height: 1.7;
             overflow-x: hidden;
         }
@@ -73,7 +76,7 @@
             width: 100%;
             background: linear-gradient(135deg, var(--primary-blue) 0%, #004080 100%);
             z-index: 1000;
-            box-shadow: 0 4px 20px rgba(0, 51, 102, 0.15);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
             height: 70px;
         }
 
@@ -99,22 +102,20 @@
             height: 48px;
             width: auto;
             display: block;
-            /* UPDATED SMOOTH ANIMATION */
             animation: smoothNavPulse 4s infinite ease-in-out;
         }
 
         /* -----------------------------------------------------------
-           UPDATED ANIMATION KEYFRAMES FOR NAV LOGO
-           Smooth 3-Blink + Pop + Hold
+           ANIMATION KEYFRAMES FOR NAV LOGO
            ----------------------------------------------------------- */
         @keyframes smoothNavPulse {
-            0% { opacity: 1; transform: scale(1); } /* Idle Start */
-            5% { opacity: 1; transform: scale(1); } /* Short Wait */
+            0% { opacity: 1; transform: scale(1); }
+            5% { opacity: 1; transform: scale(1); }
             
             /* --- BLINK 1 --- */
-            8% { opacity: 0.6; transform: scale(0.96); } /* Dim Smoothly */
-            11% { opacity: 1; transform: scale(1.08); } /* Pop Smoothly */
-            14% { opacity: 1; transform: scale(1); } /* Settle */
+            8% { opacity: 0.6; transform: scale(0.96); }
+            11% { opacity: 1; transform: scale(1.08); }
+            14% { opacity: 1; transform: scale(1); }
             
             /* --- BLINK 2 --- */
             20% { opacity: 0.6; transform: scale(0.96); }
@@ -127,7 +128,7 @@
             38% { opacity: 1; transform: scale(1); }
             
             /* --- LONG HOLD --- */
-            50%, 100% { opacity: 1; transform: scale(1); } /* Hold for remainder of cycle */
+            50%, 100% { opacity: 1; transform: scale(1); }
         }
         /* ----------------------------------------------------------- */
 
@@ -177,6 +178,7 @@
 
         section {
             padding: 5rem 2.5rem;
+            background-color: var(--bg-soft); /* Section background matches body */
         }
 
         .container {
@@ -185,7 +187,8 @@
         }
 
         .hero {
-            background: linear-gradient(160deg, var(--light-cream) 0%, #f5f3ee 100%);
+            /* Dark Gradient Background */
+            background: linear-gradient(160deg, #0b1120 0%, var(--bg-soft) 100%);
             min-height: 100vh;
             display: flex;
             align-items: center;
@@ -201,7 +204,8 @@
             right: -20%;
             width: 600px;
             height: 600px;
-            background: radial-gradient(circle, rgba(212, 175, 55, 0.08) 0%, transparent 70%);
+            /* Subtle glow */
+            background: radial-gradient(circle, rgba(242, 140, 56, 0.05) 0%, transparent 70%);
             border-radius: 50%;
         }
 
@@ -214,14 +218,14 @@
         .hero h1 {
             font-size: 3.5rem;
             font-weight: 700;
-            color: var(--primary-blue);
+            color: var(--text-main);
             margin-bottom: 1.5rem;
             line-height: 1.2;
         }
 
         .hero-subtitle {
             font-size: 1.35rem;
-            color: var(--text-charcoal);
+            color: var(--text-sub);
             margin-bottom: 2.5rem;
             font-weight: 400;
             max-width: 900px;
@@ -231,28 +235,29 @@
 
         .cta-button {
             display: inline-block;
-            background: linear-gradient(135deg, var(--accent-gold) 0%, #c9a332 100%);
-            color: var(--white);
+            background: var(--logo-orange); /* Match Logo Color */
+            color: #0f172a; /* Dark text for contrast on orange */
             padding: 1rem 3rem;
             border-radius: 50px;
             text-decoration: none;
-            font-weight: 600;
+            font-weight: 700;
             font-size: 1.1rem;
             transition: all 0.4s ease;
-            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.3);
+            box-shadow: 0 8px 25px rgba(242, 140, 56, 0.4);
             border: none;
             cursor: pointer;
         }
 
         .cta-button:hover {
             transform: translateY(-3px);
-            box-shadow: 0 12px 35px rgba(212, 175, 55, 0.4);
+            box-shadow: 0 12px 35px rgba(242, 140, 56, 0.6);
+            filter: brightness(1.1);
         }
 
         .section-title {
             font-size: 2.5rem;
             font-weight: 700;
-            color: var(--primary-blue);
+            color: var(--text-main);
             text-align: center;
             margin-bottom: 3rem;
             position: relative;
@@ -267,12 +272,12 @@
             transform: translateX(-50%);
             width: 80px;
             height: 4px;
-            background: var(--accent-gold);
+            background: var(--logo-orange); /* Orange underline */
             border-radius: 2px;
         }
 
         .about-section {
-            background: var(--white);
+            background: transparent;
         }
 
         .about-content {
@@ -285,11 +290,11 @@
             font-size: 1.15rem;
             line-height: 1.9;
             margin-bottom: 1.5rem;
-            color: var(--text-charcoal);
+            color: var(--text-sub);
         }
 
         .founder-name {
-            color: var(--primary-blue);
+            color: var(--logo-orange); /* Orange Name */
             font-weight: 600;
         }
 
@@ -301,48 +306,51 @@
         }
 
         .service-card {
-            background: var(--light-cream);
+            background: var(--card-bg); /* Darker Card */
             padding: 2.5rem 2rem;
             border-radius: 16px;
-            box-shadow: 0 6px 30px rgba(0, 51, 102, 0.08);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); /* Dark Shadow */
             transition: all 0.4s ease;
-            border: 1px solid rgba(212, 175, 55, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.05);
         }
 
         .service-card:hover {
             transform: translateY(-8px);
-            box-shadow: 0 12px 40px rgba(0, 51, 102, 0.15);
-            border-color: var(--accent-gold);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.7);
+            border-color: var(--logo-orange);
         }
 
         .service-icon {
             width: 70px;
             height: 70px;
-            background: linear-gradient(135deg, var(--primary-blue) 0%, #004080 100%);
+            background: var(--bg-soft); /* Match body bg (floating icon) */
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             margin: 0 auto 1.5rem;
-            color: var(--accent-gold);
+            color: var(--logo-orange); /* Orange Icon */
             font-size: 2rem;
-            border: 3px solid var(--accent-gold);
+            border: 2px solid rgba(242, 140, 56, 0.3);
             transition: all 0.4s ease;
         }
 
         .service-card:hover .service-icon {
             transform: scale(1.1) rotate(5deg);
+            background: var(--logo-orange);
+            color: #0f172a;
+            border-color: var(--logo-orange);
         }
 
         .service-card h3 {
-            color: var(--primary-blue);
+            color: var(--text-main);
             font-size: 1.5rem;
             margin-bottom: 1rem;
             font-weight: 600;
         }
 
         .service-card p {
-            color: var(--text-charcoal);
+            color: var(--text-sub);
             margin-bottom: 1.25rem;
             font-size: 1rem;
         }
@@ -354,7 +362,7 @@
 
         .service-card li {
             padding: 0.5rem 0;
-            color: var(--text-charcoal);
+            color: var(--text-main);
             font-size: 0.95rem;
             position: relative;
             padding-left: 1.75rem;
@@ -366,11 +374,11 @@
             font-weight: 900;
             position: absolute;
             left: 0;
-            color: var(--accent-gold);
+            color: var(--logo-orange);
         }
 
         .why-us-section {
-            background: var(--white);
+            background: transparent;
         }
 
         .features-grid {
@@ -383,19 +391,21 @@
         .feature-item {
             text-align: center;
             padding: 2rem 1.5rem;
-            background: var(--light-cream);
+            background: var(--card-bg);
             border-radius: 12px;
             transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
         }
 
         .feature-item:hover {
-            background: var(--white);
-            box-shadow: 0 8px 25px rgba(0, 51, 102, 0.1);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+            background: #263855; /* Slightly lighter on hover */
         }
 
         .feature-icon {
             font-size: 3rem;
-            color: var(--accent-gold);
+            color: var(--logo-orange);
             margin-bottom: 1.25rem;
             display: inline-block;
             transition: all 0.3s ease;
@@ -403,23 +413,24 @@
 
         .feature-item:hover .feature-icon {
             transform: scale(1.15);
-            color: var(--primary-blue);
+            color: #fff;
         }
 
         .feature-item h4 {
-            color: var(--primary-blue);
+            color: var(--text-main);
             font-size: 1.3rem;
             margin-bottom: 0.75rem;
             font-weight: 600;
         }
 
         .feature-item p {
-            color: var(--text-charcoal);
+            color: var(--text-sub);
             font-size: 0.95rem;
         }
 
         .contact-section {
-            background: linear-gradient(135deg, var(--light-cream) 0%, #f5f3ee 100%);
+            /* Slightly darker for distinction */
+            background: linear-gradient(160deg, #0b1120 0%, #162032 100%);
         }
 
         .contact-wrapper {
@@ -431,7 +442,7 @@
         }
 
         .contact-info h3 {
-            color: var(--primary-blue);
+            color: var(--text-main);
             font-size: 1.8rem;
             margin-bottom: 2rem;
             font-weight: 600;
@@ -445,29 +456,29 @@
         }
 
         .info-icon {
-            color: var(--accent-gold);
+            color: var(--logo-orange);
             font-size: 1.4rem;
             margin-top: 0.25rem;
         }
 
         .info-item h4 {
-            color: var(--primary-blue);
+            color: var(--text-main);
             font-size: 1rem;
             margin-bottom: 0.4rem;
             font-weight: 600;
         }
 
         .info-item p {
-            color: var(--text-charcoal);
+            color: var(--text-sub);
             font-size: 0.95rem;
             line-height: 1.6;
         }
 
         .contact-form {
-            background: var(--white);
+            background: var(--card-bg);
             padding: 2.5rem;
             border-radius: 16px;
-            box-shadow: 0 8px 30px rgba(0, 51, 102, 0.1);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
         }
 
         .form-group {
@@ -476,7 +487,7 @@
 
         .form-group label {
             display: block;
-            color: var(--primary-blue);
+            color: var(--text-main);
             font-weight: 500;
             margin-bottom: 0.5rem;
             font-size: 0.95rem;
@@ -486,19 +497,20 @@
         .form-group textarea {
             width: 100%;
             padding: 0.9rem 1.2rem;
-            border: 2px solid rgba(0, 51, 102, 0.1);
+            border: 2px solid rgba(255, 255, 255, 0.1);
             border-radius: 8px;
             font-family: 'Inter', sans-serif;
             font-size: 0.95rem;
             transition: all 0.3s ease;
-            background: var(--light-cream);
+            background: #0f1623; /* Very dark input bg */
+            color: #fff;
         }
 
         .form-group input:focus,
         .form-group textarea:focus {
             outline: none;
-            border-color: var(--accent-gold);
-            background: var(--white);
+            border-color: var(--logo-orange);
+            background: #162032;
         }
 
         .form-group textarea {
@@ -507,7 +519,7 @@
         }
 
         /* -----------------------------------------------------------
-           MODIFIED FOOTER STYLES - ANIMATED NEW LOGO
+           MODIFIED FOOTER STYLES
            ----------------------------------------------------------- */
         footer {
             background: linear-gradient(135deg, var(--primary-blue) 0%, #002244 100%);
@@ -539,7 +551,7 @@
         }
 
         .footer-left h4 {
-            color: var(--accent-gold);
+            color: var(--logo-orange); /* Change to Orange */
             font-size: 1.25rem;
             margin-bottom: 0.75rem;
             font-weight: 600;
@@ -564,7 +576,7 @@
             font-family: 'Poppins', sans-serif;
             font-weight: 600;
             font-size: 3.5rem;
-            color: var(--logo-orange); /* New Orange Color */
+            color: var(--logo-orange); /* Orange */
             text-decoration: none;
             letter-spacing: 0.05px;
             display: inline-block;
@@ -668,7 +680,7 @@
         }
 
         .footer-contact-summary i {
-            color: var(--accent-gold);
+            color: var(--logo-orange); /* Orange */
             font-size: 0.95rem;
             width: 18px;
             text-align: center;
@@ -703,14 +715,14 @@
 
         .footer-nav-links li:not(:last-child)::after {
             content: "|";
-            color: var(--accent-gold);
+            color: var(--logo-orange);
             margin-left: 1rem;
             margin-right: 1rem;
             opacity: 0.8;
         }
 
         .footer-nav-links a:hover {
-            color: var(--accent-gold);
+            color: var(--logo-orange);
         }
 
         .footer-socials {
@@ -720,14 +732,14 @@
         }
 
         .footer-socials a {
-            color: var(--accent-gold);
+            color: var(--logo-orange);
             font-size: 1.4rem;
             width: 45px;
             height: 45px;
             display: flex;
             align-items: center;
             justify-content: center;
-            border: 1px solid rgba(212, 175, 55, 0.3);
+            border: 1px solid rgba(242, 140, 56, 0.3);
             border-radius: 50%;
             text-decoration: none;
             transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -735,10 +747,10 @@
 
         .footer-socials a:hover {
             transform: scale(1.15);
-            background: var(--accent-gold);
-            color: var(--primary-blue);
-            border-color: var(--accent-gold);
-            box-shadow: 0 0 15px rgba(212, 175, 55, 0.5);
+            background: var(--logo-orange);
+            color: #0f172a; /* Dark text */
+            border-color: var(--logo-orange);
+            box-shadow: 0 0 15px rgba(242, 140, 56, 0.5);
         }
 
         .footer-bottom {
@@ -844,7 +856,7 @@
 <body>
     <nav>
         <div class="nav-container">
-            <!-- Updated Nav Logo with Smooth Attention Animation -->
+            <!-- Nav Logo with Attention Animation -->
             <a href="#home" class="logo">
                 <svg class="nav-logo-svg" width="200" height="60" viewBox="0 0 200 60" xmlns="http://www.w3.org/2000/svg">
                     <defs>
@@ -1071,10 +1083,10 @@
                     <p>Empowering businesses with innovative HR, trading, e-commerce, and management solutions from the heart of Ajman Freezone.</p>
                 </div>
 
-                <!-- Center: NEW Animated Logo -->
+                <!-- Center: Animated Logo -->
                 <div class="footer-center">
                     <a href="#home" class="footer-logo">
-                        <!-- New Characters: B, É, L, L, È -->
+                        <!-- Characters: B, É, L, L, È -->
                         <span class="logo-letter">B</span>
                         <span class="logo-letter">&#201;</span> <!-- É -->
                         <span class="logo-letter">L</span>
