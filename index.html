@@ -10,9 +10,9 @@
     <meta name="author" content="Belle Trading & E-Commerce F.Z.E.">
     <meta name="robots" content="index, follow">
 
-<!-- Open Graph / Social Sharing (Whatsapp, Linkedin, Facebook, etc.) -->
+<!-- Open Graph / Social Sharing -->
     <meta property="og:title" content="Belle Trading & E-Commerce F.Z.E. | Business Excellence in Ajman Freezone">
-    <meta property="og:description" content="Leading provider of HR, consultancy, e-commerce, general trading, and management & project services from Ajman Freezone, UAE. Contact us for tailored business solutions.">
+    <meta property="og:description" content="Leading provider of HR, consultancy, e-commerce, general trading, and management & project services from Ajman Freezone, UAE.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://belle-org.netlify.app/">
     <meta property="og:site_name" content="Belle Trading & E-Commerce F.Z.E.">
@@ -26,14 +26,16 @@
     
     <title>Belle Trading & E-Commerce F.Z.E. | UAE Business Solutions</title>
 
-<!-- UPDATED FAVICON: SVG Data URI matching the new Logo Style -->
+<!-- FAVICON -->
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2220%22 fill=%22%230f172a%22/><text x=%2250%22 y=%2268%22 font-family=%22Arial, sans-serif%22 font-weight=%22bold%22 font-size=%2270%22 fill=%22%23F28C38%22 text-anchor=%22middle%22> B </text></svg>" type="image/svg+xml">
     <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2220%22 fill=%22%230f172a%22/><text x=%2250%22 y=%2268%22 font-family=%22Arial, sans-serif%22 font-weight=%22bold%22 font-size=%2270%22 fill=%22%23F28C38%22 text-anchor=%22middle%22> B </text></svg>">
     
+    <!-- SWIPER CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <!-- Added Poppins for new Logo -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -46,15 +48,13 @@
         }
 
         :root {
-            /* NEW: Dark Professional Theme */
-            --bg-soft: #0f172a;       /* Deep Dark Blue-Grey (Body) */
-            --card-bg: #1e293b;        /* Lighter Navy (Cards) */
-            --text-main: #f8fafc;       /* White/Off-White */
-            --text-sub: #94a3b8;       /* Light Gray */
-            
+            --bg-soft: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f8fafc;
+            --text-sub: #94a3b8;
             --primary-blue: #003366;
             --accent-gold: #D4AF37;
-            --logo-orange: #F28C38;     /* Logo Color */
+            --logo-orange: #F28C38;
             --white: #ffffff;
         }
 
@@ -65,7 +65,7 @@
         body {
             font-family: 'Inter', sans-serif;
             color: var(--text-main);
-            background-color: var(--bg-soft); /* Applied Dark Background */
+            background-color: var(--bg-soft);
             line-height: 1.7;
             overflow-x: hidden;
         }
@@ -77,7 +77,7 @@
             background: linear-gradient(135deg, var(--primary-blue) 0%, #004080 100%);
             z-index: 1000;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-            height: 85px; /* Increased height to accommodate 2-line logo */
+            height: 85px;
         }
 
         .nav-container {
@@ -97,40 +97,27 @@
             height: 100%;
         }
 
-        /* Styling for NEW Nav Logo */
         .nav-logo-svg {
-            height: 70px; /* Slightly smaller than nav height to fit nicely */
+            height: 70px;
             width: auto;
             display: block;
             animation: smoothNavPulse 4s infinite ease-in-out;
         }
 
-        /* -----------------------------------------------------------
-           ANIMATION KEYFRAMES FOR NAV LOGO
-           ----------------------------------------------------------- */
         @keyframes smoothNavPulse {
             0% { opacity: 1; transform: scale(1); }
             5% { opacity: 1; transform: scale(1); }
-            
-            /* --- BLINK 1 --- */
             8% { opacity: 0.6; transform: scale(0.96); }
             11% { opacity: 1; transform: scale(1.08); }
             14% { opacity: 1; transform: scale(1); }
-            
-            /* --- BLINK 2 --- */
             20% { opacity: 0.6; transform: scale(0.96); }
             23% { opacity: 1; transform: scale(1.08); }
             26% { opacity: 1; transform: scale(1); }
-            
-            /* --- BLINK 3 --- */
             32% { opacity: 0.6; transform: scale(0.96); }
             35% { opacity: 1; transform: scale(1.08); }
             38% { opacity: 1; transform: scale(1); }
-            
-            /* --- LONG HOLD --- */
             50%, 100% { opacity: 1; transform: scale(1); }
         }
-        /* ----------------------------------------------------------- */
 
         .nav-links {
             display: flex;
@@ -179,7 +166,7 @@
 
         section {
             padding: 5rem 2.5rem;
-            background-color: var(--bg-soft); /* Section background matches body */
+            background-color: var(--bg-soft);
         }
 
         .container {
@@ -187,57 +174,85 @@
             margin: 0 auto;
         }
 
+        /* -----------------------------------------------------------
+           HERO SLIDER STYLES
+           ----------------------------------------------------------- */
         .hero {
-            /* Dark Gradient Background */
-            background: linear-gradient(160deg, #0b1120 0%, var(--bg-soft) 100%);
-            min-height: 100vh;
+            margin-top: 85px; /* Matches nav height */
+            position: relative;
+            height: 100vh; /* Full viewport height */
+            width: 100%;
+            overflow: hidden;
+            background: #000;
+        }
+
+        .swiper {
+            width: 100%;
+            height: 100%;
+        }
+
+        .swiper-slide {
             display: flex;
             align-items: center;
-            margin-top: 85px; /* Updated to match new nav height */
+            justify-content: center;
             position: relative;
             overflow: hidden;
         }
 
-        .hero::before {
-            content: '';
+        .slide-bg {
             position: absolute;
-            top: -50%;
-            right: -20%;
-            width: 600px;
-            height: 600px;
-            /* Subtle glow */
-            background: radial-gradient(circle, rgba(242, 140, 56, 0.05) 0%, transparent 70%);
-            border-radius: 50%;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            z-index: 1;
+        }
+
+        /* Fallback color if images fail to load */
+        .slide-bg {
+            background-color: #1e293b;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 2;
         }
 
         .hero-content {
             position: relative;
-            z-index: 2;
+            z-index: 10; /* Above overlay */
             text-align: center;
+            max-width: 1000px;
+            padding: 0 20px;
+            color: var(--white);
         }
 
         .hero h1 {
-            font-size: 3.5rem;
+            font-size: clamp(2rem, 5vw, 3.5rem); /* Responsive font size */
             font-weight: 700;
-            color: var(--text-main);
             margin-bottom: 1.5rem;
             line-height: 1.2;
+            text-shadow: 0 4px 10px rgba(0,0,0,0.5);
         }
 
         .hero-subtitle {
-            font-size: 1.35rem;
-            color: var(--text-sub);
+            font-size: clamp(1rem, 2.5vw, 1.35rem);
             margin-bottom: 2.5rem;
             font-weight: 400;
-            max-width: 900px;
-            margin-left: auto;
-            margin-right: auto;
+            text-shadow: 0 2px 5px rgba(0,0,0,0.5);
         }
 
         .cta-button {
             display: inline-block;
-            background: var(--logo-orange); /* Match Logo Color */
-            color: #0f172a; /* Dark text for contrast on orange */
+            background: var(--logo-orange);
+            color: #0f172a;
             padding: 1rem 3rem;
             border-radius: 50px;
             text-decoration: none;
@@ -256,6 +271,43 @@
             filter: brightness(1.1);
         }
 
+        /* Swiper Customization */
+        .swiper-pagination-bullet {
+            width: 12px;
+            height: 12px;
+            background: rgba(255, 255, 255, 0.5);
+            opacity: 1;
+            transition: all 0.3s ease;
+        }
+
+        .swiper-pagination-bullet-active {
+            background: var(--logo-orange) !important;
+            width: 30px;
+            border-radius: 10px;
+        }
+
+        .swiper-button-next, .swiper-button-prev {
+            color: #ffffff !important;
+            background: rgba(0,0,0,0.3);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+        
+        .swiper-button-next:hover, .swiper-button-prev:hover {
+            background: var(--logo-orange);
+            color: #0f172a !important;
+        }
+
+        .swiper-button-next:after, .swiper-button-prev:after {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        /* -----------------------------------------------------------
+           SECTIONS STYLES
+           ----------------------------------------------------------- */
         .section-title {
             font-size: 2.5rem;
             font-weight: 700;
@@ -274,11 +326,10 @@
             transform: translateX(-50%);
             width: 80px;
             height: 4px;
-            background: var(--logo-orange); /* Orange underline */
+            background: var(--logo-orange);
             border-radius: 2px;
         }
 
-        /* Sub-slogan style */
         .section-slogan {
             text-align: center;
             color: var(--logo-orange);
@@ -307,11 +358,11 @@
         }
 
         .founder-name {
-            color: var(--logo-orange); /* Orange Name */
+            color: var(--logo-orange);
             font-weight: 600;
         }
 
-        /* --- Services Section Styles --- */
+        /* Services */
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -320,11 +371,10 @@
         }
 
         .service-card {
-            background: var(--card-bg); /* Darker Card */
+            background: var(--card-bg);
             padding: 2.5rem 2rem;
             border-radius: 16px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); /* Dark Shadow */
-            /* Premium Bouncy Transition */
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
             transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), 
                         box-shadow 0.4s ease, 
                         border-color 0.4s ease;
@@ -332,22 +382,22 @@
         }
 
         .service-card:hover {
-            transform: translateY(-12px) scale(1.01); /* Lift and slight scale */
+            transform: translateY(-12px) scale(1.01);
             box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7), 
-                        0 0 20px rgba(242, 140, 56, 0.15); /* Deep shadow + Orange Glow */
+                        0 0 20px rgba(242, 140, 56, 0.15);
             border-color: var(--logo-orange);
         }
 
         .service-icon {
             width: 70px;
             height: 70px;
-            background: var(--bg-soft); /* Match body bg (floating icon) */
+            background: var(--bg-soft);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             margin: 0 auto 1.5rem;
-            color: var(--logo-orange); /* Orange Icon */
+            color: var(--logo-orange);
             font-size: 2rem;
             border: 2px solid rgba(242, 140, 56, 0.3);
             transition: all 0.4s ease;
@@ -396,11 +446,11 @@
             color: var(--logo-orange);
         }
 
-        /* --- UPDATED CUSTOMER SUPPORT OUTSOURCING SECTION --- */
+        /* Support / Outsourcing */
         .support-section {
             background: transparent;
             padding-bottom: 3rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.05); /* Subtle separator */
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
             border-bottom: 1px solid rgba(255, 255, 255, 0.05);
         }
 
@@ -413,7 +463,6 @@
             line-height: 1.7;
         }
 
-        /* Re-using features-grid for layout consistency */
         .features-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -426,7 +475,6 @@
             padding: 2.5rem 1.5rem;
             background: var(--card-bg);
             border-radius: 12px;
-            /* Premium Hover Effects */
             transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), 
                         box-shadow 0.4s ease,
                         background 0.3s ease;
@@ -439,10 +487,10 @@
         }
 
         .feature-item:hover {
-            transform: translateY(-10px) scale(1.02); /* Lift + Scale */
+            transform: translateY(-10px) scale(1.02);
             box-shadow: 0 15px 35px rgba(0,0,0, 0.6),
-                        0 0 15px rgba(242, 140, 56, 0.1); /* Glow */
-            background: #263855; /* Slightly lighter on hover */
+                        0 0 15px rgba(242, 140, 56, 0.1);
+            background: #263855;
             border-color: rgba(242, 140, 56, 0.2);
         }
 
@@ -473,7 +521,6 @@
             font-weight: 600;
         }
 
-        /* Style for lists inside Feature Items */
         .feature-item ul {
             list-style: none;
             text-align: left;
@@ -491,7 +538,7 @@
         }
 
         .feature-item li::before {
-            content: '\f00c'; /* FontAwesome check */
+            content: '\f00c';
             font-family: 'Font Awesome 6 Free';
             font-weight: 900;
             position: absolute;
@@ -504,15 +551,13 @@
             font-size: 0.95rem;
         }
 
-        /* --- END CUSTOMER SUPPORT STYLES --- */
-
-        /* --- Why Us Section --- */
+        /* Why Us */
         .why-us-section {
             background: transparent;
         }
 
+        /* Contact */
         .contact-section {
-            /* Slightly darker for distinction */
             background: linear-gradient(160deg, #0b1120 0%, #162032 100%);
         }
 
@@ -585,7 +630,7 @@
             font-family: 'Inter', sans-serif;
             font-size: 0.95rem;
             transition: all 0.3s ease;
-            background: #0f1623; /* Very dark input bg */
+            background: #0f1623;
             color: #fff;
         }
 
@@ -601,9 +646,7 @@
             min-height: 140px;
         }
 
-        /* -----------------------------------------------------------
-           NEW CAREERS SECTION STYLES
-           ----------------------------------------------------------- */
+        /* Careers */
         .careers-section {
             background: transparent;
             padding-bottom: 5rem;
@@ -642,7 +685,6 @@
             padding-bottom: 0.8rem;
         }
 
-        /* List styling for Why Join Us */
         .careers-card ul {
             list-style: none;
         }
@@ -666,7 +708,6 @@
             top: 2px;
         }
 
-        /* Job Listings Styling */
         .job-listing-container {
             display: flex;
             flex-direction: column;
@@ -714,13 +755,8 @@
             font-size: 0.9rem;
             font-style: italic;
         }
-        /* -----------------------------------------------------------
-           END NEW CAREERS SECTION STYLES
-           ----------------------------------------------------------- */
 
-        /* -----------------------------------------------------------
-           MODIFIED FOOTER STYLES
-           ----------------------------------------------------------- */
+        /* Footer */
         footer {
             background: linear-gradient(135deg, var(--primary-blue) 0%, #002244 100%);
             color: var(--white);
@@ -736,7 +772,6 @@
             gap: 3rem;
         }
 
-        /* Top 3-Column Grid Section */
         .footer-top-grid {
             display: grid;
             grid-template-columns: 1fr 1fr 1fr;
@@ -745,13 +780,12 @@
             width: 100%;
         }
 
-        /* Left Column: Details */
         .footer-left {
             text-align: left;
         }
 
         .footer-left h4 {
-            color: var(--logo-orange); /* Change to Orange */
+            color: var(--logo-orange);
             font-size: 1.25rem;
             margin-bottom: 0.75rem;
             font-weight: 600;
@@ -766,94 +800,57 @@
             max-width: 300px;
         }
 
-        /* Center Column: Logo */
         .footer-center {
             text-align: center;
         }
 
-        /* --- ANIMATED LOGO STYLES (Updated to Poppins/Orange) --- */
         .footer-logo {
             font-family: 'Poppins', sans-serif;
             font-weight: 600;
             font-size: 3.5rem;
-            color: var(--logo-orange); /* Orange */
+            color: var(--logo-orange);
             text-decoration: none;
             letter-spacing: 0.05px;
             display: inline-block;
             cursor: default;
-            
-            /* Apply blinking container animation */
             animation: containerBlink 12.5s infinite linear;
         }
 
-        /* Disable hover effects */
         .footer-logo:hover {
             transform: none;
             color: var(--logo-orange);
         }
         
-        /* Letter Wrapper */
         .logo-letter {
             display: inline-block;
             opacity: 0; 
-            /* Apply letter entry/exit animation */
             animation: letterCycle 12.5s infinite linear;
         }
 
-        /* Staggered Delays for Entry */
-        .logo-letter:nth-child(1) { animation-delay: 0s; } /* B */
-        .logo-letter:nth-child(2) { animation-delay: 0.5s; } /* É */
-        .logo-letter:nth-child(3) { animation-delay: 1.0s; } /* L */
-        .logo-letter:nth-child(4) { animation-delay: 1.5s; } /* L */
-        .logo-letter:nth-child(5) { animation-delay: 2.0s; } /* È */
+        .logo-letter:nth-child(1) { animation-delay: 0s; }
+        .logo-letter:nth-child(2) { animation-delay: 0.5s; }
+        .logo-letter:nth-child(3) { animation-delay: 1.0s; }
+        .logo-letter:nth-child(4) { animation-delay: 1.5s; }
+        .logo-letter:nth-child(5) { animation-delay: 2.0s; }
 
-        /* 
-           ANIMATION KEYFRAMES
-           Total Cycle: 12.5 seconds
-           
-           Phase 1 (0s - 2.5s): Letters appear (Slide Up).
-           Phase 2 (2.5s - 4.0s): Logo blinks 3 times.
-           Phase 3 (4.0s - 9.0s): Logo stays static (5 seconds).
-           Phase 4 (9.0s - 11.75s): Letters fade out & slide down (staggered).
-        */
-
-        /* Container Animation */
         @keyframes containerBlink {
             0% { opacity: 1; }
-            20% { opacity: 1; } /* 2.5s (Phase 1 Ends) */
-            
-            /* Phase 2: Blinking (2.5s to 4.0s) */
-            22% { opacity: 0; } /* Blink 1 Out */
-            24% { opacity: 1; } /* Blink 1 In */
-            26% { opacity: 0; } /* Blink 2 Out */
-            28% { opacity: 1; } /* Blink 2 In */
-            30% { opacity: 0; } /* Blink 3 Out */
-            32% { opacity: 1; } /* Blink 3 In */
-            
-            94% { opacity: 1; } /* 11.75s (Phase 4 Ends) - Stay visible for full staggered exit */
-            
-            95% { opacity: 0; } /* Hide to reset */
-            100% { opacity: 0; }
+            20% { opacity: 1; }
+            22% { opacity: 0; } 24% { opacity: 1; }
+            26% { opacity: 0; } 28% { opacity: 1; }
+            30% { opacity: 0; } 32% { opacity: 1; }
+            94% { opacity: 1; }
+            95% { opacity: 0; } 100% { opacity: 0; }
         }
 
-        /* Individual Letter Animation */
         @keyframes letterCycle {
-            /* Phase 1: Entry */
             0% { opacity: 0; transform: translateY(30px); }
-            4% { opacity: 1; transform: translateY(0); } /* Slide up & appear (0.5s duration) */
-            
-            /* Phase 2 & 3: Hold (Visible during blink & static period) */
-            72% { opacity: 1; transform: translateY(0); } /* Hold until 9.0s */
-            
-            /* Phase 4: Exit (Fade Out & Slide Down) */
-            82% { opacity: 0; transform: translateY(30px); } /* Slide down & vanish (1.25s duration) */
-            
-            /* Gap before loop restarts */
+            4% { opacity: 1; transform: translateY(0); }
+            72% { opacity: 1; transform: translateY(0); }
+            82% { opacity: 0; transform: translateY(30px); }
             100% { opacity: 0; transform: translateY(30px); }
         }
-        /* --------------------------- */
 
-        /* Right Column: Contact Summary */
         .footer-right {
             text-align: right;
         }
@@ -880,13 +877,12 @@
         }
 
         .footer-contact-summary i {
-            color: var(--logo-orange); /* Orange */
+            color: var(--logo-orange);
             font-size: 0.95rem;
             width: 18px;
             text-align: center;
         }
 
-        /* Bottom Section (Links, Socials, Copyright) */
         .footer-bottom-wrapper {
             border-top: 1px solid rgba(255, 255, 255, 0.1);
             padding-top: 2.5rem;
@@ -948,7 +944,7 @@
         .footer-socials a:hover {
             transform: scale(1.15);
             background: var(--logo-orange);
-            color: #0f172a; /* Dark text */
+            color: #0f172a;
             border-color: var(--logo-orange);
             box-shadow: 0 0 15px rgba(242, 140, 56, 0.5);
         }
@@ -959,16 +955,12 @@
         }
 
         /* -----------------------------------------------------------
-           END MODIFIED FOOTER STYLES
-           ----------------------------------------------------------- */
-
-        /* -----------------------------------------------------------
-           RESPONSIVE MEDIA QUERIES (Premium Optimizations)
+           RESPONSIVE
            ----------------------------------------------------------- */
         @media (max-width: 968px) {
             .nav-links {
                 position: fixed;
-                top: 85px; /* Updated mobile menu top position */
+                top: 85px;
                 left: -100%;
                 background: var(--primary-blue);
                 width: 100%;
@@ -986,30 +978,21 @@
                 display: block;
             }
 
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-
-            .hero-subtitle {
-                font-size: 1.1rem;
-            }
-
             .contact-wrapper {
                 grid-template-columns: 1fr;
                 gap: 2.5rem;
             }
 
             .careers-grid {
-                grid-template-columns: 1fr; /* Stack careers on tablet/mobile */
+                grid-template-columns: 1fr;
             }
 
             section {
                 padding: 3.5rem 1.5rem;
             }
 
-            /* Footer Mobile Adjustments */
             .footer-top-grid {
-                grid-template-columns: 1fr; /* Stack columns */
+                grid-template-columns: 1fr;
                 gap: 2rem;
                 text-align: center;
             }
@@ -1037,22 +1020,16 @@
         }
 
         @media (max-width: 640px) {
-            .hero h1 {
-                font-size: 2rem;
-            }
-
             .section-title {
                 font-size: 2rem;
             }
 
-            /* Stacking cards on small screens */
             .services-grid,
             .features-grid {
                 grid-template-columns: 1fr;
-                gap: 1.5rem; /* Slightly smaller gap on mobile */
+                gap: 1.5rem;
             }
             
-            /* Scaling Icons on Mobile */
             .service-icon, .feature-icon {
                 width: 60px;
                 height: 60px;
@@ -1070,10 +1047,9 @@
             }
             
             .nav-logo-svg {
-                height: 50px; /* Scaled down for very small screens */
+                height: 50px;
             }
 
-            /* Full width buttons on mobile for easier tapping */
             .cta-button {
                 width: 100%;
                 padding: 0.9rem 2rem;
@@ -1088,15 +1064,11 @@
                 font-size: 1rem;
             }
         }
-        /* -----------------------------------------------------------
-           END RESPONSIVE MEDIA QUERIES
-           ----------------------------------------------------------- */
     </style>
 </head>
 <body>
     <nav>
         <div class="nav-container">
-            <!-- Nav Logo with Attention Animation & New Subtitle -->
             <a href="#home" class="logo">
                 <svg class="nav-logo-svg" width="200" height="80" viewBox="0 0 200 80" xmlns="http://www.w3.org/2000/svg">
                     <defs>
@@ -1121,9 +1093,7 @@
                             }
                         </style>
                     </defs>
-                    <!-- Main Logo Text -->
                     <text x="100" y="35" class="nav-brand">B&#201;LL&#200;</text>
-                    <!-- New Subtitle Text -->
                     <text x="100" y="62" class="nav-subtitle">TRADING &amp; E-COMMERCE</text>
                 </svg>
             </a>
@@ -1134,7 +1104,7 @@
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#services">Services</a></li>
-                <li><a href="#support">Outsourcing</a></li> <!-- Updated Nav Text -->
+                <li><a href="#support">Outsourcing</a></li>
                 <li><a href="#why-us">Why Us</a></li>
                 <li><a href="#contact">Contact</a></li>
                 <li><a href="#careers">Careers</a></li>
@@ -1142,13 +1112,63 @@
         </div>
     </nav>
 
+    <!-- NEW HERO SLIDER SECTION -->
     <section class="hero" id="home">
-        <div class="container">
-            <div class="hero-content" data-aos="fade-up">
-                <h1>Empowering Global Business Excellence</h1>
-                <p class="hero-subtitle">HR | Trading | E-Commerce | Management Solutions – Ajman Freezone, UAE</p>
-                <a href="#contact" class="cta-button">Get in Touch</a>
+        <!-- Swiper -->
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                
+                <!-- Slide 1 -->
+                <div class="swiper-slide">
+                    <div class="slide-bg" style="background-image: url('/images/slider_1.jpg');"></div>
+                    <div class="overlay"></div>
+                    <div class="hero-content">
+                        <h1>Empowering Global Business Excellence</h1>
+                        <p class="hero-subtitle">HR | Trading | E-Commerce | Management – Ajman Freezone, UAE</p>
+                        <a href="#contact" class="cta-button">Get in Touch</a>
+                    </div>
+                </div>
+
+                <!-- Slide 2 -->
+                <div class="swiper-slide">
+                    <div class="slide-bg" style="background-image: url('/images/slider_2.jpg');"></div>
+                    <div class="overlay"></div>
+                    <div class="hero-content">
+                        <h1>Building Strong Partnerships & Teams</h1>
+                        <p class="hero-subtitle">Expert HR, Consultancy & Management Excellence</p>
+                        <a href="#contact" class="cta-button">Get in Touch</a>
+                    </div>
+                </div>
+
+                <!-- Slide 3 -->
+                <div class="swiper-slide">
+                    <div class="slide-bg" style="background-image: url('/images/slider_3.jpg');"></div>
+                    <div class="overlay"></div>
+                    <div class="hero-content">
+                        <h1>Seamless Trading & E-Commerce Solutions</h1>
+                        <p class="hero-subtitle">From Sourcing to Delivery – Powered by Ajman Freezone</p>
+                        <a href="#contact" class="cta-button">Get in Touch</a>
+                    </div>
+                </div>
+
+                <!-- Slide 4 -->
+                <div class="swiper-slide">
+                    <div class="slide-bg" style="background-image: url('/images/slider_4.jpg');"></div>
+                    <div class="overlay"></div>
+                    <div class="hero-content">
+                        <h1>Tailored HR & Business Support</h1>
+                        <p class="hero-subtitle">Scalable Outsourcing & Consultancy for Growth</p>
+                        <a href="#contact" class="cta-button">Get in Touch</a>
+                    </div>
+                </div>
+
             </div>
+            <!-- Pagination (Dots) -->
+            <div class="swiper-pagination"></div>
+            
+            <!-- Navigation Arrows -->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
         </div>
     </section>
 
@@ -1157,7 +1177,7 @@
             <h2 class="section-title">About Us</h2>
             <div class="about-content">
                 <p>We are a premier business solutions provider strategically positioned in heart of UAE's Ajman Freezone. Under visionary leadership of our founder, <span class="founder-name">Malik M A Awan</span>, we have dedicated ourselves to fostering operational excellence and driving substantial growth for our global partners.</p>
-                <p>Leveraging unique advantages of a Free Zone establishment, we bridge the gap between local market intelligence and international standards. Our integrated approach encompasses comprehensive human resource solutions, strategic e-commerce frameworks, general trading expertise, and robust project management. We are committed to empowering organizations with the precise tools, talent, and strategies required to navigate the complexities of today's competitive marketplace.</p>
+                <p>Leveraging unique advantages of a Free Zone establishment, we bridge gap between local market intelligence and international standards. Our integrated approach encompasses comprehensive human resource solutions, strategic e-commerce frameworks, general trading expertise, and robust project management. We are committed to empowering organizations with precise tools, talent, and strategies required to navigate the complexities of today's competitive marketplace.</p>
             </div>
         </div>
     </section>
@@ -1211,7 +1231,6 @@
         </div>
     </section>
 
-    <!-- UPDATED CUSTOMER SUPPORT OUTSOURCING SECTION -->
     <section class="support-section" id="support">
         <div class="container" data-aos="fade-up" data-aos-delay="200">
             <h2 class="section-title">Customer Support Outsourcing</h2>
@@ -1219,7 +1238,6 @@
             <p class="support-intro">Focus on building your product while we handle the connections. Our flexible, scalable outsourcing model allows modern brands to provide premium support without the fixed costs of an in-house team.</p>
             
             <div class="features-grid">
-                <!-- Feature 1: Swift Chat -->
                 <div class="feature-item" data-aos="zoom-in" data-aos-delay="300">
                     <div class="feature-icon">
                         <i class="fas fa-comments"></i>
@@ -1228,7 +1246,6 @@
                     <p>Instant replies on websites and apps to capture leads & solve issues immediately.</p>
                 </div>
 
-                <!-- Feature 2: Inbox Mastery -->
                 <div class="feature-item" data-aos="zoom-in" data-aos-delay="400">
                     <div class="feature-icon">
                         <i class="fas fa-envelope-open-text"></i>
@@ -1237,7 +1254,6 @@
                     <p>Handle high email volume with a first-contact resolution focus and speed.</p>
                 </div>
 
-                <!-- Feature 3: Customer Advocacy -->
                 <div class="feature-item" data-aos="zoom-in" data-aos-delay="500">
                     <div class="feature-icon">
                         <i class="fas fa-bullhorn"></i>
@@ -1246,7 +1262,6 @@
                     <p>We gather insights to help improve your business, not just answer queries.</p>
                 </div>
 
-                <!-- Feature 4: Multi-Channel -->
                 <div class="feature-item" data-aos="zoom-in" data-aos-delay="600">
                     <div class="feature-icon">
                         <i class="fas fa-layer-group"></i>
@@ -1256,7 +1271,6 @@
                 </div>
             </div>
 
-            <!-- CTA -->
             <div style="text-align: center;" data-aos="fade-up" data-aos-delay="700">
                 <a href="#contact" class="cta-button">Discuss with Us</a>
             </div>
@@ -1333,7 +1347,6 @@
                         </div>
                     </div>
 
-                    <!-- Combined Phone and Whatsapp as requested -->
                     <div class="info-item">
                         <i class="fas fa-phone info-icon"></i>
                         <div>
@@ -1371,7 +1384,6 @@
         </div>
     </section>
 
-    <!-- NEW CAREERS SECTION -->
     <section class="careers-section" id="careers">
         <div class="container" data-aos="fade-up" data-aos-delay="200">
             <h2 class="section-title">Careers</h2>
@@ -1381,7 +1393,6 @@
             </p>
 
             <div class="careers-grid">
-                <!-- Left Column: Why Join Us -->
                 <div class="careers-card" data-aos="fade-right" data-aos-delay="300">
                     <h3>Why Join Us?</h3>
                     <ul>
@@ -1392,27 +1403,10 @@
                     </ul>
                 </div>
 
-                <!-- Right Column: Current Openings -->
                 <div class="careers-card" data-aos="fade-left" data-aos-delay="300">
                     <h3>Current Openings</h3>
                     
                     <div class="job-listing-container">
-                        <!-- 
-                           NOTE: To add jobs later, simply remove the "no-jobs" paragraph 
-                           and uncomment/add <div class="job-item"> blocks below.
-                        -->
-                        
-                        <!-- <div class="job-item">
-                            <span class="job-title">Senior HR Consultant</span>
-                            <span class="job-details">Full-time • Ajman Freezone</span>
-                        </div>
-                        
-                        <div class="job-item">
-                            <span class="job-title">E-Commerce Manager</span>
-                            <span class="job-details">Full-time • Hybrid</span>
-                        </div> -->
-
-                        <!-- Current Status: No Open Positions -->
                         <p class="no-jobs">
                             We currently have no open positions listed. However, we're always open to talented individuals! Please send your CV/resume to <a href="mailto:info@belletec.org" style="color:var(--logo-orange);">info@belletec.org</a> with subject 'Career Application - [Your Name]'.
                         </p>
@@ -1426,33 +1420,25 @@
             </div>
         </div>
     </section>
-    <!-- END CAREERS SECTION -->
 
-    <!-- MODIFIED FOOTER SECTION -->
     <footer>
         <div class="footer-wrapper">
-            
-            <!-- Top Grid: Left (Details) | Center (Logo) | Right (Address) -->
             <div class="footer-top-grid">
-                <!-- Left: Company Details -->
                 <div class="footer-left">
                     <h4>Belle Trading & E-Commerce</h4>
                     <p>Empowering businesses with innovative HR, trading, e-commerce, and management solutions from the heart of Ajman Freezone.</p>
                 </div>
 
-                <!-- Center: Animated Logo -->
                 <div class="footer-center">
                     <a href="#home" class="footer-logo">
-                        <!-- Characters: B, É, L, L, È -->
                         <span class="logo-letter">B</span>
-                        <span class="logo-letter">&#201;</span> <!-- É -->
+                        <span class="logo-letter">&#201;</span>
                         <span class="logo-letter">L</span>
                         <span class="logo-letter">L</span>
-                        <span class="logo-letter">&#200;</span> <!-- È -->
+                        <span class="logo-letter">&#200;</span>
                     </a>
                 </div>
 
-                <!-- Right: Address Details -->
                 <div class="footer-right">
                     <div class="footer-contact-summary">
                         <p><i class="fas fa-map-marker-alt"></i> C1 Building, Ajman Freezone</p>
@@ -1461,7 +1447,6 @@
                 </div>
             </div>
 
-            <!-- Bottom Wrapper: Links, Socials, Copyright -->
             <div class="footer-bottom-wrapper">
                 <ul class="footer-nav-links">
                     <li><a href="#home">Home</a></li>
@@ -1489,13 +1474,15 @@
                     <p>&copy; 2026 Belle Trading & E-Commerce F.Z.E. All rights reserved.</p>
                 </div>
             </div>
-
         </div>
     </footer>
-    <!-- END MODIFIED FOOTER SECTION -->
 
+    <!-- Scripts -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    
     <script>
+        // Mobile Toggle
         const mobileToggle = document.getElementById('mobileToggle');
         const navLinks = document.getElementById('navLinks');
 
@@ -1506,6 +1493,7 @@
             icon.classList.toggle('fa-times');
         });
 
+        // Smooth Scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -1519,7 +1507,7 @@
                 
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
-                    const offset = 85; // Updated offset to match new nav height
+                    const offset = 85;
                     const targetPosition = target.offsetTop - offset;
                     window.scrollTo({
                         top: targetPosition,
@@ -1529,10 +1517,30 @@
             });
         });
 
+        // AOS Init
         AOS.init({
             duration: 800,
             once: true,
-            easing: 'ease-out-cubic' /* Changed to cubic for smoother entrance */
+            easing: 'ease-out-cubic'
+        });
+
+        // Swiper Init
+        const swiper = new Swiper(".mySwiper", {
+            effect: "fade",
+            loop: true,
+            autoplay: {
+                delay: 5000,
+                disableOnInteraction: false,
+                pauseOnMouseEnter: true,
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
         });
     </script>
 </body>
