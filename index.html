@@ -29,11 +29,15 @@
 <!-- Favicon (simple text-based placeholder for now – blue background, white B) -->
     <link rel="icon" href="https://placehold.co" type="image/png">
     <link rel="apple-touch-icon" href="https://placehold.co">
+    
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Added Poppins for new Logo -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
     <style>
         * {
             margin: 0;
@@ -48,6 +52,7 @@
             --light-cream: #FAF9F6;
             --text-charcoal: #2C3E50;
             --white: #ffffff;
+            --logo-orange: #F28C38; /* Added for easy reference */
         }
 
         html {
@@ -69,29 +74,55 @@
             background: linear-gradient(135deg, var(--primary-blue) 0%, #004080 100%);
             z-index: 1000;
             box-shadow: 0 4px 20px rgba(0, 51, 102, 0.15);
+            height: 70px;
         }
 
         .nav-container {
             max-width: 1400px;
             margin: 0 auto;
-            padding: 1.2rem 2.5rem;
+            height: 100%;
+            padding: 0 2.5rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
         .logo {
-            font-size: 1.75rem;
-            font-weight: 600;
-            color: var(--white);
-            letter-spacing: 0.5px;
             text-decoration: none;
+            display: flex;
+            align-items: center;
+            height: 100%;
         }
 
-        .logo-accent {
-            color: var(--accent-gold);
-            font-weight: 700;
+        /* Styling for NEW Nav Logo */
+        .nav-logo-svg {
+            height: 48px;
+            width: auto;
+            display: block;
+            /* ADDING ATTENTION ANIMATION HERE */
+            animation: navPulse 3.5s infinite ease-in-out;
         }
+
+        /* -----------------------------------------------------------
+           ANIMATION KEYFRAMES FOR NAV LOGO (Attention Grabber)
+           ----------------------------------------------------------- */
+        @keyframes navPulse {
+            0% { opacity: 1; transform: scale(1); } /* Normal */
+            10% { opacity: 1; transform: scale(1); } /* Wait */
+            
+            /* Dip slightly */
+            15% { opacity: 0.3; transform: scale(0.95); } 
+            
+            /* Flash Bright & Bounce (The "Attention" moment) */
+            18% { opacity: 1; transform: scale(1.1); } 
+            
+            /* Return to normal */
+            22% { opacity: 1; transform: scale(1); } 
+            
+            /* Hold for the rest of the cycle */
+            100% { opacity: 1; transform: scale(1); }
+        }
+        /* ----------------------------------------------------------- */
 
         .nav-links {
             display: flex;
@@ -469,7 +500,7 @@
         }
 
         /* -----------------------------------------------------------
-           MODIFIED FOOTER STYLES
+           MODIFIED FOOTER STYLES - ANIMATED NEW LOGO
            ----------------------------------------------------------- */
         footer {
             background: linear-gradient(135deg, var(--primary-blue) 0%, #002244 100%);
@@ -521,13 +552,14 @@
             text-align: center;
         }
 
-        /* --- ANIMATED LOGO STYLES --- */
+        /* --- ANIMATED LOGO STYLES (Updated to Poppins/Orange) --- */
         .footer-logo {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
             font-size: 3.5rem;
-            font-weight: 700;
-            color: var(--white);
+            color: var(--logo-orange); /* New Orange Color */
             text-decoration: none;
-            letter-spacing: 0.5px;
+            letter-spacing: 0.05px;
             display: inline-block;
             cursor: default;
             
@@ -538,11 +570,7 @@
         /* Disable hover effects */
         .footer-logo:hover {
             transform: none;
-            color: var(--white);
-        }
-
-        .footer-logo .logo-accent {
-            color: var(--accent-gold);
+            color: var(--logo-orange);
         }
         
         /* Letter Wrapper */
@@ -554,11 +582,11 @@
         }
 
         /* Staggered Delays for Entry */
-        .logo-letter:nth-child(1) { animation-delay: 0s; }
-        .logo-letter:nth-child(2) { animation-delay: 0.5s; }
-        .logo-letter:nth-child(3) { animation-delay: 1.0s; }
-        .logo-letter:nth-child(4) { animation-delay: 1.5s; }
-        .logo-letter:nth-child(5) { animation-delay: 2.0s; }
+        .logo-letter:nth-child(1) { animation-delay: 0s; } /* B */
+        .logo-letter:nth-child(2) { animation-delay: 0.5s; } /* É */
+        .logo-letter:nth-child(3) { animation-delay: 1.0s; } /* L */
+        .logo-letter:nth-child(4) { animation-delay: 1.5s; } /* L */
+        .logo-letter:nth-child(5) { animation-delay: 2.0s; } /* È */
 
         /* 
            ANIMATION KEYFRAMES
@@ -799,14 +827,34 @@
             .footer-logo {
                 font-size: 2.5rem;
             }
+            
+            .nav-logo-svg {
+                height: 40px;
+            }
         }
     </style>
 </head>
 <body>
     <nav>
         <div class="nav-container">
+            <!-- Updated Nav Logo with Attention Animation -->
             <a href="#home" class="logo">
-                <span class="logo-accent">B</span>éllè
+                <svg class="nav-logo-svg" width="200" height="60" viewBox="0 0 200 60" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <style>
+                            @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+                            .nav-brand {
+                                font-family: 'Poppins', sans-serif;
+                                font-weight: 600;
+                                font-size: 34px;
+                                fill: #F28C38;
+                                text-anchor: middle;
+                                letter-spacing: 0.05em;
+                            }
+                        </style>
+                    </defs>
+                    <text x="100" y="42" class="nav-brand">B&#201;LL&#200;</text>
+                </svg>
             </a>
             <button class="mobile-toggle" id="mobileToggle">
                 <i class="fas fa-bars"></i>
@@ -1016,15 +1064,15 @@
                     <p>Empowering businesses with innovative HR, trading, e-commerce, and management solutions from the heart of Ajman Freezone.</p>
                 </div>
 
-                <!-- Center: Animated Belle Logo -->
+                <!-- Center: NEW Animated Logo -->
                 <div class="footer-center">
                     <a href="#home" class="footer-logo">
-                        <!-- Wrapped letters for individual animation -->
-                        <span class="logo-letter logo-accent">B</span>
-                        <span class="logo-letter">é</span>
-                        <span class="logo-letter">l</span>
-                        <span class="logo-letter">l</span>
-                        <span class="logo-letter">è</span>
+                        <!-- New Characters: B, É, L, L, È -->
+                        <span class="logo-letter">B</span>
+                        <span class="logo-letter">&#201;</span> <!-- É -->
+                        <span class="logo-letter">L</span>
+                        <span class="logo-letter">L</span>
+                        <span class="logo-letter">&#200;</span> <!-- È -->
                     </a>
                 </div>
 
