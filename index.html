@@ -172,8 +172,9 @@
             background: none;
             border: none;
             color: var(--white);
-            font-size: 1.5rem;
+            font-size: 1rem;
             cursor: pointer;
+            padding: 0.5rem;
         }
 
         section {
@@ -246,10 +247,11 @@
             box-shadow: 0 8px 25px rgba(242, 140, 56, 0.4);
             border: none;
             cursor: pointer;
+            text-align: center;
         }
 
         .cta-button:hover {
-            transform: translateY(-3px);
+            transform: translateY(-3px) scale(1.02);
             box-shadow: 0 12px 35px rgba(242, 140, 56, 0.6);
             filter: brightness(1.1);
         }
@@ -298,6 +300,7 @@
             font-weight: 600;
         }
 
+        /* --- Services Section Styles --- */
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -310,13 +313,17 @@
             padding: 2.5rem 2rem;
             border-radius: 16px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); /* Dark Shadow */
-            transition: all 0.4s ease;
+            /* Premium Bouncy Transition */
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), 
+                        box-shadow 0.4s ease, 
+                        border-color 0.4s ease;
             border: 1px solid rgba(255, 255, 255, 0.05);
         }
 
         .service-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.7);
+            transform: translateY(-12px) scale(1.01); /* Lift and slight scale */
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7), 
+                        0 0 20px rgba(242, 140, 56, 0.15); /* Deep shadow + Orange Glow */
             border-color: var(--logo-orange);
         }
 
@@ -336,10 +343,11 @@
         }
 
         .service-card:hover .service-icon {
-            transform: scale(1.1) rotate(5deg);
+            transform: scale(1.15) rotate(5deg);
             background: var(--logo-orange);
             color: #0f172a;
             border-color: var(--logo-orange);
+            box-shadow: 0 0 15px rgba(242, 140, 56, 0.4);
         }
 
         .service-card h3 {
@@ -377,55 +385,110 @@
             color: var(--logo-orange);
         }
 
-        .why-us-section {
+        /* --- NEW CUSTOMER SUPPORT SECTION STYLES --- */
+        .support-section {
             background: transparent;
+            padding-bottom: 3rem;
         }
 
+        .support-intro {
+            text-align: center;
+            max-width: 850px;
+            margin: -1.5rem auto 3rem auto; /* Pull up slightly closer to title */
+            color: var(--text-sub);
+            font-size: 1.1rem;
+            line-height: 1.7;
+        }
+
+        /* Re-using features-grid for layout consistency */
         .features-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 2.5rem;
-            margin-top: 3rem;
+            margin-top: 1rem;
         }
 
         .feature-item {
             text-align: center;
-            padding: 2rem 1.5rem;
+            padding: 2.5rem 1.5rem;
             background: var(--card-bg);
             border-radius: 12px;
-            transition: all 0.3s ease;
+            /* Premium Hover Effects */
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), 
+                        box-shadow 0.4s ease,
+                        background 0.3s ease;
             box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100%;
+            border: 1px solid transparent;
         }
 
         .feature-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+            transform: translateY(-10px) scale(1.02); /* Lift + Scale */
+            box-shadow: 0 15px 35px rgba(0,0,0, 0.6),
+                        0 0 15px rgba(242, 140, 56, 0.1); /* Glow */
             background: #263855; /* Slightly lighter on hover */
+            border-color: rgba(242, 140, 56, 0.2);
         }
 
         .feature-icon {
             font-size: 3rem;
             color: var(--logo-orange);
-            margin-bottom: 1.25rem;
+            margin-bottom: 1.5rem;
             display: inline-block;
-            transition: all 0.3s ease;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
 
         .feature-item:hover .feature-icon {
-            transform: scale(1.15);
+            transform: scale(1.2) rotate(-5deg);
             color: #fff;
+            text-shadow: 0 0 10px rgba(242, 140, 56, 0.6);
         }
 
         .feature-item h4 {
             color: var(--text-main);
             font-size: 1.3rem;
-            margin-bottom: 0.75rem;
+            margin-bottom: 1rem;
             font-weight: 600;
         }
 
+        /* Style for lists inside Feature Items (for Support Section) */
+        .feature-item ul {
+            list-style: none;
+            text-align: left;
+            width: 100%;
+            margin-top: 0.5rem;
+        }
+
+        .feature-item li {
+            padding: 0.5rem 0;
+            color: var(--text-sub);
+            font-size: 0.95rem;
+            position: relative;
+            padding-left: 1.5rem;
+            line-height: 1.5;
+        }
+
+        .feature-item li::before {
+            content: '\f00c'; /* FontAwesome check */
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            color: var(--logo-orange);
+        }
+        
         .feature-item p {
             color: var(--text-sub);
             font-size: 0.95rem;
+        }
+        /* --- END CUSTOMER SUPPORT STYLES --- */
+
+        /* --- Why Us Section --- */
+        .why-us-section {
+            background: transparent;
         }
 
         .contact-section {
@@ -762,6 +825,9 @@
            END MODIFIED FOOTER STYLES
            ----------------------------------------------------------- */
 
+        /* -----------------------------------------------------------
+           RESPONSIVE MEDIA QUERIES (Premium Optimizations)
+           ----------------------------------------------------------- */
         @media (max-width: 968px) {
             .nav-links {
                 position: fixed;
@@ -838,9 +904,18 @@
                 font-size: 2rem;
             }
 
+            /* Stacking cards on small screens */
             .services-grid,
             .features-grid {
                 grid-template-columns: 1fr;
+                gap: 1.5rem; /* Slightly smaller gap on mobile */
+            }
+            
+            /* Scaling Icons on Mobile */
+            .service-icon, .feature-icon {
+                width: 60px;
+                height: 60px;
+                font-size: 1.8rem;
             }
             
             .footer-logo {
@@ -850,7 +925,21 @@
             .nav-logo-svg {
                 height: 40px;
             }
+
+            /* Full width buttons on mobile for easier tapping */
+            .cta-button {
+                width: 100%;
+                padding: 0.9rem 2rem;
+                font-size: 1rem;
+            }
+
+            .service-card, .feature-item {
+                padding: 2rem 1.5rem;
+            }
         }
+        /* -----------------------------------------------------------
+           END RESPONSIVE MEDIA QUERIES
+           ----------------------------------------------------------- */
     </style>
 </head>
 <body>
@@ -882,6 +971,7 @@
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#services">Services</a></li>
+                <li><a href="#support">Support</a></li> <!-- Added Support Link -->
                 <li><a href="#why-us">Why Us</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
@@ -912,7 +1002,7 @@
         <div class="container" data-aos="fade-up" data-aos-delay="200">
             <h2 class="section-title">Our Services</h2>
             <div class="services-grid">
-                <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+                <div class="service-card" data-aos="zoom-in" data-aos-delay="300">
                     <div class="service-icon">
                         <i class="fas fa-users"></i>
                     </div>
@@ -926,7 +1016,7 @@
                     </ul>
                 </div>
 
-                <div class="service-card" data-aos="fade-up" data-aos-delay="400">
+                <div class="service-card" data-aos="zoom-in" data-aos-delay="400">
                     <div class="service-icon">
                         <i class="fas fa-shopping-cart"></i>
                     </div>
@@ -940,7 +1030,7 @@
                     </ul>
                 </div>
 
-                <div class="service-card" data-aos="fade-up" data-aos-delay="500">
+                <div class="service-card" data-aos="zoom-in" data-aos-delay="500">
                     <div class="service-icon">
                         <i class="fas fa-briefcase"></i>
                     </div>
@@ -957,11 +1047,62 @@
         </div>
     </section>
 
+    <!-- NEW CUSTOMER SUPPORT SECTION -->
+    <section class="support-section" id="support">
+        <div class="container" data-aos="fade-up" data-aos-delay="200">
+            <h2 class="section-title">Customer Support</h2>
+            <p class="support-intro">We provide dedicated, responsive customer support to ensure your business operations run smoothly. Our team is committed to fast resolutions and long-term partnerships.</p>
+            
+            <div class="features-grid">
+                <!-- Column 1: Dedicated Support Channels -->
+                <div class="feature-item" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="feature-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h4>Dedicated Support Channels</h4>
+                    <ul>
+                        <li>Phone/WhatsApp support during business hours</li>
+                        <li>Email ticketing system (response within 24 hours)</li>
+                        <li>Direct account manager for key clients</li>
+                    </ul>
+                </div>
+
+                <!-- Column 2: Service Level Commitments -->
+                <div class="feature-item" data-aos="zoom-in" data-aos-delay="400">
+                    <div class="feature-icon">
+                        <i class="fas fa-stopwatch"></i>
+                    </div>
+                    <h4>Service Level Commitments</h4>
+                    <ul>
+                        <li>Standard inquiries answered within 1 business day</li>
+                        <li>Urgent issues prioritized with 4-hour initial response</li>
+                        <li>Ongoing consultation for HR/Trading projects</li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: How to Reach Us -->
+                <div class="feature-item" data-aos="zoom-in" data-aos-delay="500">
+                    <div class="feature-icon">
+                        <i class="fas fa-envelope-open-text"></i>
+                    </div>
+                    <h4>How to Reach Us</h4>
+                    <ul>
+                        <li><strong>Call/WA:</strong> +971 55 438 3573</li>
+                        <li><strong>Email:</strong> info@belletec.org</li>
+                    </ul>
+                    <div style="margin-top: 1.5rem;">
+                        <a href="#contact" class="cta-button" style="padding: 0.6rem 1.5rem; font-size: 0.9rem;">Submit Inquiry</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section class="why-us-section" id="why-us">
         <div class="container" data-aos="fade-up" data-aos-delay="300">
             <h2 class="section-title">Why Choose Us</h2>
             <div class="features-grid">
-                <div class="feature-item" data-aos="fade-up" data-aos-delay="350">
+                <div class="feature-item" data-aos="zoom-in" data-aos-delay="350">
                     <div class="feature-icon">
                         <i class="fas fa-certificate"></i>
                     </div>
@@ -969,7 +1110,7 @@
                     <p>Registered Ajman Freezone entity ensuring regulatory compliance and business credibility</p>
                 </div>
 
-                <div class="feature-item" data-aos="fade-up" data-aos-delay="400">
+                <div class="feature-item" data-aos="zoom-in" data-aos-delay="400">
                     <div class="feature-icon">
                         <i class="fas fa-globe"></i>
                     </div>
@@ -977,7 +1118,7 @@
                     <p>International expertise with local market knowledge for seamless cross-border operations</p>
                 </div>
 
-                <div class="feature-item" data-aos="fade-up" data-aos-delay="450">
+                <div class="feature-item" data-aos="zoom-in" data-aos-delay="450">
                     <div class="feature-icon">
                         <i class="fas fa-user-tie"></i>
                     </div>
@@ -985,7 +1126,7 @@
                     <p>Seasoned professionals dedicated to delivering tailored solutions that drive results</p>
                 </div>
 
-                <div class="feature-item" data-aos="fade-up" data-aos-delay="500">
+                <div class="feature-item" data-aos="zoom-in" data-aos-delay="500">
                     <div class="feature-icon">
                         <i class="fas fa-chart-line"></i>
                     </div>
@@ -1104,6 +1245,7 @@
                     <li><a href="#home">Home</a></li>
                     <li><a href="#about">About</a></li>
                     <li><a href="#services">Services</a></li>
+                    <li><a href="#support">Support</a></li>
                     <li><a href="#why-us">Why Choose Us</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
@@ -1167,7 +1309,7 @@
         AOS.init({
             duration: 800,
             once: true,
-            easing: 'ease-in-out'
+            easing: 'ease-out-cubic' /* Changed to cubic for smoother entrance */
         });
     </script>
 </body>
