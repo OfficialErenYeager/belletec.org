@@ -94,38 +94,14 @@
             text-decoration: none;
             display: flex;
             align-items: center;
-            justify-content: center;
             height: 100%;
         }
 
-        /* Container for the logo image and subtitle */
-        .logo-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            width: fit-center;
-            text-align: center;
-        }
-
-        /* Styling the logo image */
-        .logo-img {
-            display: block;
-            height: auto;
-            max-height: 55px;
+        .nav-logo-svg {
+            height: 70px;
             width: auto;
-        }
-
-        /* Styling the subtitle */
-        .subtitle {
-            font-family: 'Inter', sans-serif;
-            font-size: 11px;
-            color: #ffffff;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-top: 4px;
-            font-weight: 500;
-            width: 100%;
-            text-align: center;
+            display: block;
+            animation: smoothNavPulse 4s infinite ease-in-out;
         }
 
         @keyframes smoothNavPulse {
@@ -1091,10 +1067,32 @@
     <nav>
         <div class="nav-container">
             <a href="#home" class="logo">
-                <div class="logo-container">
-                    <img src="belle-logo.png" alt="BÉLLÈ" class="logo-img">
-                    <div class="subtitle">TRADING & E-COMMERCE</div>
-                </div>
+                <svg class="nav-logo-svg" width="200" height="80" viewBox="0 0 200 80" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <style>
+                            @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Poppins:wght@600&display=swap');
+                            .nav-brand {
+                                font-family: 'Poppins', sans-serif;
+                                font-weight: 600;
+                                font-size: 34px;
+                                fill: #F28C38;
+                                text-anchor: middle;
+                                letter-spacing: 0.05em;
+                            }
+                            .nav-subtitle {
+                                font-family: 'Inter', sans-serif;
+                                font-weight: 500;
+                                font-size: 12px;
+                                fill: #ffffff;
+                                text-anchor: middle;
+                                text-transform: uppercase;
+                                letter-spacing: 0.1em;
+                            }
+                        </style>
+                    </defs>
+                    <text x="100" y="35" class="nav-brand">B&#201;LL&#200;</text>
+                    <text x="100" y="62" class="nav-subtitle">TRADING &amp; E-COMMERCE</text>
+                </svg>
             </a>
             <button class="mobile-toggle" id="mobileToggle">
                 <i class="fas fa-bars"></i>
