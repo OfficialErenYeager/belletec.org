@@ -1056,6 +1056,53 @@
                 font-size: 1rem;
             }
         }
+
+        /* -----------------------------------------------------------
+           HERO TEXT ANIMATIONS
+           ----------------------------------------------------------- */
+
+        /* 1. Set initial state: Hidden and slightly lowered */
+        .hero-content h1,
+        .hero-content p,
+        .hero-content .cta-button {
+        opacity: 0;
+        transform: translateY(30px);
+        /* Reset any existing transitions to avoid conflict */
+        transition: none !important; 
+       }
+
+       /* 2. Animate elements ONLY when the slide is active */
+       /* Heading */
+       .swiper-slide-active .hero-content h1 {
+       animation: heroFadeUp 1s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+       animation-delay: 0.2s; /* Start shortly after slide change */
+      }
+
+      /* Subtitle */
+     .swiper-slide-active .hero-content p {
+     animation: heroFadeUp 1s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+     animation-delay: 0.4s; /* Staggered delay for premium feel */
+     }
+
+     /* CTA Button */
+    .swiper-slide-active .hero-content .cta-button {
+    animation: heroFadeUp 1s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+    animation-delay: 0.6s; /* Appears last */
+    }
+
+    /* 3. Force hide content on non-active slides (Prevents visual overlap) */
+    .swiper-slide:not(.swiper-slide-active) .hero-content {
+    opacity: 0 !important;
+    pointer-events: none;
+    }
+
+    /* The Keyframe Definition */
+    @keyframes heroFadeUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
     </style>
 </head>
 <body>
@@ -1111,7 +1158,7 @@
             <div class="swiper-wrapper">
                 
                 <!-- Slide 1 -->
-                <div class="swiper-slide" style="background-image: url('/images/slider-1.jpg');">
+                <div class="swiper-slide" style="background-image: url('/images/slider_1.jpg');">
                     <div class="overlay"></div>
                     <div class="hero-content">
                         <h1>Empowering Global Business Excellence</h1>
@@ -1120,7 +1167,7 @@
                 </div>
 
                 <!-- Slide 2 -->
-                <div class="swiper-slide" style="background-image: url('/images/slider-2.jpg');">
+                <div class="swiper-slide" style="background-image: url('/images/slider_2.jpg');">
                     <div class="overlay"></div>
                     <div class="hero-content">
                         <h1>Building Strong Partnerships & Teams</h1>
@@ -1129,7 +1176,7 @@
                 </div>
 
                 <!-- Slide 3 -->
-                <div class="swiper-slide" style="background-image: url('/images/slider-3.jpg');">
+                <div class="swiper-slide" style="background-image: url('/images/slider_3.jpg');">
                     <div class="overlay"></div>
                     <div class="hero-content">
                         <h1>Seamless Trading & E-Commerce Solutions</h1>
@@ -1138,7 +1185,7 @@
                 </div>
 
                 <!-- Slide 4 -->
-                <div class="swiper-slide" style="background-image: url('/images/slider-4.jpg');">
+                <div class="swiper-slide" style="background-image: url('/images/slider_4.jpeg');">
                     <div class="overlay"></div>
                     <div class="hero-content">
                         <h1>Tailored HR & Business Support</h1>
@@ -1508,5 +1555,42 @@
             });
         });
     </script>
+
+    <!-- SWIPER JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const swiper = new Swiper(".mySwiper", {
+            // Use 'fade' effect for smooth, non-overlapping transitions
+            effect: "fade", 
+            
+            // Speed should match the longest CSS animation (approx 1000ms + delay)
+            speed: 1200, 
+            
+            loop: true,
+            
+            // Enable crossFade to ensure one fades out as the other fades in
+            fadeEffect: {
+                crossFade: true 
+            },
+            
+            autoplay: {
+                delay: 6000, // How long each slide stays static
+                disableOnInteraction: false,
+            },
+            
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+        });
+    });
+</script>
 </body>
 </html>
