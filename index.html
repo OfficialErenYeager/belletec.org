@@ -173,7 +173,7 @@
             margin-top: 0;
             padding: 0;
             position: relative;
-            height: 100vh;
+            height: 80vh;
             width: 100vw;
             overflow: hidden;
             background: #000;
@@ -183,7 +183,7 @@
 
         .swiper {
             width: 100%;
-            height: 100%;
+            height: 80%;
         }
 
         .swiper-slide {
@@ -950,6 +950,32 @@
            RESPONSIVE
            ----------------------------------------------------------- */
         @media (max-width: 968px) {
+            
+    /* Scale down height on mobile */
+    .hero, .swiper {
+        height: 60vh;
+    }
+
+    /* Reduce top padding so text doesn't get cut off */
+    .hero-content {
+        padding-top: 80px; 
+    }
+
+    /* Slightly scale down text for smaller screens if needed */
+    .hero h1 {
+        font-size: 1.8rem; 
+    }
+    
+    .hero-subtitle {
+        font-size: 0.9rem;
+    }
+    
+    .cta-button {
+        padding: 0.8rem 2rem;
+        font-size: 0.9rem;
+    }
+}
+            
             .nav-links {
                 position: fixed;
                 top: 85px;
@@ -1168,8 +1194,6 @@
         
         <p class="hero-subtitle" data-swiper-parallax="-200">HR | Trading | E-Commerce | Management – Ajman Freezone, UAE</p>
         
-        <a href="#contact" class="cta-button" data-swiper-parallax="-100">Get in Touch</a>
-        
     </div>
 </div>
 
@@ -1183,8 +1207,6 @@
         <h1 data-swiper-parallax="-300">Empowering Global Business Excellence</h1>
         
         <p class="hero-subtitle" data-swiper-parallax="-200">HR | Trading | E-Commerce | Management – Ajman Freezone, UAE</p>
-        
-        <a href="#contact" class="cta-button" data-swiper-parallax="-100">Get in Touch</a>
         
     </div>
 </div>
@@ -1200,13 +1222,11 @@
         
         <p class="hero-subtitle" data-swiper-parallax="-200">HR | Trading | E-Commerce | Management – Ajman Freezone, UAE</p>
         
-        <a href="#contact" class="cta-button" data-swiper-parallax="-100">Get in Touch</a>
-        
     </div>
 </div>
 
                 <!-- Slide 4 -->
-                <div class="swiper-slide" style="background-image: url('/images/slider_4.jpg');">
+                <div class="swiper-slide" style="background-image: url('/images/slider_4.jpeg');">
     <div class="overlay"></div>
     <!-- Added data-swiper-parallax-opacity for a fade effect during movement -->
     <div class="hero-content" data-swiper-parallax-opacity="0.5">
@@ -1215,8 +1235,6 @@
         <h1 data-swiper-parallax="-300">Empowering Global Business Excellence</h1>
         
         <p class="hero-subtitle" data-swiper-parallax="-200">HR | Trading | E-Commerce | Management – Ajman Freezone, UAE</p>
-        
-        <a href="#contact" class="cta-button" data-swiper-parallax="-100">Get in Touch</a>
         
     </div>
 </div>
