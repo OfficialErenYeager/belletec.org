@@ -1326,6 +1326,45 @@
         </div>
     </section>
 
+    <!-- SWAP LOCATION: Careers Section moved here -->
+    <section class="careers-section" id="careers">
+        <div class="container" data-aos="fade-up" data-aos-delay="200">
+            <h2 class="section-title">Careers</h2>
+            
+            <p class="careers-intro">
+                Join our growing team at Belle Trading & E-Commerce F.Z.E. in Ajman Freezone, UAE. We're seeking passionate professionals in HR, business consultancy, e-commerce, trading, management, and support roles.
+            </p>
+
+            <div class="careers-grid">
+                <div class="careers-card" data-aos="fade-right" data-aos-delay="300">
+                    <h3>Why Join Us?</h3>
+                    <ul>
+                        <li>Opportunity to work in a dynamic UAE freezone environment</li>
+                        <li>Supportive team and professional growth</li>
+                        <li>Competitive packages and benefits</li>
+                        <li>Exposure to international business operations</li>
+                    </ul>
+                </div>
+
+                <div class="careers-card" data-aos="fade-left" data-aos-delay="300">
+                    <h3>Current Openings</h3>
+                    
+                    <div class="job-listing-container">
+                        <p class="no-jobs">
+                            We currently have no open positions listed. However, we're always open to talented individuals! Please send your CV/resume to <a href="mailto:info@belletec.org" style="color:var(--logo-orange);">info@belletec.org</a> with subject 'Career Application - [Your Name]'.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="careers-cta" data-aos="fade-up" data-aos-delay="500">
+                <p class="diversity-note">We encourage applications from diverse backgrounds.</p>
+                <a href="mailto:info@belletec.org?subject=Career%20Application" class="cta-button">Send Your Resume</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SWAP LOCATION: Contact Section moved here -->
     <section class="contact-section" id="contact">
         <div class="container" data-aos="fade-up" data-aos-delay="400">
             <h2 class="section-title">Contact Us</h2>
@@ -1394,43 +1433,6 @@
         </div>
     </section>
 
-    <section class="careers-section" id="careers">
-        <div class="container" data-aos="fade-up" data-aos-delay="200">
-            <h2 class="section-title">Careers</h2>
-            
-            <p class="careers-intro">
-                Join our growing team at Belle Trading & E-Commerce F.Z.E. in Ajman Freezone, UAE. We're seeking passionate professionals in HR, business consultancy, e-commerce, trading, management, and support roles.
-            </p>
-
-            <div class="careers-grid">
-                <div class="careers-card" data-aos="fade-right" data-aos-delay="300">
-                    <h3>Why Join Us?</h3>
-                    <ul>
-                        <li>Opportunity to work in a dynamic UAE freezone environment</li>
-                        <li>Supportive team and professional growth</li>
-                        <li>Competitive packages and benefits</li>
-                        <li>Exposure to international business operations</li>
-                    </ul>
-                </div>
-
-                <div class="careers-card" data-aos="fade-left" data-aos-delay="300">
-                    <h3>Current Openings</h3>
-                    
-                    <div class="job-listing-container">
-                        <p class="no-jobs">
-                            We currently have no open positions listed. However, we're always open to talented individuals! Please send your CV/resume to <a href="mailto:info@belletec.org" style="color:var(--logo-orange);">info@belletec.org</a> with subject 'Career Application - [Your Name]'.
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="careers-cta" data-aos="fade-up" data-aos-delay="500">
-                <p class="diversity-note">We encourage applications from diverse backgrounds.</p>
-                <a href="mailto:info@belletec.org?subject=Career%20Application" class="cta-button">Send Your Resume</a>
-            </div>
-        </div>
-    </section>
-
     <footer>
         <div class="footer-wrapper">
             <div class="footer-top-grid">
@@ -1476,75 +1478,55 @@
                 </div>
 
                 <div class="footer-bottom">
-                    &copy; 2024 Belle Trading & E-Commerce F.Z.E. All Rights Reserved.
+                    <p>&copy; 2024 Belle Trading & E-Commerce F.Z.E. All rights reserved.</p>
                 </div>
             </div>
         </div>
     </footer>
 
-    <!-- Scripts -->
+    <!-- SCRIPTS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
     <script>
+        // Initialize Swiper
+        const swiper = new Swiper(".mySwiper", {
+            spaceBetween: 0,
+            effect: "fade",
+            loop: true,
+            speed: 1000,
+            autoplay: {
+                delay: 6000,
+                disableOnInteraction: false,
+            },
+            parallax: true,
+            allowTouchMove: true,
+        });
+
         // Initialize AOS (Animate On Scroll)
         AOS.init({
             duration: 800,
-            easing: 'ease-in-out',
+            easing: 'ease-out-cubic',
             once: true,
-            offset: 100
+            offset: 100,
         });
 
-        // Mobile Menu Toggle
+        // Mobile Menu Toggle Logic
         const mobileToggle = document.getElementById('mobileToggle');
         const navLinks = document.getElementById('navLinks');
 
-        mobileToggle.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-        });
-
-        // Close mobile menu when a link is clicked
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                navLinks.classList.remove('active');
+        if(mobileToggle && navLinks) {
+            mobileToggle.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
             });
-        });
-    </script>
 
-    <!-- SWIPER JS -->
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const swiper = new Swiper(".mySwiper", {
-            // Use 'fade' effect for smooth, non-overlapping transitions
-            effect: "fade", 
-            
-            // Speed should match the longest CSS animation (approx 1000ms + delay)
-            speed: 1200, 
-            
-            loop: true,
-            
-            // Enable crossFade to ensure one fades out as the other fades in
-            fadeEffect: {
-                crossFade: true 
-            },
-            
-            autoplay: {
-                delay: 6000, // How long each slide stays static
-                disableOnInteraction: false,
-            },
-            
-            pagination: {
-                el: ".swiper-pagination",
-                clickable: true,
-            },
-            
-            navigation: {
-                nextEl: ".swiper-button-next",
-                prevEl: ".swiper-button-prev",
-            },
-        });
-    });
-</script>
+            // Close mobile menu when a link is clicked
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.addEventListener('click', () => {
+                    navLinks.classList.remove('active');
+                });
+            });
+        }
+    </script>
 </body>
 </html>
