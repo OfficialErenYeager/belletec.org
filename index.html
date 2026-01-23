@@ -4,31 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- Basic SEO -->
+    <!-- Basic SEO -->
     <meta name="description" content="Belle Trading & E-Commerce F.Z.E. – Expert business solutions from Ajman Freezone, UAE. HR provision, business consultancy, e-commerce & general trading, management and project services.">
     <meta name="keywords" content="Ajman Freezone, UAE business services, HR consultancy, e-commerce solutions, general trading, project management, business consulting, UAE free zone company">
     <meta name="author" content="Belle Trading & E-Commerce F.Z.E.">
     <meta name="robots" content="index, follow">
 
-<!-- Open Graph / Social Sharing -->
+    <!-- Open Graph / Social Sharing -->
     <meta property="og:title" content="Belle Trading & E-Commerce F.Z.E. | Business Excellence in Ajman Freezone">
     <meta property="og:description" content="Leading provider of HR, consultancy, e-commerce, general trading, and management & project services from Ajman Freezone, UAE.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://belle-org.netlify.app/">
     <meta property="og:site_name" content="Belle Trading & E-Commerce F.Z.E.">
-    <meta property="og:image" content="https://placehold.co">
-
-<!-- Twitter/X Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Belle Trading & E-Commerce F.Z.E. | UAE Business Solutions">
-    <meta name="twitter:description" content="HR | Trading | E-Commerce | Management Excellence – Ajman Freezone">
-    <meta name="twitter:image" content="https://placehold.co">
     
     <title>Belle Trading & E-Commerce F.Z.E. | UAE Business Solutions</title>
 
-<!-- FAVICON -->
+    <!-- FAVICON -->
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2220%22 fill=%22%230f172a%22/><text x=%2250%22 y=%2268%22 font-family=%22Arial, sans-serif%22 font-weight=%22bold%22 font-size=%2270%22 fill=%22%23F28C38%22 text-anchor=%22middle%22> B </text></svg>" type="image/svg+xml">
-    <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2220%22 fill=%22%230f172a%22/><text x=%2250%22 y=%2268%22 font-family=%22Arial, sans-serif%22 font-weight=%22bold%22 font-size=%2270%22 fill=%22%23F28C38%22 text-anchor=%22middle%22> B </text></svg>">
     
     <!-- SWIPER CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
@@ -175,15 +167,14 @@
         }
 
         /* -----------------------------------------------------------
-           HERO SLIDER STYLES (FIXED & FULL SCREEN)
+           HERO SLIDER STYLES (FADE EFFECT)
            ----------------------------------------------------------- */
         .hero {
-            /* Full screen, absolutely no edges */
             margin-top: 0;
             padding: 0;
             position: relative;
-            height: 100vh; /* Forces Full Viewport Height */
-            width: 100vw;  /* Forces Full Viewport Width */
+            height: 100vh;
+            width: 100vw;
             overflow: hidden;
             background: #000;
             left: 0;
@@ -200,10 +191,9 @@
             align-items: center;
             justify-content: center;
             position: relative;
-            overflow: hidden;
-            /* Ensure image covers everything to prevent blackness */
             background-size: cover;
             background-position: center;
+            background-repeat: no-repeat;
         }
 
         .overlay {
@@ -216,18 +206,23 @@
             z-index: 2;
         }
 
+        /* Content Wrapper */
         .hero-content {
             position: relative;
-            z-index: 10; /* Above overlay */
+            z-index: 10;
             text-align: center;
             max-width: 1000px;
-            /* Padding top to clear navbar visually */
             padding-top: 120px; 
             padding-bottom: 20px;
             padding-left: 20px;
             padding-right: 20px;
             color: var(--white);
             width: 100%;
+            pointer-events: none;
+        }
+
+        .hero-content > * {
+            pointer-events: auto;
         }
 
         .hero h1 {
@@ -289,7 +284,7 @@
             height: 50px;
             border-radius: 50%;
             transition: all 0.3s ease;
-            z-index: 20; /* Ensure clickable above everything */
+            z-index: 20; 
         }
         
         .swiper-button-next:hover, .swiper-button-prev:hover {
@@ -1109,49 +1104,45 @@
         </div>
     </nav>
 
-    <!-- FIXED HERO SLIDER SECTION -->
+    <!-- HERO SLIDER SECTION -->
     <section class="hero" id="home">
         <!-- Swiper -->
         <div class="swiper mySwiper">
             <div class="swiper-wrapper">
                 
                 <!-- Slide 1 -->
-                <div class="swiper-slide" style="background-image: url('/images/slider_1.jpg');">
+                <div class="swiper-slide" style="background-image: url('/images/slider-1.jpg');">
                     <div class="overlay"></div>
                     <div class="hero-content">
                         <h1>Empowering Global Business Excellence</h1>
                         <p class="hero-subtitle">HR | Trading | E-Commerce | Management – Ajman Freezone, UAE</p>
-                        <a href="#contact" class="cta-button">Get in Touch</a>
                     </div>
                 </div>
 
                 <!-- Slide 2 -->
-                <div class="swiper-slide" style="background-image: url('/images/slider_2.jpg');">
+                <div class="swiper-slide" style="background-image: url('/images/slider-2.jpg');">
                     <div class="overlay"></div>
                     <div class="hero-content">
                         <h1>Building Strong Partnerships & Teams</h1>
                         <p class="hero-subtitle">Expert HR, Consultancy & Management Excellence</p>
-                        <a href="#contact" class="cta-button">Get in Touch</a>
                     </div>
                 </div>
 
                 <!-- Slide 3 -->
-                <div class="swiper-slide" style="background-image: url('/images/slider_3.jpg');">
+                <div class="swiper-slide" style="background-image: url('/images/slider-3.jpg');">
                     <div class="overlay"></div>
                     <div class="hero-content">
                         <h1>Seamless Trading & E-Commerce Solutions</h1>
                         <p class="hero-subtitle">From Sourcing to Delivery – Powered by Ajman Freezone</p>
-                        <a href="#contact" class="cta-button">Get in Touch</a>
                     </div>
                 </div>
 
                 <!-- Slide 4 -->
-                <div class="swiper-slide" style="background-image: url('/images/slider_4.jpg');">
+                <div class="swiper-slide" style="background-image: url('/images/slider-4.jpg');">
                     <div class="overlay"></div>
                     <div class="hero-content">
                         <h1>Tailored HR & Business Support</h1>
                         <p class="hero-subtitle">Scalable Outsourcing & Consultancy for Growth</p>
-                        <a href="#contact" class="cta-button">Get in Touch</a>
                     </div>
                 </div>
 
@@ -1459,77 +1450,63 @@
                 </div>
 
                 <div class="footer-bottom">
-                    <p>&copy; 2024 Belle Trading & E-Commerce F.Z.E. All Rights Reserved.</p>
+                    &copy; 2024 Belle Trading & E-Commerce F.Z.E. All Rights Reserved.
                 </div>
             </div>
         </div>
     </footer>
 
-    <!-- SCRIPTS -->
-    <!-- Swiper JS -->
+    <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    
-    <!-- AOS Animation JS -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-
-    <!-- Main Logic -->
     <script>
         // Initialize AOS (Animate On Scroll)
         AOS.init({
-            once: true,
-            offset: 50,
             duration: 800,
-            easing: 'ease-out-cubic',
+            easing: 'ease-in-out',
+            once: true,
+            offset: 100
         });
 
-        // Initialize Swiper with Requested Configuration
-        var swiper = new Swiper(".mySwiper", {
-            loop: true,
-            loopAdditionalSlides: 3,
-            loopedSlides: 4,
-            slidesPerView: 1,
-            spaceBetween: 0,
-            centeredSlides: false,
-            effect: 'fade',
+        // Initialize Swiper with FADE Effect
+        const swiper = new Swiper(".mySwiper", {
+            effect: "fade",
             fadeEffect: {
-                crossFade: true
+                crossFade: true // Ensures smooth transition without overlap
             },
-            speed: 800,
+            speed: 1200, // Slower speed for elegant feel
+            loop: true,
             autoplay: {
                 delay: 5000,
-                disableOnInteraction: false,
-                pauseOnMouseEnter: true,
+                disableOnInteraction: false, // Keeps autoplay running after user interaction
             },
             pagination: {
                 el: ".swiper-pagination",
                 clickable: true,
-                dynamicBullets: true,
             },
             navigation: {
                 nextEl: ".swiper-button-next",
                 prevEl: ".swiper-button-prev",
             },
-            observer: true,
-            updateOnWindowResize: true,
-            preloadImages: true,
+            keyboard: {
+                enabled: true,
+            },
         });
 
-        // Mobile Menu Toggle Logic
+        // Mobile Menu Toggle
         const mobileToggle = document.getElementById('mobileToggle');
         const navLinks = document.getElementById('navLinks');
 
-        if(mobileToggle) {
-            mobileToggle.addEventListener('click', () => {
-                navLinks.classList.toggle('active');
-            });
+        mobileToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
 
-            // Close menu when a link is clicked
-            document.querySelectorAll('.nav-links a').forEach(link => {
-                link.addEventListener('click', () => {
-                    navLinks.classList.remove('active');
-                });
+        // Close mobile menu when a link is clicked
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
             });
-        }
+        });
     </script>
 </body>
 </html>
