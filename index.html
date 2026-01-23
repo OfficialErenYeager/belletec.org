@@ -206,6 +206,22 @@
             background-position: center;
         }
 
+        .swiper-slide-active .hero-content {
+            .swiper-slide-active .hero-content {
+                animation: heroTextEntrance 1s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+        }
+
+        @keyframes heroTextEntrance {
+            0% {
+                opacity: 0;
+                transform: translateY(30px);
+        }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+        }
+    }
+
         .overlay {
             position: absolute;
             top: 0;
@@ -1146,7 +1162,7 @@
                 </div>
 
                 <!-- Slide 4 -->
-                <div class="swiper-slide" style="background-image: url('/images/slider_4.jpg');">
+                <div class="swiper-slide" style="background-image: url('/images/slider_4.jpeg');">
                     <div class="overlay"></div>
                     <div class="hero-content">
                         <h1>Tailored HR & Business Support</h1>
@@ -1468,6 +1484,39 @@
     <!-- SCRIPTS -->
     <!-- Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- Swiper with Fade Settings -->
+    <script>
+    const swiper = new Swiper(".mySwiper", {
+        // 1. Set the effect to 'fade'
+        effect: "fade",
+        
+        // 2. Enable Crossfade to ensure smooth blending (no lag/overlap)
+        fadeEffect: {
+            crossFade: true
+        },
+        
+        // 3. Set transition speed (1000ms = 1 second for a luxurious feel)
+        speed: 1000,
+        
+        // 4. Enable Looping and Autoplay
+        loop: true,
+        autoplay: {
+            delay: 5000,
+            disableOnInteraction: false,
+        },
+        
+        // 5. Keep your existing controls
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+    });
+</script>
     
     <!-- AOS Animation JS -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
