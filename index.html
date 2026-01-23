@@ -262,41 +262,6 @@
             filter: brightness(1.1);
         }
 
-        /* Swiper Customization */
-        .swiper-pagination-bullet {
-            width: 12px;
-            height: 12px;
-            background: rgba(255, 255, 255, 0.5);
-            opacity: 1;
-            transition: all 0.3s ease;
-        }
-
-        .swiper-pagination-bullet-active {
-            background: var(--logo-orange) !important;
-            width: 30px;
-            border-radius: 10px;
-        }
-
-        .swiper-button-next, .swiper-button-prev {
-            color: #ffffff !important;
-            background: rgba(0,0,0,0.3);
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            transition: all 0.3s ease;
-            z-index: 20; 
-        }
-        
-        .swiper-button-next:hover, .swiper-button-prev:hover {
-            background: var(--logo-orange);
-            color: #0f172a !important;
-        }
-
-        .swiper-button-next:after, .swiper-button-prev:after {
-            font-size: 20px;
-            font-weight: bold;
-        }
-
         /* -----------------------------------------------------------
            SECTIONS STYLES
            ----------------------------------------------------------- */
@@ -1215,13 +1180,6 @@
 </div>
 
             </div>
-            <!-- Pagination (Dots) -->
-            <div class="swiper-pagination"></div>
-            
-            <!-- Navigation Arrows -->
-            <div class="swiper-button-next"></div>
-            <div class="swiper-button-prev"></div>
-        </div>
     </section>
 
     <section class="about-section" id="about">
@@ -1534,31 +1492,6 @@
             easing: 'ease-in-out',
             once: true,
             offset: 100
-        });
-
-        // Initialize Swiper with FADE Effect
-        const swiper = new Swiper(".mySwiper", {
-            effect: "fade",
-            fadeEffect: {
-                crossFade: true // Ensures smooth transition without overlap
-            },
-            speed: 1200, // Slower speed for elegant feel
-            loop: true,
-            autoplay: {
-                delay: 5000,
-                disableOnInteraction: false, // Keeps autoplay running after user interaction
-            },
-            pagination: {
-                el: ".swiper-pagination",
-                clickable: true,
-            },
-            navigation: {
-                nextEl: ".swiper-button-next",
-                prevEl: ".swiper-button-prev",
-            },
-            keyboard: {
-                enabled: true,
-            },
         });
 
         // Mobile Menu Toggle
