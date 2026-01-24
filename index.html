@@ -14,7 +14,7 @@
     <meta property="og:title" content="Belle Trading & E-Commerce F.Z.E. | Business Excellence in Ajman Freezone">
     <meta property="og:description" content="Leading provider of HR, consultancy, e-commerce, general trading, and management & project services from Ajman Freezone, UAE.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://belle-org.netlify.app/">
+    <meta property="og:url" content="https://belletec.org/">
     <meta property="og:site_name" content="Belle Trading & E-Commerce F.Z.E.">
     
     <title>Belle Trading & E-Commerce F.Z.E. | UAE Business Solutions</title>
@@ -1474,61 +1474,81 @@
 
                 <div class="footer-socials">
                     <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
                 </div>
 
                 <div class="footer-bottom">
-                    <p>&copy; 2024 Belle Trading & E-Commerce F.Z.E. All rights reserved.</p>
+                    &copy; 2024 Belle Trading & E-Commerce F.Z.E. All rights reserved.
                 </div>
             </div>
         </div>
     </footer>
 
-    <!-- SCRIPTS -->
+    <!-- Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     
-    <script>
-        // Initialize Swiper
-        const swiper = new Swiper(".mySwiper", {
-            spaceBetween: 0,
-            effect: "fade",
-            loop: true,
-            speed: 1000,
-            autoplay: {
-                delay: 6000,
-                disableOnInteraction: false,
-            },
-            parallax: true,
-            allowTouchMove: true,
-        });
+    <!-- AOS Animation JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
-        // Initialize AOS (Animate On Scroll)
+    <script>
+        // Init AOS (Animate On Scroll)
         AOS.init({
             duration: 800,
             easing: 'ease-out-cubic',
             once: true,
-            offset: 100,
+            offset: 50
         });
 
-        // Mobile Menu Toggle Logic
+        // Mobile Menu Toggle
         const mobileToggle = document.getElementById('mobileToggle');
         const navLinks = document.getElementById('navLinks');
+        const navLinksItems = document.querySelectorAll('.nav-links a');
 
-        if(mobileToggle && navLinks) {
-            mobileToggle.addEventListener('click', () => {
-                navLinks.classList.toggle('active');
-            });
+        mobileToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            // Toggle between hamburger and close icon
+            const icon = mobileToggle.querySelector('i');
+            if (navLinks.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
 
-            // Close mobile menu when a link is clicked
-            document.querySelectorAll('.nav-links a').forEach(link => {
-                link.addEventListener('click', () => {
-                    navLinks.classList.remove('active');
-                });
+        // Close mobile menu when a link is clicked
+        navLinksItems.forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                const icon = mobileToggle.querySelector('i');
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
             });
-        }
+        });
+
+        // Init Swiper
+        const swiper = new Swiper(".mySwiper", {
+            spaceBetween: 0,
+            centeredSlides: true,
+            loop: true,
+            effect: 'fade',
+            fadeEffect: {
+                crossFade: true
+            },
+            speed: 1200,
+            autoplay: {
+                delay: 5000,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+        });
     </script>
 </body>
 </html>
